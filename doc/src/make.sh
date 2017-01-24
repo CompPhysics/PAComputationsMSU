@@ -68,7 +68,6 @@ if [ ! -d $dest/$name ]; then
 mkdir $dest/$name
 mkdir $dest/$name/pdf
 mkdir $dest/$name/html
-mkdir $dest/$name/ipynb
 fi
 cp ${name}*.pdf $dest/$name/pdf
 cp -r ${name}*.html ._${name}*.html reveal.js $dest/$name/html
@@ -81,13 +80,3 @@ fi
 cp -r fig-${name}/* $dest/$name/html/fig-$name
 fi
 
-cp ${name}.ipynb $dest/$name/ipynb
-ipynb_tarfile=ipynb-${name}-src.tar.gz
-if [ ! -f ${ipynb_tarfile} ]; then
-cat > README.txt <<EOF
-This IPython notebook ${name}.ipynb does not require any additional
-programs.
-EOF
-tar czf ${ipynb_tarfile} README.txt
-fi
-cp ${ipynb_tarfile} $dest/$name/ipynb
