@@ -1,0 +1,83 @@
+//  Input from Wade
+
+As a first volley, I can outline my first impression.  It seems we're
+being asked to advise on two items: (1) the extent and nature of
+computational skills currently being taught in PA courses, and (2) the
+need/feasibility/desire for physics major programs where
+computation/modeling play a large role.  Before going too deeply down
+this rabbit hole, I have a few open-ended questions:
+
+-- Is formal training of computational skills the most effective way
+   to educate?  At the lower levels, I suspect so.  But where do
+   things become too specific to be universally useful?
+
+-- Is a computational physics major belong in PA or CMSE?  Or should
+   this be joint in some manner?  There is a computational math major,
+   is that coordinated outside the math dept at all?
+
+-- An underlying current is likely to be how we integrate
+   computational skill training in our existing physics courses and
+   whether this is keeping up with the modern demands of the field(s).
+   Do we want to tackle that?
+
+//  Input from Danny
+
+Thanks for starting the conversation. 
+
+I would like piggyback off what you proposed and suggest that we might
+start our work by consider what (as Wade put it) computational skills
+we intend for our students to develop over the course of the
+major. This might lead to some ideas of where to include the
+development and, I'd argue, how to do that inclusion (i.e., what is
+the appropriate pedagogy).
+
+I agree that the charge is rather vague, but I have personal
+experience (and, from my knowledge, so do Brian and Morten, maybe
+others?) in working on these kinds of broader curriculum projects. So
+I suspect we might be able to have a conversation about what the
+process might look like for the committee and then leap into the first
+aspect of that process at this first meeting.
+
+// Input from Brian
+
+Hi all,
+
+I think that the list of questions Wade has brought up are good ones
+and are definitely some of the things that we should talk about.
+Prior to meeting, we might want to try to collect some information
+about the various places that computation enters the undergraduate and
+graduate curriculum.  I know of some specific classes where that’s
+done, but my guess is that there’s a greater diversity of that sort of
+thing than I’m aware of.  I’m happy to talk to the astrophysics
+faculty - I know that Ed Brown and Laura Chomiuk have spent a lot of
+time integrating programming and modeling into AST 208.
+
+I would also urge you all to take a look at the AAPT “AAPT
+Recommendations for Computational Physics in the Undergraduate Physics
+Curriculum” document that was released in October:
+
+  https://www.aapt.org/Resources/upload/AAPT_UCTF_CompPhysReport_final_B.pdf
+
+It includes recommendations for learning goals, skills, and tools
+intended for undergraduate physics education, and was developed by the
+AAPT in consultation with many members of the physics community
+(including Danny and myself, in the interests of full disclosure).  I
+think that it will help to inform our discussion quite a bit!
+
+Also, regarding a computational physics major and its interactions
+with CMSE… let’s discuss that in person rather than over email.  I’m
+also happy to talk about the direction that CMSE intends to go with
+its scientific computing and data science degrees, and the rough
+timetable for those.
+
+// Input from Carlo
+
+Hi all, yes I agree that before the meeting we should gather more
+information on how our colleagues integrate computation in their UG/G
+teaching. I will do that for the CMP group and report to the
+committee. Maybe each of us could do it for the respective PA
+groups. Since we are focusing also on the graduate curriculum, I think
+we should ask about how computation enters in their research
+activities as well, so to have a better idea of common needs for
+grads.
+

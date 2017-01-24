@@ -1,0 +1,12 @@
+Charge to the PA ADHOC Committee on computers in physics education
+Committee members: Caballero, Couch, Fisher, Hjorth-Jensen, O’Shea, Piermarocchi
+Firstly, thanks for agreeing to serve on this important committee.
+The purpose of this committee is to evaluate the way in which undergraduate and graduate students are currently trained in computational skills, and to propose a path forward.   This could include:
+Consideration of whether PA students should be required to have a “minimum skill-set in computational methods”.  If so, what should be included. 
+Consideration of the way in which computations should be included in our service courses, including co-ordination with other units that teach large service courses (Math, Chemistry).  
+Consideration of existing courses in other departments, such as CMSE and CSE, that could be required or optional for physics or astronomy students, at both the Ugrad and Grad levels.    A list of such courses for circulation to PA students would be helpful.    
+Evaluation of the computational physics courses currently offered in the physics and astronomy department, with proposals for changes if needed.
+Consideration of the ways in which computational methods and problems can and should be included in the PA core courses.
+Consideration of whether PA should develop a computational physics major, or perhaps develop an applied physics major with computational physics as one of the options.   A computational physics option would be co-ordinated with CMSE which is developing program specializations in several directions, including physics. 
+Timeline:   A positive outcome of the committee’s work would be a report with recommendations that can be presented to the faculty at a faculty meeting at the end of 
+Spring semester 2017, or in Fall semester 2017.   This could include a request for resources from the department for implementation of proposed changes. 
