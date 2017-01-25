@@ -13,3 +13,6 @@ Morten Hjorth-Jensen
 Brian O'Shea
 
 Carlo Piermarocchi
+
+Material will be added gradually. See also the website of Partnership for Integration of
+Computation into Undergraduate Physics at http://helium.bradley.edu/PICUP/index.php for highly relevant information.
