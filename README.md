@@ -1,6 +1,6 @@
 #Computational Physics and related topics at the Physics and Astronomy Department at MSU
 This repository contains material pertinent to discussions on how to implement a computational perspective in basic physics courses, with several possible extensions and collaborations across departments at the CNS.
-The present working group consists of 
+The present working group consists of
 
 Danny Caballero
 
@@ -14,5 +14,5 @@ Brian O'Shea
 
 Carlo Piermarocchi
 
-Material will be added gradually. See also the website of Partnership for Integration of
-Computation into Undergraduate Physics at http://helium.bradley.edu/PICUP/index.php for highly relevant information.
+Material will be added gradually. See also the website of [Partnership for Integration of
+Computation into Undergraduate Physics](http://gopicup.org) for highly relevant information.
