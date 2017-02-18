@@ -8,7 +8,11 @@ Sean Couch
 
 Wade Fisher
 
+Connor Glosser
+
 Morten Hjorth-Jensen
+
+Claire Kopenhafer
 
 Brian O'Shea
 
