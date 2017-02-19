@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="description" content="Computational Physics at the Physics and Astronomy Department, Michigan State University">
+
+<title>Computational Physics at the Physics and Astronomy Department, Michigan State University</title>
+
+
+
+
+
+
+
+<!-- reveal.js: http://lab.hakim.se/reveal-js/ -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+<link rel="stylesheet" href="reveal.js/css/reveal.css">
+<link rel="stylesheet" href="reveal.js/css/theme/beige.css" id="theme">
+<!--
+<link rel="stylesheet" href="reveal.js/css/reveal.css">
+<link rel="stylesheet" href="reveal.js/css/theme/beige.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/beigesmall.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/solarized.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/serif.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/night.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/moon.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/sky.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/darkgray.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/cbc.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/simula.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/white.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/league.css" id="theme">
+-->
+
+<!-- For syntax highlighting -->
+<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+<!-- Printing and PDF exports -->
+<script>
+var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+
+<style type="text/css">
+    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+    p.caption { width: 80%; font-size: 60%; font-style: italic; text-align: left; }
+    hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+    .reveal .alert-text-small   { font-size: 80%;  }
+    .reveal .alert-text-large   { font-size: 130%; }
+    .reveal .alert-text-normal  { font-size: 90%;  }
+    .reveal .alert {
+             padding:8px 35px 8px 14px; margin-bottom:18px;
+             text-shadow:0 1px 0 rgba(255,255,255,0.5);
+             border:5px solid #bababa;
+             -webkit-border-radius: 14px; -moz-border-radius: 14px;
+             border-radius:14px;
+             background-position: 10px 10px;
+             background-repeat: no-repeat;
+             background-size: 38px;
+             padding-left: 30px; /* 55px; if icon */
+     }
+     .reveal .alert-block {padding-top:14px; padding-bottom:14px}
+     .reveal .alert-block > p, .alert-block > ul {margin-bottom:1em}
+     /*.reveal .alert li {margin-top: 1em}*/
+     .reveal .alert-block p+p {margin-top:5px}
+     /*.reveal .alert-notice { background-image: url(http://hplgit.github.io/doconce/bundled/html_images/small_gray_notice.png); }
+     .reveal .alert-summary  { background-image:url(http://hplgit.github.io/doconce/bundled/html_images/small_gray_summary.png); }
+     .reveal .alert-warning { background-image: url(http://hplgit.github.io/doconce/bundled/html_images/small_gray_warning.png); }
+     .reveal .alert-question {background-image:url(http://hplgit.github.io/doconce/bundled/html_images/small_gray_question.png); } */
+
+</style>
+
+
+
+<!-- Styles for table layout of slides -->
+<style type="text/css">
+td.padding {
+  padding-top:20px;
+  padding-bottom:20px;
+  padding-right:50px;
+  padding-left:50px;
+}
+</style>
+
+</head>
+
+<body>
+<div class="reveal">
+
+<!-- Any section element inside the <div class="slides"> container
+     is displayed as a slide -->
+
+<div class="slides">
+
+
+
+    
+
+
+
+<section>
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<center><h1 style="text-align: center;">Computational Physics at the Physics and Astronomy Department, Michigan State University</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): Danny Caballero, Sean Couch, Wade Fisher, Morten Hjorth-Jensen, Brian O'Shea, and Carlo Piermarocchi -->
+
+<center>
+<b>Danny Caballero, Sean Couch, Wade Fisher, Morten Hjorth-Jensen, Brian O'Shea, and Carlo Piermarocchi</b> 
+</center>
+
+<p>&nbsp;<br>
+<!-- institution(s) -->
+
+<br>
+<p>&nbsp;<br>
+<center><h4>January 27, 3pm-4pm</h4></center> <!-- date -->
+<br>
+
+<h2 id="___sec0">Short introduction and tentative agenda </h2>
+
+<p>
+The charge we received from the physics department is rather broad and challenging, 
+as many of you noted and commented upon in mails. The various points are listed here
+
+<ol>
+<p><li> Consideration of whether PA students should be required to have a &#8220;minimum skill-set in computational methods&#8221;.  If so, what should be included.</li> 
+<p><li> Consideration of the way in which computations should be included in our service courses, including co-ordination with other units that teach large service courses (Math, Chemistry).</li>
+
+<p><li> Consideration of existing courses in other departments, such as CMSE and CSE, that could be required or optional for physics or astronomy students, at both the Ugrad and Grad levels.    A list of such courses for circulation to PA students would be helpful.</li>
+
+<p><li> Evaluation of the computational physics courses currently offered in the physics and astronomy department, with proposals for changes if needed.</li>
+<p><li> Consideration of the ways in which computational methods and problems can and should be included in the PA core courses.</li>
+<p><li> Consideration of whether PA should develop a computational physics major, or perhaps develop an applied physics major with computational physics as one of the options.   A computational physics option would be co-ordinated with CMSE which is developing program specializations in several directions, including physics.</li> 
+<p><li> Timeline:   A positive outcome of the committee&#8217;s work would be a report with recommendations that can be presented to the faculty at a faculty meeting at the end of  Spring semester 2017, or in Fall semester 2017.   This could include a request for resources from the department for implementation of proposed changes.</li>
+</ol>
+<p>
+
+As pointed out by Wade, Danny and Brian, how we integrate computational competences  in our existing physics courses is a recurrent theme which spans from actual applications in specific courses and coordination with courses from other departments to important issues like whether this gives our students an increased understanding of the scientific methods. And hopefully better insights about various physical systems. Our strength at MSU is that we have a Physics education group which can conduct actual research on the implementation of various initiatives.
+
+<p>
+<b>Since computing competences and skills are recurring themes, I would like to propose that we use the first meeting to
+discuss such overarching issues</b>. My personal experience is that if we are able to single out the overarhcing issues, it is much easier to discuss various implementations and initiatives. However, please feel free to propose additional topics.  It is crucial that we keep this as a consensus driven approach. 
+After the tentative agenda, you will find some material for the discussion. I have added some generic stuff about computing competence (which could serve as input to our final document) as well as a list of suggested learning outcomes.
+
+<h3 id="___sec1">Tentative Agenda for the first meeting, January 27, 3pm-4pm, 1325 BPS </h3>
+
+<ol>
+<p><li> Welcome and short presentation of our backgrounds and interests</li>
+<p><li> Discussion of possible overarching issues: learning outcomes and what do we mean with computing competence and how do we integrate this in physics courses</li>
+<p><li> Discussion of next steps, possible examples are (feel free to think of more)</li>
+
+<ul>
+
+<p><li> How do we implement possible learning outcomes on computational competence?</li>
+
+<p><li> Which basic physics courses have and/or should have a computational content?</li>
+
+<p><li> Are physics courses coordinated with courses from other departments?</li>
+
+<p><li> What is the profile of our explicit courses in computational physics (ugrad and grad level)</li>
+
+<p><li> And which computational science courses are the most relevant for our learning outcomes?</li>
+
+<p><li> If we opt for a computational physics major (or similar paths), how can this be coordinated with other departments?</li>
+
+<p><li> How do we integrate a computational perspective with research on physics education?</li>
+
+<p><li> Other topics (many most likely)</li>
+</ul>
+<p>
+</ol>
+
+<h2 id="___sec2">Scientific and educational motivation </h2>
+
+<p>
+Numerical simulations of various systems in science are central to our
+basic understanding of nature and technology.
+The increase in computational power,
+improved algorithms for solving problems in science as well as access
+to high-performance facilities, allow researchers nowadays to study
+complicated systems across many length and energy scales. Applications
+span from studying quantum physical systems in nanotechnology and the
+characteristics of new materials or subamotic physics at its smallest
+length scale, to simulating galaxies and the evolution of the universe.
+In between, simulations are key to understanding
+cancer treatment and how the brain works,
+predicting climate changes and this week's weather,
+simulating natural disasters, semi-conductor devices,
+quantum computers, as well as assessing risk in the insurance and
+financial industry.
+
+<h2 id="___sec3">Computing competence </h2>
+
+<p>
+Computing means solving scientific problems using computers. It covers
+numerical as well as symbolic computing. Computing is also about
+developing an understanding of the scientific process by enhancing
+algorithmic thinking when solving problems.  Computing competence has
+always been a central part of education in the  sciences and engineering disciplines.
+
+<p>
+This  competence involves:
+
+<ul>
+<p><li> derivation, verification, and implementation of algorithms</li>
+<p><li> understanding what can go wrong with algorithms</li>
+<p><li> overview of important, known algorithms</li>
+<p><li> understanding how algorithms are used to solve mathematical problems</li>
+<p><li> reproducible science and ethics</li>
+<p><li> algorithmic thinking for gaining deeper insights about scientific problems</li>
+</ul>
+<p>
+
+All these elements (and many more) are central for  maturing and gaining a better understanding of the scientific process <em>per se</em>.
+
+<p>
+The power of the scientific method lies in identifying a given problem
+as a special case of an abstract class of problems, identifying
+general solution methods for this class of problems, and applying a
+general method to the specific problem (applying means, in the case of
+computing, calculations by pen and paper, symbolic computing, or
+numerical computing by ready-made and/or self-written software). This
+generic view on problems and methods is particularly important for
+understanding how to apply available, generic software to solve a
+particular problem.
+
+<p>
+Computing competence represents a central element
+in scientific problem solving, from basic education and research to
+essentially almost all advanced problems in modern
+societies. Computing competence is simply central to further
+progress. It enlarges the body of tools available to students and
+scientists beyond classical tools and allows for a more generic
+handling of problems. Focusing on algorithmic aspects results in
+deeper insights about scientific problems.
+
+<h3 id="___sec4">Why should basic university education undergo a shift from classical mathematics to modern computing?  </h3>
+
+<ul>
+<p><li> Algorithms involving pen and paper are traditionally aimed at what we often refer to as continuous models.</li> 
+<p><li> Application of computers calls for approximate discrete models.</li> 
+<p><li> Much of the development of methods for continuous models are now being replaced by methods  for discrete models in science and industry, simply because much larger problem classes can be addressed with discrete models, often also by simpler and more generic methodologies.</li> 
+</ul>
+<p>
+
+However, verification of algorithms and understanding their limitations requires much 
+of the classical knowledge about continuous models.
+
+<p>
+So, why should basic university education undergo a shift from classical mathematics to modern computing?
+
+<p>
+The impact of the computer on mathematics and science is tremendous: science and industry now rely on solving mathematical problems through computing.
+
+<ul>
+<p><li> Computing increases the relevance in education by solving more realistic problems earlier.</li>
+<p><li> Computing through programming is excellent training of creativity.</li>
+<p><li> Computing enhances the understanding of abstractions and generalization.</li>
+<p><li> Computing decreases the need for special tricks and tedious algebra, and shifts the focus to problem definition, visualization, and "what if" discussions.</li>
+</ul>
+<p>
+
+The result is a deeper understanding of mathematical modeling and the scientific method (we hope, and here our physics education group can play a central role in promiting this). 
+Not only is computing via programming a very powerful tool, it also a great pedagogical aid.
+
+<p>
+For the mathematical training, there is one major new component among the arguments above: understanding abstractions and generalization. While many of the classical methods developed for continuous models are specialized for a particular problem or a narrow class of problems, computing-based algorithms are often developed for problems in a generic form and hence applicable to a large problem class.
+
+<p>
+Computing competence represents thus a central element in scientific problem solving, from basic education and research to essentially almost all advanced problems in modern societies. Computing competence is simply central to further progress. It enlarges the body of tools available to students and scientists beyond classical tools and allows for a more generic handling of problems. Focusing on algorithmic aspects results in deeper insights about scientific problems.
+
+<p>
+Today's project in science and industry tend to involve larger teams. Tools for reliable collaboration must therefore be mastered (e.g., version control systems, automated computer experiments for reproducibility, software and method documentation).
+
+<h2 id="___sec5">Possible learning outcomes </h2>
+
+<p>
+What follows here is a list of suggested learning outcomes. Not all may be relevant, but hopefully they can serve as 
+a way to spark off discussions.
+
+<p>
+The learning outcomes are subdivided in three general categories, knowledge, skills and general competence.
+
+<ul>
+<p><li> <b>Knowledge</b>: A student with a degree in Physics</li>
+
+<ul>
+ <p><li> has deep knowledge of the scientific method meaning that the candidate</li>
+
+<ol>
+ <p><li> has the ability to understand advanced scientific results in new fields</li>
+ <p><li> has fundamental understanding of methods and tools</li>
+ <p><li> can develop and apply advanced computational methods to scientific problems</li>
+ <p><li> is capable of judging and analyzing all parts of the obtained scientific results</li>
+ <p><li> can present results orally and in written form as scientific reports/articles</li>
+ <p><li> can propose new hypotheses and suggest solution paths</li>
+ <p><li> can generalize mathematical algorithms and apply them to new situations</li>
+ <p><li> can link computational models to specific applications and/or experimental data</li>
+ <p><li> can develop models and algorithms to describe experimental data</li>
+<p><li> masters methods for reproducibility and how to link this to a sound ethical scienfitic conduct</li>
+<p><li> has a thorough understanding of how computing is used to  solve  scientific problems</li>
+<p><li> knows fundamental algorithms in computational science</li>
+</ol>
+<p><li> has a fundamental understanding and knowledge of scientific work, meaning that</li>
+
+<ol>
+ <p><li> the candidate can develop hypotheses and suggest ways to test these</li>
+ <p><li> can use relevant analytical, experimental and numerical tools and results to test the scientific hypotheses</li>
+ <p><li> can generalize from numerical and experimental data to mathematical models and underlying principles</li>
+ <p><li> can analyze the results and evaluate their relevance with respect to the actual problems and/or hypotheses</li>
+ <p><li> can present the results according to good scientific practices</li>
+</ol>
+<p>
+</ul>
+<p><li> <b>Skills (mainly computational ones)</b>: A candidate</li> 
+
+<ul>
+ <p><li> has a deep understanding of what computing means, entailing several or all of the topics listed below</li>
+
+<ol>
+ <p><li> knows the most fundamental algorithms involved (which algorithms should we focus on?)</li>
+ <p><li> has overview of advanced algorithms and how they can be accessed in available software and how they are used to solve scientific problems</li>
+ <p><li> has knowledge and understands high-performance computing elements: memory usage, vectorization and parallel algorithms</li>
+ <p><li> can use effeciently high-performance computing resources, from compilers to hardware architectures</li>
+ <p><li> understands approximation errors and what can go wrong with algorithms</li>
+ <p><li> has knowledge of at least one computer algebra system and how it is applied to perform classical mathematics</li>
+ <p><li> has extensive experience with programming in a high-level language (MATLAB, Python, R)</li>
+ <p><li> has experience with programming in a compiled language (Fortran, C, C++)</li>
+ <p><li> has experience with implementing and applying numerical algorithms in reusable software that acknowledges the generic nature of the mathematical algorithms</li>
+<p><li> has experience with debugging software</li>
+<p><li> has experience with test frameworks and procedures</li>
+<p><li> has experience with different visualization techniques for different types of data</li>
+<p><li> can critically evaluate results and errors</li>
+<p><li> can develop algorithms and software for complicated scientific problems independently and in collaboration with other students</li>
+<p><li> masters software carpentry: can design a maintainable program in a systematic way, use version control systems, and write scripts to automate manual work</li>
+<p><li> understands how to increase the efficiency of numerical algorithms and pertinent software</li>
+<p><li> has knowledge of stringent requirements to efficiency and precision of software</li>
+<p><li> understands tools to make science reproducible and has a sound ethical approach to scientific problems</li>
+</ol>
+<p>
+</ul>
+<p><li> <b>General competence</b>:</li> 
+
+<ul>
+ <p><li> is able to develop professional competence, entailing:</li>
+
+<ol>
+ <p><li> mature professionally and be able to work independently</li>
+ <p><li> can communicate in a professional way scientific results, orally and in written form</li>
+ <p><li> can plan and complete a research project</li>
+ <p><li> can develop a scientific intuition and understanding that makes it possible to present and discuss scientific problems, results and uncertainties</li>
+</ol>
+<p><li> is able to develop virtues, values and attitudes that lead to  a better understanding of ethical aspects of the scientific method, as well as promoting central aspects of the scientific method to society. This means for example that the candidate</li>
+
+<ol>
+ <p><li> can reflect on and develop strategies for making science reproducible and to promote the need for a proper ethical conduct</li>
+ <p><li> has a deep understanding of the role basic and applied  research and computing play for progress in society</li>
+ <p><li> is able to promote, use and develop version control tools in order to make science reproducible</li>
+ <p><li> is able to critically evaluate the consequences of own research and how this impacts society</li>
+ <p><li> matures an understanding of the links between basic and applied research and how these shape, in a fundamental way,  progress in science and technology</li>
+ <p><li> can develop an understading of the role research and science can play together with industry and society in general</li>
+ <p><li> can reflect over and develop learning strategies for life-long learning.</li>
+</ol>
+<p>
+</ul>
+<p>
+</ul>
+</section>
+
+
+
+</div> <!-- class="slides" -->
+</div> <!-- class="reveal" -->
+
+<script src="reveal.js/lib/js/head.min.js"></script>
+<script src="reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+    // Display navigation controls in the bottom right corner
+    controls: true,
+
+    // Display progress bar (below the horiz. slider)
+    progress: true,
+
+    // Display the page number of the current slide
+    slideNumber: true,
+
+    // Push each slide change to the browser history
+    history: false,
+
+    // Enable keyboard shortcuts for navigation
+    keyboard: true,
+
+    // Enable the slide overview mode
+    overview: true,
+
+    // Vertical centering of slides
+    //center: true,
+    center: false,
+
+    // Enables touch navigation on devices with touch input
+    touch: true,
+
+    // Loop the presentation
+    loop: false,
+
+    // Change the presentation direction to be RTL
+    rtl: false,
+
+    // Turns fragments on and off globally
+    fragments: true,
+
+    // Flags if the presentation is running in an embedded mode,
+    // i.e. contained within a limited portion of the screen
+    embedded: false,
+
+    // Number of milliseconds between automatically proceeding to the
+    // next slide, disabled when set to 0, this value can be overwritten
+    // by using a data-autoslide attribute on your slides
+    autoSlide: 0,
+
+    // Stop auto-sliding after user input
+    autoSlideStoppable: true,
+
+    // Enable slide navigation via mouse wheel
+    mouseWheel: false,
+
+    // Hides the address bar on mobile devices
+    hideAddressBar: true,
+
+    // Opens links in an iframe preview overlay
+    previewLinks: false,
+
+    // Transition style
+    transition: 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+    // Transition speed
+    transitionSpeed: 'default', // default/fast/slow
+
+    // Transition style for full page slide backgrounds
+    backgroundTransition: 'default', // default/none/slide/concave/convex/zoom
+
+    // Number of slides away from the current that are visible
+    viewDistance: 3,
+
+    // Parallax background image
+    //parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+    // Parallax background size
+    //parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
+
+    theme: Reveal.getQueryHash().theme, // available themes are in reveal.js/css/theme
+    transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+});
+
+Reveal.initialize({
+    dependencies: [
+        // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+        { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+        // Interpret Markdown in <section> elements
+        { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+
+        // Syntax highlight for <code> elements
+        { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+        // Zoom in and out with Alt+click
+        { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+
+        // Speaker notes
+        { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+        // Remote control your reveal.js presentation using a touch device
+        //{ src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+        // MathJax
+        //{ src: 'reveal.js/plugin/math/math.js', async: true }
+    ]
+});
+
+Reveal.initialize({
+
+    // The "normal" size of the presentation, aspect ratio will be preserved
+    // when the presentation is scaled to fit different resolutions. Can be
+    // specified using percentage units.
+    width: 1170,  // original: 960,
+    height: 700,
+
+    // Factor of the display size that should remain empty around the content
+    margin: 0.1,
+
+    // Bounds for smallest/largest possible scale to apply to content
+    minScale: 0.2,
+    maxScale: 1.0
+
+});
+</script>
+
+<!-- begin footer logo
+<div style="position: absolute; bottom: 0px; left: 0; margin-left: 0px">
+<img src="somelogo.png">
+</div>
+     end footer logo -->
+
+
+
+</body>
+</html>
