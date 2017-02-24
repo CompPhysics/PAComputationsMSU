@@ -1,12 +1,9 @@
 TITLE: Computational Physics at the Physics and Astronomy Department, Michigan State University
 AUTHOR: Danny Caballero, Sean Couch, Wade Fisher, Connor Glosser, Morten Hjorth-Jensen, Claire Kopenhafer, Brian O'Shea, and Carlo Piermarocchi
-DATE: February 19
-
-===== Introduction =====
+DATE: February 24, 2017
 
 
-
-===== Scientific and educational motivation =====
+===== Introduction: Scientific and educational motivation =====
 
 Numerical simulations of various systems in science are central to our
 basic understanding of nature and technology.
@@ -25,7 +22,7 @@ quantum computers, as well as assessing risk in the insurance and
 financial industry. 
 
 
-===== Computing competence =====
+=== Computing competence ===
 
 Computing means solving scientific problems using computers. It covers
 numerical as well as symbolic computing. Computing is also about
@@ -95,6 +92,61 @@ Computing competence represents thus a central element in scientific problem sol
 
 Today's project in science and industry tend to involve larger teams. Tools for reliable collaboration must therefore be mastered (e.g., version control systems, automated computer experiments for reproducibility, software and method documentation).
 
+
+===== General learning outcomes for computing competence =====
+
+Learning outcomes for numerical algorithms:
+
+o Deep knowledge of the most fundamental algorithms for linear algebra, ordinary and partial differential equations, optimization, and statistical uncertainty quantification.
+o Overview of advanced algorithms and how they can be accessed in available software.
+o Knowledge of high-performance computing elements: memory usage, vectorized and parallel algorithms.
+o Understanding of approximation errors.
+o Application of fundamental and advanced algorithms to classical model problems as well as real-world problems with assessment of the uncertainty in the answer.
+
+Learning outcomes for symbolic computing:
+o Knowledge of at least one computer algebra system and how it is applied to perform classical mathematics (calculus, linear algebra, differential equations - with verification).
+
+Learning outcomes for programming:
+o Experience with programming in a high-level language (MATLAB, Python, R). Experience with programming in a compiled language (Fortran, C, C++).
+o Experience with implementing and applying numerical algorithms in reusable software that acknowledges the generic nature of the mathematical algorithms.
+o Knowledge of basic software engineering elements: functions, classes, modules/libraries, testing procedures and frameworks, scripting for automated and reproducible experiments, documentation tools, and version control systems.
+o Experience with debugging software, e.g., as part of implementing comprehensive tests.
+
+Learning outcomes for verification:
+o Experience with programming of testing procedures.
+o Deep knowledge of testing/verification methods:
+  o Exact solution of numerical models
+  o Method of manufactured solutions (choose solution and fit a problem)
+  o Classical analytical solutions (incl. asymptotic solutions) 
+  o Computing of asymptotic approximation errors (convergence rates)
+  o Step-wise construction of tests to aid debugging.
+
+Learning outcomes for mathematical modeling:
+o Experience with deriving computational models from basic principles in physics.
+o Experience with bringing models on dimensionless form to reduce and simplify input data and increase the understanding of the model by interpreting its dimensionless parameters.
+o Experience with solving real problems from applied sciences.
+
+Learning outcomes for presentation of results:
+o Experience with different visualization techniques for different types of computed data.
+o Extensive experience with presenting computed results in scientific reports and oral presentations.
+
+What is deep knowledge?
+By deep knowledge we here mean the understanding of the underlying fundamental ideas and concepts from which a plethora of seemingly different methods and technologies can be derived. In other words, the deep knowledge brings structure to all the technical details.
+Obtaining this type of knowledge requires time in class and a lot of exercises. In addition, the students need to reflect about theory and practice. The reflection process is often difficult to implement. Below are some suggestions.
+A useful concept is simplify, understand, and then generalize. Giving a superficial overview of a bunch of unrelated methods and their applications to unrelated scientific problems equips the students with a wide toolbox, but fails to enhance a fundamental understanding of how multidisciplinary topics play together. Instead, we believe in the following list.
+ o Pick a few selected classes of problems, 
+ o start out with simplified models,
+ o apply general, fundamental ideas to construct algorithms,
+ o understand all details to correctly implement the algorithms,
+ o understand how to judge the numerical quality of the algorithms,
+ o understand how to verify that the computations are mathematically correct.
+
+The verification process forces the student to reflect on all the points: What type of problem is actually solved? How can I test that the solution is right?
+After obtaining an understanding of the simplified problem, one can generalize the models to real applications, but illustrate how the insight from the simplified models and methods gives very valuable knowledge when attacking the generalizations. The focus on simplified models help to detach the mathematics from a lot of discipline-dependent application details and cultivate the common mathematical and implementational ideas.
+This philosophy is closely related to the key principle stated earlier:
+ o solving a complicated problem first starts with the purpose of breaking up the problem into subtasks that belong to general classes of well-studied problems in mathematics,
+ o each subproblem is understood with great help simplified models in that class,
+ o and finally a synthesis of the subproblems can solve the original problem.
 
 
 ===== Possible learning outcomes =====
@@ -170,3 +222,111 @@ The learning outcomes are subdivided in three general categories, knowledge, ski
   o can reflect over and develop learning strategies for life-long learning.
 
 
+=====  Specific algorithms and computational skills =====
+
+The above learning goals and outcomes are of a more generic character. What follows here are specific 
+algorithms that occur frequently in scientific problems. We list also tools that are important in developing
+numerical projects. These tools allows the students to develop a better understanding of the scientific process as well, in addition to bring in a sound ethical approach to science.
+
+The algorithms and tools listed here reflect to various degrees the previously discussed learning outcomes. They can be integrated to various degrees in the physics courses that we propose below here.
+
+=== Central algorithms ===
+The following mathematical formulations of problems from the physical sciences play a prominent role and should be reflected in the way we teach physics:
+ o Ordinary differential equations
+   o Euler, modified Euler, Verlet and Runge-Kutta methods with applications to problems in electromagnetism and mechanics.
+ o Partial differential equations
+   o Diffusion in one and two dimensions (statistical physics), wave equation in one and two dimensions (mechanics and electromagnetism) and Laplace's and Poisson's equations (electromagnetism).
+ o Numerical integration 
+   o Trapezoidal and Simpson's rule and Monte Carlo integration. Applications in statistical physics, electromagnetism and quantum mechanics.
+ o Random numbers, random walks, probability distributions, Monte Carlo integration and Metropolis algorithm. Applications to statistical physics
+ o Linear Algebra and eigenvalue problems. 
+   o Gaussian elimination, LU-decomposition, eigenvalue solvers, and iterative methods like  Jacobi or Gauss-Seidel for systems of linear equations. Important for several courses, classical mechanics, electromagnetism and quantum mechanics
+ o Root finding and interpolation techniques
+
+=== Central tools and programming languages ===
+
+We will strongly recommend that Python is used as programming language for all the courses proposed below. This means that students can apply their knowledge from CSE 231 and extend and add to their knowledge of programming in various physics classes. We recommend strongly that the following tools are used
+ o "Jupiter and ipython notebook":"http://jupyter.org/". 
+ o Version control software like "git":"https://git-scm.com/" and repositories like "github":" https://github.com/"
+ o Other typsetting tools like Latex
+ o Developing unit tests and using existing tools for unit tests. "Python has extensive tools for this":"https://docs.python.org/2/library/unittest.html"
+ o Other high-level environments like Mathematica and Matlab can also be presented and offered as special courses like PHY102 - Physics Computations I.  
+
+The notebooks can be used to hand in exercises and projects and give the students a training in presenting their studies in the form of scientific/technical reports.
+
+Version control software allows teachers to bring in naturally aspects like reproducibility of science as well as enhancing
+collaborative efforts among students. Making science reproducible and ethical aspects linked with reproducibility can be easily implemented with proper usage of version control software. Using version control can also be used to train students in presenting benchmark results, allowing thereby for verification by others of their results. 
+
+Unit testing is a central element in the development of numerical projects, from microtests of code fragments, to intermediate merging of functions to final test of the correctness of a code.
+ 
+=====  Proposed physics courses that could integrate a computational perspective ===== 
+
+For a major in physics degree at Michigan State University, the course "CSE 231 Introduction to programming":"https://www.cse.msu.edu/~cse231/" is compulsory and it lays the foundation for the insertion of computational exercises and projects in various physics courses. 
+
+We would like to propose that the following courses that aim at integrating the above learning outcomes and goals:
+
+ o Classical Mechanics 1: PHY321. 
+   o Here one should focus on ordinary differential equations like modified Euler, Verlet and perhaps RK methods. There are several interesting problems that can deepen the understanding of newtonian problems, from modeling planetary motion to models for friction and earthquake simulations. With not too advanced programs one can easily bring in actual research problems (friction is a good example).  
+ o Thermal and Statistical Physics, PHY410
+ o Random numbers, random walks, probability distributions, Monte Carlo integration and Metropolis algorithm. Applications to statistical physics. Simulation of simple phase transitions with spin models like the Ising model.
+ o Quantum mechanics 1  PHY 471
+   o Ordinary and partial differential equations, eigenvalue solvers and root finding methods. Can explore interacting two-electron problem with simple rewriting of for example harmonic oscillator problem. 
+ o Quantum mechanics 2 PHY 472
+   o Ordinary and partial differential equations, eigenvalue solvers and root finding methods. Can explore interacting two-electron problem with simple rewriting of for example harmonic oscillator problem. 
+ o Electromagnetism 1 PHY481.  
+   o Both ordinary and partial differential equations with two-point boundary value problems. Central algorithms based on finite difference for one and two-dimensional wave equation and Poisson's and Laplace's equations. See "the detailed learning outcomes":"https://dannycab.github.io/phy481msu/learning_goals.html" for more information.
+ o Electromagnetism 2 PHY482
+   o Both ordinary and partial differential equations with two-point boundary value problems. Central algorithms based on finite difference for one and two-dimensional wave equation and Poisson's and Laplace's equations. See "the detailed learning outcomes":"https://dannycab.github.io/phy482msu/learning_goals.html" for more information.
+
+
+   
+Question to us: Should we propose detailed learning outcomes as done by Danny? 
+
+
+
+
+===== Physics Education research and computing in science education ===== 
+
+The introduction of computational elements in the various courses should be stronly integrated with ongoing research on physics education.
+
+The Physics and Astronomy department at MSU is in a unique position due to its strong research group in physics education, the "PERL group":"http://www.pa.msu.edu/research/physics-education-lab".
+This means that it is possible to
+develop research motivated curricular changes.  There are many interesting challenges here, like
+which are the main obstacles when transferring from a classical pen and paper approach to actually have a working program which solves the same (and more general problems). What is a good progression in presenting numerical topics in physics courses? Are there specific mathematical skills we would like our students to have? How do we integrate student-active teaching, how do we develop and test various assessment methods?
+
+
+
+===== Links with CSME and Mathematics courses =====
+
+We need to figure out, beyond CSE 321, if computational elements, or some of the abovementioned algorithms are included in the mathematics courses our physics students take. 
+
+
+===== Advanced computational physics courses =====
+
+Towards the end of undergraduate studies it is useful to offer a course which focuses on more advanced algorithms and presents compiled languages like C++ and Fortran, languages our students will meet in actual research.
+Furthemore, such a course, like the present "PHY480 Computational Physics":"https://github.com/CompPhysics/ComputationalPhysicsMSU" offers as well more advanced projects which train the students in actual research, developing more complicated programs and working on larger projects.
+Such a course could cover
+  * C++ and/or Fortran programming
+  * Numerical derivation and integration
+  * Random numbers and Monte Carlo integration
+  * Monte Carlo methods in statistical physics
+  * Quantum Monte Carlo methods
+  * Linear algebra and eigenvalue problems
+  * Non-linear equations and roots of polynomials
+  * Ordinary differential equations
+  * Partial differential equations
+  * Parallelization of codes
+  * High-performance computing aspects and optimization of codes
+
+Then we should consider more advanced (at the graduate level) courses which could cover specialized topics. 
+These could be (presently some of this is covered by PHY905, sections 002 and 003)
+  o  Computational quantum mechanics, spanning from Monte Carlo methods to other methods used in atomic, molecular, nuclear, condensed matter and high-energy physics
+  o  Computational Statistical mechanics, covering topics spanning from Molecular dynamics to studies of phase transitions, highly relevant for several subdisciplines
+  o  Computational Astrophysics and Astronomy
+  o  Data analysis and machine learning tailored to physics problems (PA+CSME?)
+  o  High-performance computing (CSME)
+  o  More...
+
+===== A possible Physics major in computational physics and a possible MSc in Computational Physics =====
+
+To be discussed. 
