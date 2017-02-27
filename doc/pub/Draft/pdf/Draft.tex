@@ -475,7 +475,7 @@ The above learning goals and outcomes are of a more generic character. What foll
 algorithms that occur frequently in scientific problems. The implementation of these algorithms in various physics courses, together with problem and project solving, is a way to implement large fractions of the above learning goals. 
 
 We list also tools that are important in developing
-numerical projects. These tool allows the students to develop a better understanding of the scientific process as well, in addition to bring in a sound ethical approach to science.
+numerical projects. These tools allow students to develop a better understanding of the scientific process as well, in addition to bring in a sound ethical approach to science.
 
 The algorithms and tools listed here reflect to various degrees the previously discussed learning outcomes. They can be integrated to various degrees in the physics courses that we propose below here. Furthermore, several of these algorithms can be used and reused in the various courses. The ideal would also be that some of these algorithms have been presented in different mathematics courses.
 
@@ -506,7 +506,7 @@ The following mathematical formulations of problems from the physical sciences p
 \end{enumerate}
 
 \noindent
- \item Statistical analysis, random numbers, random walks, probability distributions, Monte Carlo integration and Metropolis algorithm. Applications to statistical physics and laboratory courses
+ \item Statistical analysis, random numbers, random walks, probability distributions, Monte Carlo integration and Metropolis algorithm. Applications to statistical physics and laboratory courses.
 
  \item Linear Algebra and eigenvalue problems. 
 \begin{enumerate}
@@ -516,16 +516,16 @@ The following mathematical formulations of problems from the physical sciences p
 \end{enumerate}
 
 \noindent
- \item Root finding and interpolation techniques, used in methods for theoretical physics, quantum mechanics, elekctromagnetism and mechanics.
+ \item Root finding and interpolation techniques, used in methods for theoretical physics, quantum mechanics, electromagnetism and mechanics.
 \end{itemize}
 
 \noindent
-In order to achieve a proper pedagogical introduction of these algorithms, it is important that students and teachers alike see how these algorithms are used to solve a variety of physics problems. The same algorithm, for example the solution of a second-order differential equation, can be used to solve the equations for the classical pendulum in a mechanics course or the (with a suitable change of variables) equations for a coupled RLC course in the electromagnetism course. Similarly, if students develop a program for studies of celestial bodies in the mechanics course, many of the elements of such a program can be reused in a molecular dynamics calculation in a course on statistical physics and thermal physics. The two-point boundary value problem for a buckling beam
-(discretized as an eigenvalue problem) can be reused in qauntum mechanical studies of interacting electrons in oscilltor traps, or simply the study of a particle in a box potential. 
+In order to achieve a proper pedagogical introduction of these algorithms, it is important that students and teachers alike see how these algorithms are used to solve a variety of physics problems. The same algorithm, for example the solution of a second-order differential equation, can be used to solve the equations for the classical pendulum in a mechanics course or the (with a suitable change of variables) equations for a coupled RLC circuit in the electromagnetism course. Similarly, if students develop a program for studies of celestial bodies in the mechanics course, many of the elements of such a program can be reused in a molecular dynamics calculation in a course on statistical physics and thermal physics. The two-point boundary value problem for a buckling beam
+(discretized as an eigenvalue problem) can be reused in quantum mechanical studies of interacting electrons in oscillator traps, or just to study a particle in a box potential with varying depth and extension. 
 
 In order to aid the introduction of computational exercises and projects, we will need to develop educational resources for this. The \href{{http://www.compadre.org/picup/}}{PICUP project},  Partnership for Integration of Computation into Undergraduate Physics, develops \href{{http://www.compadre.org/PICUP/resources/}}{resources for teachers and students on the integration of computational  material}.   We strongly recommend these resources.
 
-As part of this proposal, we have developed several examples on problems and projects that can be included in our undergraduate courses in physics. You can click on the following links (ipython notebooks or PDF formats)
+As part of this proposal, we have developed several examples of problems and projects that can be included in our undergraduate courses in physics. You can click on the following links (ipython notebooks or PDF formats)
 \begin{itemize}
 \item Mechanics
 \begin{enumerate}
@@ -594,9 +594,9 @@ We will strongly recommend that Python is used as programming language for all t
 \begin{enumerate}
 \item \href{{http://jupyter.org/}}{Jupiter and ipython notebook}. 
 
-\item Version control software like \href{{https://git-scm.com/}}{git} and repositories like "github":" \href{{https://github.com/}}{\nolinkurl{https://github.com/}}"
+\item Version control software like \href{{https://git-scm.com/}}{git} and repositories like \href{{https://github.com/}}{github}
 
-\item Other typsetting tools like Latex
+\item Other typsetting tools like Latex.
 
 \item Developing unit tests and using existing tools for unit tests. \href{{https://docs.python.org/2/library/unittest.html}}{Python has extensive tools for this}
 
@@ -621,7 +621,7 @@ We would like to propose that the following courses that aim at integrating the 
  \item Classical Mechanics 1: PHY321. 
 \begin{enumerate}
 
-  \item Here one should focus on ordinary differential equations like modified Euler, Verlet and perhaps RK methods. There are several interesting problems that can deepen the understanding of newtonian problems, from modeling planetary motion to models for friction and earthquake simulations. With not too advanced programs one can easily bring in actual research problems (friction is a good example).  The classical pendulum is also a good case to illustrate. The code can easily be reused for studies of for example an RLC circuit in electromagnetism. The equations for a buckling beam lead to an eigenvalue problem which can reused in the quantum mechanics course.
+  \item Here one could focus on ordinary differential equations like modified Euler, Verlet and perhaps RK methods. There are several interesting problems that can deepen the understanding of newtonian problems, from modeling planetary motion to models for friction and earthquake simulations. With not too advanced programs one can easily bring in actual research problems (friction is a good example).  The classical pendulum is also a good case to illustrate. The code can easily be reused for studies of for example an RLC circuit in electromagnetism. The equations for a buckling beam lead to an eigenvalue problem which can reused in the quantum mechanics course.
 
 \end{enumerate}
 
@@ -637,7 +637,7 @@ We would like to propose that the following courses that aim at integrating the 
  \item Methods in Theoretical Physics, PHY415
 \begin{enumerate}
 
-  \item Here one could discuss algorithms which are relevant for the other physics courses discussed here, such as particular eigenvalue solvers. Furthermore, when solving famous differential equations in physics, one can write functions to generate polynomials like Legendre, Laguerre, Hermite etc. Here it would be natural to discuss Gaussian quadrature and how to use this to integrate numerically. 
+  \item Here one could discuss algorithms which are relevant for the other physics courses discussed here, such as particular eigenvalue solvers. Furthermore, when solving famous differential equations in physics, one can write functions to generate polynomials like Legendre, Laguerre, Hermite functions etc. Here it would be natural to discuss Gaussian quadrature and how to use this to integrate numerically. 
 
 \end{enumerate}
 
@@ -645,7 +645,7 @@ We would like to propose that the following courses that aim at integrating the 
  \item Advanced Laboratory course in Physics PHY451
 \begin{enumerate}
 
-  \item Data analysis plays a central role, natural to have algorithms on data fitting, computations  of mean values, variance and standard deviations, covariance, famous distributions. Many of these topics find their natural place in a course on statistical physics like PHY410.  
+  \item Data analysis plays a central role, natural to have algorithms on data fitting, computations  of mean values, variance and standard deviations, covariance, famous distributions. Many of these topics find also their natural place in a course on statistical physics like PHY410.  
 
 \end{enumerate}
 
@@ -653,7 +653,7 @@ We would like to propose that the following courses that aim at integrating the 
  \item Quantum mechanics 1  PHY 471 (and possible extentions to Quantum mechanics 2 PHY 472)
 \begin{enumerate}
 
-  \item Ordinary and partial differential equations, eigenvalue solvers and root finding methods. Can explore interacting two-electron problem with simple rewriting of for example harmonic oscillator problem. Metropolis can be used to simulate one and two-body problems like the Helium atom using Variational Monte Carlo. Gives students a feeling for variational calculus which can be included and  taught in PHY415
+  \item Ordinary and partial differential equations, eigenvalue solvers and root finding methods. Can explore interacting two-electron problem with simple rewriting of for example harmonic oscillator problem. The Metropolis algorithm can be used to simulate one and two-body problems like the Helium atom using Variational Monte Carlo. Gives students a feeling for variational calculus which can be included and  taught in PHY415
 
 \end{enumerate}
 
