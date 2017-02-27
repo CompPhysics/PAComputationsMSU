@@ -46,6 +46,8 @@ html=${name}-bs
 system doconce format html $name --html_style=bootstrap --pygments_html_style=default --html_admon=bootstrap_panel --html_output=$html $opt
 system doconce split_html $html.html --method=split --pagination --nav_button=bottom
 
+# IPython notebook
+system doconce format ipynb $name $opt
 
 
 # Ordinary plain LaTeX document
@@ -68,6 +70,7 @@ if [ ! -d $dest/$name ]; then
 mkdir $dest/$name
 mkdir $dest/$name/pdf
 mkdir $dest/$name/html
+mkdir $dest/$name/ipynb
 fi
 cp ${name}*.pdf $dest/$name/pdf
 cp -r ${name}*.html ._${name}*.html reveal.js $dest/$name/html
@@ -80,3 +83,13 @@ fi
 cp -r fig-${name}/* $dest/$name/html/fig-$name
 fi
 
+cp ${name}.ipynb $dest/$name/ipynb
+ipynb_tarfile=ipynb-${name}-src.tar.gz
+if [ ! -f ${ipynb_tarfile} ]; then
+cat > README.txt <<EOF
+This IPython notebook ${name}.ipynb does not require any additional
+programs.
+EOF
+tar czf ${ipynb_tarfile} README.txt
+fi
+cp ${ipynb_tarfile} $dest/$name/ipynb
