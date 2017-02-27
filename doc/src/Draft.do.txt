@@ -225,27 +225,29 @@ The learning outcomes are subdivided in three general categories, knowledge, ski
 =====  Specific algorithms and computational skills =====
 
 The above learning goals and outcomes are of a more generic character. What follows here are specific 
-algorithms that occur frequently in scientific problems. We list also tools that are important in developing
+algorithms that occur frequently in scientific problems. The implementation of these algorithms in various physics courses, together with problem and project solving, is a way to implement large fractions of the above learning goals. 
+
+We list also tools that are important in developing
 numerical projects. These tools allows the students to develop a better understanding of the scientific process as well, in addition to bring in a sound ethical approach to science.
 
-The algorithms and tools listed here reflect to various degrees the previously discussed learning outcomes. They can be integrated to various degrees in the physics courses that we propose below here.
+The algorithms and tools listed here reflect to various degrees the previously discussed learning outcomes. They can be integrated to various degrees in the physics courses that we propose below here. Furthermore, several of these algorithms can be used and reused in the various courses. The ideal would also be that some of these algorithms have been presented in different mathematics courses.
 
 === Central algorithms ===
 The following mathematical formulations of problems from the physical sciences play a prominent role and should be reflected in the way we teach physics:
- o Ordinary differential equations
-   o Euler, modified Euler, Verlet and Runge-Kutta methods with applications to problems in electromagnetism and mechanics.
- o Partial differential equations
-   o Diffusion in one and two dimensions (statistical physics), wave equation in one and two dimensions (mechanics and electromagnetism) and Laplace's and Poisson's equations (electromagnetism).
- o Numerical integration 
-   o Trapezoidal and Simpson's rule and Monte Carlo integration. Applications in statistical physics, electromagnetism and quantum mechanics.
- o Random numbers, random walks, probability distributions, Monte Carlo integration and Metropolis algorithm. Applications to statistical physics
- o Linear Algebra and eigenvalue problems. 
-   o Gaussian elimination, LU-decomposition, eigenvalue solvers, and iterative methods like  Jacobi or Gauss-Seidel for systems of linear equations. Important for several courses, classical mechanics, electromagnetism and quantum mechanics
- o Root finding and interpolation techniques
+ * Ordinary differential equations
+   o Euler, modified Euler, Verlet and Runge-Kutta methods with applications to problems in electromagnetism, methods for theoretical physics, quantum mechanics and mechanics.
+ * Partial differential equations
+   o Diffusion in one and two dimensions (statistical physics), wave equation in one and two dimensions (mechanics, electromagnetism, quantum mechanics, methods for theoretical physics) and Laplace's and Poisson's equations (electromagnetism).
+ * Numerical integration 
+   o Trapezoidal and Simpson's rule and Monte Carlo integration. Applications in statistical physics, methods of theoretical physics, electromagnetism and quantum mechanics.
+ * Statistical analysis, random numbers, random walks, probability distributions, Monte Carlo integration and Metropolis algorithm. Applications to statistical physics and laboratory courses
+ * Linear Algebra and eigenvalue problems. 
+   o Gaussian elimination, LU-decomposition, eigenvalue solvers, and iterative methods like  Jacobi or Gauss-Seidel for systems of linear equations. Important for several courses, classical mechanics, methods of theoretical physics, electromagnetism and quantum mechanics
+ * Root finding and interpolation techniques, used in methods for theoretical physics, quantum mechanics, elekctromagnetism and mechanics
 
 === Central tools and programming languages ===
 
-We will strongly recommend that Python is used as programming language for all the courses proposed below. This means that students can apply their knowledge from CSE 231 and extend and add to their knowledge of programming in various physics classes. We recommend strongly that the following tools are used
+We will strongly recommend that Python is used as programming language for all the courses proposed below. This means that students can apply their knowledge from CSE 201 and extend and add to their knowledge of programming in various physics classes. We recommend strongly that the following tools are used
  o "Jupiter and ipython notebook":"http://jupyter.org/". 
  o Version control software like "git":"https://git-scm.com/" and repositories like "github":" https://github.com/"
  o Other typsetting tools like Latex
@@ -261,22 +263,21 @@ Unit testing is a central element in the development of numerical projects, from
  
 =====  Proposed physics courses that could integrate a computational perspective ===== 
 
-For a major in physics degree at Michigan State University, the course "CSE 231 Introduction to programming":"https://www.cse.msu.edu/~cse231/" is compulsory and it lays the foundation for the insertion of computational exercises and projects in various physics courses. 
+For a major in physics degree at Michigan State University, the course "CSE 201 Fundamentals of Information Technology":"https://www.cse.msu.edu/~cse201/" is compulsory and it lays the foundation for the insertion of computational exercises and projects in various physics courses. 
 
 We would like to propose that the following courses that aim at integrating the above learning outcomes and goals:
 
- o Classical Mechanics 1: PHY321. 
+ * Classical Mechanics 1: PHY321. 
    o Here one should focus on ordinary differential equations like modified Euler, Verlet and perhaps RK methods. There are several interesting problems that can deepen the understanding of newtonian problems, from modeling planetary motion to models for friction and earthquake simulations. With not too advanced programs one can easily bring in actual research problems (friction is a good example).  
- o Thermal and Statistical Physics, PHY410
- o Random numbers, random walks, probability distributions, Monte Carlo integration and Metropolis algorithm. Applications to statistical physics. Simulation of simple phase transitions with spin models like the Ising model.
- o Quantum mechanics 1  PHY 471
+ * Thermal and Statistical Physics, PHY410
+   o Random numbers, random walks, probability distributions, Monte Carlo integration and Metropolis algorithm. Applications to statistical physics. Simulation of simple phase transitions with spin models like the Ising model.
+ * Methods in Theoretical Physics, PHY415
+
+ * Quantum mechanics 1  PHY 471 (and possible extentions to Quantum mechanics 2 PHY 472)
    o Ordinary and partial differential equations, eigenvalue solvers and root finding methods. Can explore interacting two-electron problem with simple rewriting of for example harmonic oscillator problem. 
- o Quantum mechanics 2 PHY 472
-   o Ordinary and partial differential equations, eigenvalue solvers and root finding methods. Can explore interacting two-electron problem with simple rewriting of for example harmonic oscillator problem. 
- o Electromagnetism 1 PHY481.  
+ * Electromagnetism 1 PHY481 (and possible extensions to Electromagnetism 2 PHY482)
    o Both ordinary and partial differential equations with two-point boundary value problems. Central algorithms based on finite difference for one and two-dimensional wave equation and Poisson's and Laplace's equations. See "the detailed learning outcomes":"https://dannycab.github.io/phy481msu/learning_goals.html" for more information.
- o Electromagnetism 2 PHY482
-   o Both ordinary and partial differential equations with two-point boundary value problems. Central algorithms based on finite difference for one and two-dimensional wave equation and Poisson's and Laplace's equations. See "the detailed learning outcomes":"https://dannycab.github.io/phy482msu/learning_goals.html" for more information.
+ o Laboratory courses in Physics 
 
 
    
@@ -298,7 +299,7 @@ which are the main obstacles when transferring from a classical pen and paper ap
 
 ===== Links with CSME and Mathematics courses =====
 
-We need to figure out, beyond CSE 321, if computational elements, or some of the abovementioned algorithms are included in the mathematics courses our physics students take. 
+We need to figure out, beyond CSE 201, if computational elements, or some of the abovementioned algorithms are included in the mathematics courses our physics students take. 
 
 
 ===== Advanced computational physics courses =====

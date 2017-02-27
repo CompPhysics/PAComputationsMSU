@@ -1,0 +1,636 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="description" content="Numerical projects in Quantum mechanics">
+
+<title>Numerical projects in Quantum mechanics</title>
+
+
+<link href="https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_styles/style_solarized_box/css/solarized_light_code.css" rel="stylesheet" type="text/css" title="light"/>
+<script src="https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_styles/style_solarized_box/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="http://thomasf.github.io/solarized-css/solarized-light.min.css" rel="stylesheet">
+<style type="text/css">
+h1 {color: #b58900;}  /* yellow */
+/* h1 {color: #cb4b16;}  orange */
+/* h1 {color: #d33682;}  magenta, the original choice of thomasf */
+code { padding: 0px; background-color: inherit; }
+pre {
+  border: 0pt solid #93a1a1;
+  box-shadow: none;
+}
+.alert-text-small   { font-size: 80%;  }
+.alert-text-large   { font-size: 130%; }
+.alert-text-normal  { font-size: 90%;  }
+.alert {
+  padding:8px 35px 8px 14px; margin-bottom:18px;
+  text-shadow:0 1px 0 rgba(255,255,255,0.5);
+  border:1px solid #93a1a1;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  color: #555;
+  background-color: #eee8d5;
+  background-position: 10px 5px;
+  background-repeat: no-repeat;
+  background-size: 38px;
+  padding-left: 55px;
+  width: 75%;
+ }
+.alert-block {padding-top:14px; padding-bottom:14px}
+.alert-block > p, .alert-block > ul {margin-bottom:1em}
+.alert li {margin-top: 1em}
+.alert-block p+p {margin-top:5px}
+.alert-notice { background-image: url(https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_images/small_yellow_notice.png); }
+.alert-summary  { background-image:url(https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_images/small_yellow_summary.png); }
+.alert-warning { background-image: url(https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_images/small_yellow_warning.png); }
+.alert-question {background-image:url(https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_images/small_yellow_question.png); }
+
+div { text-align: justify; text-justify: inter-word; }
+</style>
+
+
+<script src="http://sagecell.sagemath.org/static/jquery.min.js"></script>
+<script src="http://sagecell.sagemath.org/embedded_sagecell.js"></script>
+<link rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
+<script>
+$(function () {
+    // Make the div with id 'mycell' a Sage cell
+    sagecell.makeSagecell({inputLocation:  '#mycell',
+                           template:       sagecell.templates.minimal,
+                           evalButtonText: 'Activate'});
+    // Make *any* div with class 'compute' a Sage cell
+    sagecell.makeSagecell({inputLocation: 'div.compute',
+                           evalButtonText: 'Evaluate'});
+});
+</script>
+
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [('Quantum dots in three dimensions, one ad two electrons',
+               2,
+               None,
+               '___sec0'),
+              ('Spherical coordinates', 2, None, '___sec1'),
+              ('Making the equations dimensionless', 2, None, '___sec2'),
+              ('And introducing a natural length scale', 2, None, '___sec3'),
+              ('Discretizing I', 2, None, '___sec4'),
+              ('Discretizing II', 2, None, '___sec5'),
+              ('Discretizing III', 2, None, '___sec6'),
+              ('From one to two electrons, studying the role of the repulsive Coulomb force',
+               2,
+               None,
+               '___sec7'),
+              ('Rewriting the equations', 2, None, '___sec8'),
+              ('Center of mass and relative coordinates', 2, None, '___sec9'),
+              ('The equation for the relative motion', 2, None, '___sec10'),
+              ('Further manipulations', 2, None, '___sec11'),
+              ('The new equation to solve', 2, None, '___sec12'),
+              ('The Python code', 2, None, '___sec13')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "AMS"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript"
+ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<center><h1>Numerical projects in Quantum mechanics</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): Morten Hjorth-Jensen -->
+
+<center>
+<b>Morten Hjorth-Jensen</b> [1, 2]
+</center>
+
+<p>
+<!-- institution(s) -->
+
+<center>[1] <b>Department of Physics, University of Oslo</b></center>
+<center>[2] <b>Department of Physics and Astronomy and National Superconducting Cyclotron Laboratory, Michigan State University</b></center>
+<br>
+<p>
+<center><h4>2017</h4></center> <!-- date -->
+<br>
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec0">Quantum dots in three dimensions, one ad two electrons </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+We are first interested in the solution of the radial part of Schroedinger's equation for one electron. This equation reads
+$$
+  -\frac{\hbar^2}{2 m} \left ( \frac{1}{r^2} \frac{d}{dr} r^2
+  \frac{d}{dr} - \frac{l (l + 1)}{r^2} \right )R(r) 
+     + V(r) R(r) = E R(r).
+$$
+
+In our case \( V(r) \) is the harmonic oscillator potential \( (1/2)kr^2 \) with
+\( k=m\omega^2 \) and \( E \) is
+the energy of the harmonic oscillator in three dimensions.
+The oscillator frequency is \( \omega \) and the energies are
+$$
+E_{nl}=  \hbar \omega \left(2n+l+\frac{3}{2}\right),
+$$
+
+with \( n=0,1,2,\dots \) and \( l=0,1,2,\dots \).
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec1">Spherical coordinates </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+Since we have made a transformation to spherical coordinates it means that 
+\( r\in [0,\infty) \).  
+The quantum number
+\( l \) is the orbital momentum of the electron.   Then we substitute \( R(r) = (1/r) u(r) \) and obtain
+$$
+  -\frac{\hbar^2}{2 m} \frac{d^2}{dr^2} u(r) 
+       + \left ( V(r) + \frac{l (l + 1)}{r^2}\frac{\hbar^2}{2 m}
+                                    \right ) u(r)  = E u(r) .
+$$
+
+The boundary conditions are \( u(0)=0 \) and \( u(\infty)=0 \).
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec2">Making the equations dimensionless </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+We introduce a dimensionless variable \( \rho = (1/\alpha) r \)
+where \( \alpha \) is a constant with dimension length and get
+$$
+  -\frac{\hbar^2}{2 m \alpha^2} \frac{d^2}{d\rho^2} u(\rho) 
+       + \left ( V(\rho) + \frac{l (l + 1)}{\rho^2}
+         \frac{\hbar^2}{2 m\alpha^2} \right ) u(\rho)  = E u(\rho) .
+$$
+
+In project 2 we choose \( l=0 \).
+Inserting \( V(\rho) = (1/2) k \alpha^2\rho^2 \) we end up with
+$$
+  -\frac{\hbar^2}{2 m \alpha^2} \frac{d^2}{d\rho^2} u(\rho) 
+       + \frac{k}{2} \alpha^2\rho^2u(\rho)  = E u(\rho) .
+$$
+
+We multiply thereafter with \( 2m\alpha^2/\hbar^2 \) on both sides and obtain
+$$
+  -\frac{d^2}{d\rho^2} u(\rho) 
+       + \frac{mk}{\hbar^2} \alpha^4\rho^2u(\rho)  = \frac{2m\alpha^2}{\hbar^2}E u(\rho) .
+$$
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec3">And introducing a natural length scale </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+We have thus
+$$
+  -\frac{d^2}{d\rho^2} u(\rho) 
+       + \frac{mk}{\hbar^2} \alpha^4\rho^2u(\rho)  = \frac{2m\alpha^2}{\hbar^2}E u(\rho) .
+$$
+
+The constant \( \alpha \) can now be fixed
+so that
+$$
+\frac{mk}{\hbar^2} \alpha^4 = 1,
+$$
+
+or 
+$$
+\alpha = \left(\frac{\hbar^2}{mk}\right)^{1/4}.
+$$
+
+Defining
+$$
+\lambda = \frac{2m\alpha^2}{\hbar^2}E,
+$$
+
+we can rewrite Schroedinger's equation as
+$$
+  -\frac{d^2}{d\rho^2} u(\rho) + \rho^2u(\rho)  = \lambda u(\rho) .
+$$
+
+This is the first equation to solve numerically. In three dimensions 
+the eigenvalues for \( l=0 \) are 
+\( \lambda_0=3,\lambda_1=7,\lambda_2=11,\dots . \)
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec4">Discretizing I </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+We use the by now standard
+expression for the second derivative of a function \( u \)
+$$
+\begin{equation}
+    u''=\frac{u(\rho+h) -2u(\rho) +u(\rho-h)}{h^2} +O(h^2),
+\label{eq:diffoperation}
+\end{equation} 
+$$
+
+where \( h \) is our step.
+Next we define minimum and maximum values for the variable \( \rho \),
+\( \rho_{\mathrm{min}}=0 \)  and \( \rho_{\mathrm{max}} \), respectively.
+You need to check your results for the energies against different values
+\( \rho_{\mathrm{max}} \), since we cannot set
+\( \rho_{\mathrm{max}}=\infty \).
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec5">Discretizing II </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+With a given number of steps, \( n_{\mathrm{step}} \), we then 
+define the step \( h \) as
+$$
+  h=\frac{\rho_{\mathrm{max}}-\rho_{\mathrm{min}} }{n_{\mathrm{step}}}.
+$$
+
+Define an arbitrary value of \( \rho \) as 
+$$
+    \rho_i= \rho_{\mathrm{min}} + ih \hspace{1cm} i=0,1,2,\dots , n_{\mathrm{step}}
+$$
+
+we can rewrite the Schr\"odinger equation for \( \rho_i \) as
+$$
+-\frac{u(\rho_i+h) -2u(\rho_i) +u(\rho_i-h)}{h^2}+\rho_i^2u(\rho_i)  = \lambda u(\rho_i),
+$$
+
+or in  a more compact way
+$$
+-\frac{u_{i+1} -2u_i +u_{i-1}}{h^2}+\rho_i^2u_i=-\frac{u_{i+1} -2u_i +u_{i-1} }{h^2}+V_iu_i  = \lambda u_i,
+$$
+
+where \( V_i=\rho_i^2 \) is the harmonic oscillator potential.
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec6">Discretizing III </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+Define first the diagonal matrix element
+$$
+   d_i=\frac{2}{h^2}+V_i,
+$$
+
+and the non-diagonal matrix element 
+$$
+   e_i=-\frac{1}{h^2}.
+$$
+
+In this case the non-diagonal matrix elements are given by a mere constant. <em>All non-diagonal matrix elements are equal</em>.
+
+<p>
+With these definitions the Schroedinger equation takes the following form
+$$
+d_iu_i+e_{i-1}u_{i-1}+e_{i+1}u_{i+1}  = \lambda u_i,
+$$
+
+where \( u_i \) is unknown. We can write the 
+latter equation as a matrix eigenvalue problem 
+$$
+\begin{equation}
+    \left( \begin{array}{ccccccc} d_1 & e_1 & 0   & 0    & \dots  &0     & 0 \\
+                                e_1 & d_2 & e_2 & 0    & \dots  &0     &0 \\
+                                0   & e_2 & d_3 & e_3  &0       &\dots & 0\\
+                                \dots  & \dots & \dots & \dots  &\dots      &\dots & \dots\\
+                                0   & \dots & \dots & \dots  &\dots       &d_{n_{\mathrm{step}}-2} & e_{n_{\mathrm{step}}-1}\\
+                                0   & \dots & \dots & \dots  &\dots       &e_{n_{\mathrm{step}}-1} & d_{n_{\mathrm{step}}-1}
+             \end{array} \right)      \left( \begin{array}{c} u_{1} \\
+                                                              u_{2} \\
+                                                              \dots\\ \dots\\ \dots\\
+                                                              u_{n_{\mathrm{step}}-1}
+             \end{array} \right)=\lambda \left( \begin{array}{c} u_{1} \\
+                                                              u_{2} \\
+                                                              \dots\\ \dots\\ \dots\\
+                                                              u_{n_{\mathrm{step}}-1}
+             \end{array} \right) 
+\label{eq:sematrix}
+\end{equation} 
+$$
+
+or if we wish to be more detailed, we can write the tridiagonal matrix as
+$$
+\begin{equation}
+    \left( \begin{array}{ccccccc} \frac{2}{h^2}+V_1 & -\frac{1}{h^2} & 0   & 0    & \dots  &0     & 0 \\
+                                -\frac{1}{h^2} & \frac{2}{h^2}+V_2 & -\frac{1}{h^2} & 0    & \dots  &0     &0 \\
+                                0   & -\frac{1}{h^2} & \frac{2}{h^2}+V_3 & -\frac{1}{h^2}  &0       &\dots & 0\\
+                                \dots  & \dots & \dots & \dots  &\dots      &\dots & \dots\\
+                                0   & \dots & \dots & \dots  &\dots       &\frac{2}{h^2}+V_{n_{\mathrm{step}}-2} & -\frac{1}{h^2}\\
+                                0   & \dots & \dots & \dots  &\dots       &-\frac{1}{h^2} & \frac{2}{h^2}+V_{n_{\mathrm{step}}-1}
+             \end{array} \right)  
+\label{eq:matrixse} 
+\end{equation} 
+$$
+
+Recall that the solutions are known via the boundary conditions at
+\( i=n_{\mathrm{step}} \) and at the other end point, that is for  \( \rho_0 \).
+The solution is zero in both cases.
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec7">From one to two electrons, studying the role of the repulsive Coulomb force </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+We are going to study two electrons in a harmonic oscillator well which
+also interact via a repulsive Coulomb interaction.
+Let us start with the single-electron equation written as
+$$
+  -\frac{\hbar^2}{2 m} \frac{d^2}{dr^2} u(r) 
+       + \frac{1}{2}k r^2u(r)  = E^{(1)} u(r),
+$$
+
+where \( E^{(1)} \) stands for the energy with one electron only.
+For two electrons with no repulsive Coulomb interaction, we have the following 
+Schroedinger equation
+$$
+\left(  -\frac{\hbar^2}{2 m} \frac{d^2}{dr_1^2} -\frac{\hbar^2}{2 m} \frac{d^2}{dr_2^2}+ \frac{1}{2}k r_1^2+ \frac{1}{2}k r_2^2\right)u(r_1,r_2)  = E^{(2)} u(r_1,r_2) .
+$$
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec8">Rewriting the equations </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+Note that we deal with a two-electron wave function \( u(r_1,r_2) \) and 
+two-electron energy \( E^{(2)} \).
+
+<p>
+With no interaction this can be written out as the product of two
+single-electron wave functions, that is we have a solution on closed form.
+
+<p>
+We introduce the relative coordinate \( \mathbf{r} = \mathbf{r}_1-\mathbf{r}_2 \)
+and the center-of-mass coordinate \( \mathbf{R} = 1/2(\mathbf{r}_1+\mathbf{r}_2) \).
+With these new coordinates, the radial Schroedinger equation reads
+$$
+\left(  -\frac{\hbar^2}{m} \frac{d^2}{dr^2} -\frac{\hbar^2}{4 m} \frac{d^2}{dR^2}+ \frac{1}{4} k r^2+  kR^2\right)u(r,R)  = E^{(2)} u(r,R).
+$$
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec9">Center of mass and relative coordinates </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+The equations for \( r \) and \( R \) can be separated via the ansatz for the 
+wave function \( u(r,R) = \psi(r)\phi(R) \) and the energy is given by the sum
+of the relative energy \( E_r \) and the center-of-mass energy \( E_R \), that
+is
+$$
+E^{(2)}=E_r+E_R.
+$$
+
+We add then the repulsive Coulomb interaction between two electrons,
+namely a term 
+$$
+V(r_1,r_2) = \frac{\beta e^2}{|\mathbf{r}_1-\mathbf{r}_2|}=\frac{\beta e^2}{r},
+$$
+
+with \( \beta e^2=1.44 \) eVnm.
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec10">The equation for the relative motion </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+Adding this term, the \( r \)-dependent Schroedinger equation becomes
+$$
+\left(  -\frac{\hbar^2}{m} \frac{d^2}{dr^2}+ \frac{1}{4}k r^2+\frac{\beta e^2}{r}\right)\psi(r)  = E_r \psi(r).
+$$
+
+This equation is similar to the one we had previously in parts (a) and (b) 
+and we introduce
+again a dimensionless variable \( \rho = r/\alpha \). Repeating the same
+steps, we arrive at 
+$$
+  -\frac{d^2}{d\rho^2} \psi(\rho) 
+       + \frac{mk}{4\hbar^2} \alpha^4\rho^2\psi(\rho)+\frac{m\alpha \beta e^2}{\rho\hbar^2}\psi(\rho)  = 
+\frac{m\alpha^2}{\hbar^2}E_r \psi(\rho) .
+$$
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec11">Further manipulations </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+We want to manipulate this equation further to make it as similar to the one-lectron case
+as possible. We define a 'frequency' 
+$$
+\omega_r^2=\frac{1}{4}\frac{mk}{\hbar^2} \alpha^4,
+$$
+
+and fix the constant \( \alpha \) by requiring 
+$$
+\frac{m\alpha \beta e^2}{\hbar^2}=1
+$$
+
+or 
+$$
+\alpha = \frac{\hbar^2}{m\beta e^2}.
+$$
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec12">The new equation to solve </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+Defining 
+$$
+\lambda = \frac{m\alpha^2}{\hbar^2}E,
+$$
+
+we can rewrite Schroedinger's equation as
+$$
+  -\frac{d^2}{d\rho^2} \psi(\rho) + \omega_r^2\rho^2\psi(\rho) +\frac{1}{\rho}\psi(\rho) = \lambda \psi(\rho).
+$$
+</div>
+
+
+<p>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+We treat \( \omega_r \) as a parameter which reflects the strength of the oscillator potential.
+
+<p>
+With no repulsive Coulomb interaction 
+you should get a result which corresponds to 
+the relative energy of a non-interacting system.   
+Make sure your results are 
+stable as functions of \( \rho_{\mathrm{max}} \) and the number of steps.
+
+<p>
+We are only interested in the ground state with \( l=0 \). We omit the 
+center-of-mass energy.
+
+<p>
+For specific oscillator frequencies, the above equation has analytic answers,
+see the article by M.&nbsp;Taut, Phys. Rev. A 48, 3561 - 3566 (1993).
+The article can be retrieved from the following web address <a href="http://prola.aps.org/abstract/PRA/v48/i5/p3561_1" target="_blank"><tt>http://prola.aps.org/abstract/PRA/v48/i5/p3561_1</tt></a>.
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec13">The Python code </h2>
+The code sets up the Hamiltonian matrix by defining the the minimun and maximum values of \( r \) with a
+maximum value of integration points.  These are set in the initialization function. It plots the 
+eigenfunctions of the three lowest eigenstates.
+<p>
+
+
+<div class="compute"><script type="text/x-sage">
+#Program which solves the one-particle Schrodinger equation 
+#for a potential specified in function
+#potential(). This example is for the harmonic oscillator in 3d
+
+from  matplotlib import pyplot as plt
+import numpy as np
+#Function for initialization of parameters
+def initialize():
+    RMin = 0.0
+    RMax = 10.0
+    lOrbital = 0
+    Dim = 400
+    return RMin, RMax, lOrbital, Dim
+# Here we set up the harmonic oscillator potential
+def potential(r):
+    return r*r
+
+#Get the boundary, orbital momentum and number of integration points
+RMin, RMax, lOrbital, Dim = initialize()
+
+#Initialize constants
+Step    = RMax/(Dim+1)
+DiagConst = 2.0 / (Step*Step)
+NondiagConst =  -1.0 / (Step*Step)
+OrbitalFactor = lOrbital * (lOrbital + 1.0)
+
+#Calculate array of potential values
+v = np.zeros(Dim)
+r = np.linspace(RMin,RMax,Dim)
+for i in xrange(Dim):
+    r[i] = RMin + (i+1) * Step;
+    v[i] = potential(r[i]) + OrbitalFactor/(r[i]*r[i]);
+
+#Setting up a tridiagonal matrix and finding eigenvectors and eigenvalues
+Hamiltonian = np.zeros((Dim,Dim))
+Hamiltonian[0,0] = DiagConst + v[0];
+Hamiltonian[0,1] = NondiagConst;
+for i in xrange(1,Dim-1):
+    Hamiltonian[i,i-1]  = NondiagConst;
+    Hamiltonian[i,i]    = DiagConst + v[i];
+    Hamiltonian[i,i+1]  = NondiagConst;
+Hamiltonian[Dim-1,Dim-2] = NondiagConst;
+Hamiltonian[Dim-1,Dim-1] = DiagConst + v[Dim-1];
+# diagonalize and obtain eigenvalues, not necessarily sorted
+EigValues, EigVectors = np.linalg.eig(Hamiltonian)
+# sort eigenvectors and eigenvalues
+permute = EigValues.argsort()
+EigValues = EigValues[permute]
+EigVectors = EigVectors[:,permute]
+# now plot the results for the three lowest lying eigenstates
+for i in xrange(3):
+    print EigValues[i]
+FirstEigvector = EigVectors[:,0]
+SecondEigvector = EigVectors[:,1]
+ThirdEigvector = EigVectors[:,2]
+plt.plot(r, FirstEigvector**2 ,'b-',r, SecondEigvector**2 ,'g-',r, ThirdEigvector**2 ,'r-')
+plt.axis([0,4.6,0.0, 0.025])
+plt.xlabel(r'$r$')
+plt.ylabel(r'Radial probability $r^2|R(r)|^2$')
+plt.title(r'Radial probability distributions for three lowest-lying states')
+plt.savefig('eigenvector.pdf')
+plt.show()
+
+</script></div>
+<p>
+
+<!-- ------------------- end of main content --------------- -->
+
+
+<center style="font-size:80%">
+<!-- copyright --> &copy; 1999-2017, Morten Hjorth-Jensen. Released under CC Attribution-NonCommercial 4.0 license
+</center>
+
+
+</body>
+</html>
+    
+

@@ -1,0 +1,227 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="description" content="Numerical projects in Quantum mechanics">
+
+<title>Numerical projects in Quantum mechanics</title>
+
+<!-- Bootstrap style: bootstrap -->
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- not necessary
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+-->
+
+<style type="text/css">
+
+/* Add scrollbar to dropdown menus in bootstrap navigation bar */
+.dropdown-menu {
+   height: auto;
+   max-height: 400px;
+   overflow-x: hidden;
+}
+
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:50px;      /* fixed header height for style bootstrap */
+  margin:-50px 0 0; /* negative fixed header height */
+}
+</style>
+
+
+<script src="http://sagecell.sagemath.org/static/jquery.min.js"></script>
+<script src="http://sagecell.sagemath.org/embedded_sagecell.js"></script>
+<link rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
+<script>
+$(function () {
+    // Make the div with id 'mycell' a Sage cell
+    sagecell.makeSagecell({inputLocation:  '#mycell',
+                           template:       sagecell.templates.minimal,
+                           evalButtonText: 'Activate'});
+    // Make *any* div with class 'compute' a Sage cell
+    sagecell.makeSagecell({inputLocation: 'div.compute',
+                           evalButtonText: 'Evaluate'});
+});
+</script>
+
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [('Quantum dots in three dimensions, one ad two electrons',
+               2,
+               None,
+               '___sec0'),
+              ('Spherical coordinates', 2, None, '___sec1'),
+              ('Making the equations dimensionless', 2, None, '___sec2'),
+              ('And introducing a natural length scale', 2, None, '___sec3'),
+              ('Discretizing I', 2, None, '___sec4'),
+              ('Discretizing II', 2, None, '___sec5'),
+              ('Discretizing III', 2, None, '___sec6'),
+              ('From one to two electrons, studying the role of the repulsive Coulomb force',
+               2,
+               None,
+               '___sec7'),
+              ('Rewriting the equations', 2, None, '___sec8'),
+              ('Center of mass and relative coordinates', 2, None, '___sec9'),
+              ('The equation for the relative motion', 2, None, '___sec10'),
+              ('Further manipulations', 2, None, '___sec11'),
+              ('The new equation to solve', 2, None, '___sec12'),
+              ('The Python code', 2, None, '___sec13')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript"
+ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<!-- Bootstrap navigation bar -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="Quantum-bs.html">Numerical projects in Quantum mechanics</a>
+  </div>
+
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+     <!-- navigation toc: --> <li><a href="._Quantum-bs001.html#___sec0" style="font-size: 80%;">Quantum dots in three dimensions, one ad two electrons</a></li>
+     <!-- navigation toc: --> <li><a href="._Quantum-bs002.html#___sec1" style="font-size: 80%;">Spherical coordinates</a></li>
+     <!-- navigation toc: --> <li><a href="._Quantum-bs003.html#___sec2" style="font-size: 80%;">Making the equations dimensionless</a></li>
+     <!-- navigation toc: --> <li><a href="._Quantum-bs004.html#___sec3" style="font-size: 80%;">And introducing a natural length scale</a></li>
+     <!-- navigation toc: --> <li><a href="._Quantum-bs005.html#___sec4" style="font-size: 80%;">Discretizing I</a></li>
+     <!-- navigation toc: --> <li><a href="._Quantum-bs006.html#___sec5" style="font-size: 80%;">Discretizing II</a></li>
+     <!-- navigation toc: --> <li><a href="._Quantum-bs007.html#___sec6" style="font-size: 80%;">Discretizing III</a></li>
+     <!-- navigation toc: --> <li><a href="._Quantum-bs008.html#___sec7" style="font-size: 80%;">From one to two electrons, studying the role of the repulsive Coulomb force</a></li>
+     <!-- navigation toc: --> <li><a href="._Quantum-bs009.html#___sec8" style="font-size: 80%;">Rewriting the equations</a></li>
+     <!-- navigation toc: --> <li><a href="._Quantum-bs010.html#___sec9" style="font-size: 80%;">Center of mass and relative coordinates</a></li>
+     <!-- navigation toc: --> <li><a href="._Quantum-bs011.html#___sec10" style="font-size: 80%;">The equation for the relative motion</a></li>
+     <!-- navigation toc: --> <li><a href="._Quantum-bs012.html#___sec11" style="font-size: 80%;">Further manipulations</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec12" style="font-size: 80%;">The new equation to solve</a></li>
+     <!-- navigation toc: --> <li><a href="._Quantum-bs014.html#___sec13" style="font-size: 80%;">The Python code</a></li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</div> <!-- end of navigation bar -->
+
+<div class="container">
+
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
+
+<a name="part0013"></a>
+<!-- !split -->
+
+<h2 id="___sec12" class="anchor">The new equation to solve </h2>
+<div class="panel panel-default">
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+Defining 
+$$
+\lambda = \frac{m\alpha^2}{\hbar^2}E,
+$$
+
+we can rewrite Schroedinger's equation as
+$$
+  -\frac{d^2}{d\rho^2} \psi(\rho) + \omega_r^2\rho^2\psi(\rho) +\frac{1}{\rho}\psi(\rho) = \lambda \psi(\rho).
+$$
+</div>
+</div>
+
+
+<p>
+<div class="panel panel-default">
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+We treat \( \omega_r \) as a parameter which reflects the strength of the oscillator potential.
+
+<p>
+With no repulsive Coulomb interaction 
+you should get a result which corresponds to 
+the relative energy of a non-interacting system.   
+Make sure your results are 
+stable as functions of \( \rho_{\mathrm{max}} \) and the number of steps.
+
+<p>
+We are only interested in the ground state with \( l=0 \). We omit the 
+center-of-mass energy.
+
+<p>
+For specific oscillator frequencies, the above equation has analytic answers,
+see the article by M.&nbsp;Taut, Phys. Rev. A 48, 3561 - 3566 (1993).
+The article can be retrieved from the following web address <a href="http://prola.aps.org/abstract/PRA/v48/i5/p3561_1" target="_self"><tt>http://prola.aps.org/abstract/PRA/v48/i5/p3561_1</tt></a>.
+</div>
+</div>
+
+
+<p>
+<p>
+<!-- navigation buttons at the bottom of the page -->
+<ul class="pagination">
+<li><a href="._Quantum-bs012.html">&laquo;</a></li>
+  <li><a href="._Quantum-bs000.html">1</a></li>
+  <li><a href="">...</a></li>
+  <li><a href="._Quantum-bs005.html">6</a></li>
+  <li><a href="._Quantum-bs006.html">7</a></li>
+  <li><a href="._Quantum-bs007.html">8</a></li>
+  <li><a href="._Quantum-bs008.html">9</a></li>
+  <li><a href="._Quantum-bs009.html">10</a></li>
+  <li><a href="._Quantum-bs010.html">11</a></li>
+  <li><a href="._Quantum-bs011.html">12</a></li>
+  <li><a href="._Quantum-bs012.html">13</a></li>
+  <li class="active"><a href="._Quantum-bs013.html">14</a></li>
+  <li><a href="._Quantum-bs014.html">15</a></li>
+  <li><a href="._Quantum-bs014.html">&raquo;</a></li>
+</ul>
+<!-- ------------------- end of main content --------------- -->
+
+</div>  <!-- end container -->
+<!-- include javascript, jQuery *first* -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+<!-- Bootstrap footer
+<footer>
+<a href="http://..."><img width="250" align=right src="http://..."></a>
+</footer>
+-->
+
+
+<center style="font-size:80%">
+<!-- copyright only on the titlepage -->
+</center>
+
+
+</body>
+</html>
+    
+
