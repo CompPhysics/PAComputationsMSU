@@ -235,7 +235,7 @@ The algorithms and tools listed here reflect to various degrees the previously d
 
 === Central algorithms ===
 The following mathematical formulations of problems from the physical sciences play a prominent role and should be reflected in the way we teach physics:
- * rdinary differential equations
+ * Ordinary differential equations
    o Euler, modified Euler, Verlet and Runge-Kutta methods with applications to problems in electromagnetism, methods for theoretical physics, quantum mechanics and mechanics.
  * Partial differential equations
    o Diffusion in one and two dimensions (statistical physics), wave equation in one and two dimensions (mechanics, electromagnetism, quantum mechanics, methods for theoretical physics) and Laplace's and Poisson's equations (electromagnetism).
