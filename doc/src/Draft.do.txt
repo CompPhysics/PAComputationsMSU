@@ -153,7 +153,8 @@ The results of a computation need to be communicated in some format (i.e., throu
 * A working knowledge of the norms and practices for scientific presentations in various formats (i.e., figures, posters, talks, and written reports)
 
 
-What is deep knowledge?
+===== What is deep knowledge? =====
+
 By deep knowledge we here mean the understanding of the underlying fundamental ideas and concepts from which a plethora of seemingly different methods and technologies can be derived. In other words, the deep knowledge brings structure to all the technical details.
 Obtaining this type of knowledge requires time in class and a lot of exercises. In addition, the students need to reflect about theory and practice. The reflection process is often difficult to implement. Below are some suggestions.
 A useful concept is simplify, understand, and then generalize. Giving a superficial overview of a bunch of unrelated methods and their applications to unrelated scientific problems equips the students with a wide toolbox, but fails to enhance a fundamental understanding of how multidisciplinary topics play together. Instead, we believe in the following list.
