@@ -1,22 +1,6 @@
 TITLE: Computating in Physics courses at the Physics and Astronomy Department, Michigan State University
-AUTHOR: Danny Caballero, Sean Couch, Wade Fisher, Morten Hjorth-Jensen, Brian O'Shea, and Carlo Piermarocchi
-DATE: Spring semester 2017
-
-!split
-=====  Charge =====
-
-
-o Consideration of whether PA students should be required to have a “minimum skill-set in computational methods”.  If so, what should be included. 
-o Consideration of the way in which computations should be included in our service courses, including co-ordination with other units that teach large service courses (Math, Chemistry).  
-o Consideration of existing courses in other departments, such as CMSE and CSE, that could be required or optional for physics or astronomy students, at both the Ugrad and Grad levels.    A list of such courses for circulation to PA students would be helpful.    
-o Evaluation of the computational physics courses currently offered in the physics and astronomy department, with proposals for changes if needed.
-o Consideration of the ways in which computational methods and problems can and should be included in the PA core courses.
-o Consideration of whether PA should develop a computational physics major, or perhaps develop an applied physics major with computational physics as one of the options.   A computational physics option would be co-ordinated with CMSE which is developing program specializations in several directions, including physics. 
-
-o Timeline:   A positive outcome of the committee’s work would be a report with recommendations that can be presented to the faculty at a faculty meeting at the end of  Spring semester 2017, or in Fall semester 2017.   This could include a request for resources from the department for implementation of proposed changes.
-
-
-
+AUTHOR: Danny Caballero, Sean Couch, Wade Fisher, Connor Glosser, Morten Hjorth-Jensen, Claire Kopenhafer, Brian O'Shea, and Carlo Piermarocchi
+DATE: today
 
 !split
 ===== Introduction: Scientific and educational motivation =====

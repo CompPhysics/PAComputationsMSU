@@ -134,7 +134,7 @@ end of tocinfo -->
      <!-- navigation toc: --> <li><a href="._PAComp-bs011.html#___sec11" style="font-size: 80%;">Specific algorithms and computational skills</a></li>
      <!-- navigation toc: --> <li><a href="._PAComp-bs012.html#___sec12" style="font-size: 80%;">Central algorithms</a></li>
      <!-- navigation toc: --> <li><a href="._PAComp-bs013.html#___sec13" style="font-size: 80%;">Central tools and programming languages</a></li>
-     <!-- navigation toc: --> <li><a href="._PAComp-bs014.html#___sec14" style="font-size: 80%;">Learning goals for specific physics courses</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec14" style="font-size: 80%;">Learning goals for specific physics courses</a></li>
      <!-- navigation toc: --> <li><a href="._PAComp-bs015.html#___sec15" style="font-size: 80%;">Physics Education research and computing in science education</a></li>
      <!-- navigation toc: --> <li><a href="._PAComp-bs016.html#___sec16" style="font-size: 80%;">Links with CSME and Mathematics courses</a></li>
      <!-- navigation toc: --> <li><a href="._PAComp-bs017.html#___sec17" style="font-size: 80%;">Advanced computational physics courses</a></li>
@@ -152,52 +152,91 @@ end of tocinfo -->
 
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
 
-<a name="part0000"></a>
-<!-- ------------------- main content ---------------------- -->
+<a name="part0014"></a>
+<!-- !split -->
 
-
-
-<div class="jumbotron">
-<center><h1>Computating in Physics courses at the Physics and Astronomy Department, Michigan State University</h1></center>  <!-- document title -->
+<h2 id="___sec14" class="anchor">Learning goals for specific physics courses </h2>
 
 <p>
-<!-- author(s): Danny Caballero, Sean Couch, Wade Fisher, Morten Hjorth-Jensen, Brian O'Shea, and Carlo Piermarocchi -->
-
-<center>
-<b>Danny Caballero, Sean Couch, Wade Fisher, Morten Hjorth-Jensen, Brian O'Shea, and Carlo Piermarocchi</b> 
-</center>
+For a major in physics degree at Michigan State University, the course <a href="https://cmse.msu.edu/academics/undergraduate-program/undergraduate-courses/cmse-201-introduction-to-computational-modeling/" target="_self">CMSE 201 Introduction to Computational Modeling</a> is compulsory and it lays the foundation for the use of computational exercises and projects in various physics courses.
 
 <p>
-<!-- institution(s) -->
+We propose that the following courses aim to integrate the above learning outcomes and goals:
 
-<br>
-<p>
-<center><h4>Spring semester 2017</h4></center> <!-- date -->
-<br>
-<p>
+<ul>
+<li> Classical Mechanics 1: PHY321.
 
+<ol type="a"></li>
+  <li> Here one could focus on ordinary differential equations like modified Euler, Verlet and perhaps RK methods. There are several interesting problems that can deepen the understanding of newtonian problems, from modeling planetary motion to models for friction and earthquake simulations. With not too advanced programs one can easily bring in actual research problems (friction is a good example).  The classical pendulum is also a good case to illustrate. The code can easily be reused for studies of for example an RLC circuit in electromagnetism. The equations for a buckling beam lead to an eigenvalue problem which can reused in the quantum mechanics course.</li>
+</ol>
 
-<p><a href="._PAComp-bs001.html" class="btn btn-primary btn-lg">Read &raquo;</a></p>
+ <li> Thermal and Statistical Physics, PHY410
 
+<ol type="a"></li>
+  <li> Random numbers, random walks, probability distributions, Monte Carlo integration and Metropolis algorithm. Applications to statistical physics. Simulation of simple phase transitions with spin models like the Ising model.  Studies of Brownian motion and diffusion can easily be done.</li>
+</ol>
 
-</div> <!-- end jumbotron -->
+ <li> Methods in Theoretical Physics, PHY415
+
+<ol type="a"></li>
+  <li> Here one could discuss algorithms which are relevant for the other physics courses discussed here, such as particular eigenvalue solvers. Furthermore, when solving famous differential equations in physics, one can write functions to generate polynomials like Legendre, Laguerre, Hermite functions etc. Here it would be natural to discuss Gaussian quadrature and how to use this to integrate numerically.</li>
+</ol>
+
+ <li> Advanced Laboratory course in Physics PHY451
+
+<ol type="a"></li>
+  <li> Data analysis plays a central role, natural to have algorithms on data fitting, computations  of mean values, variance and standard deviations, covariance, famous distributions. Many of these topics find also their natural place in a course on statistical physics like PHY410.</li>
+</ol>
+
+ <li> Quantum mechanics 1  PHY 471 (and possible extensions to Quantum mechanics 2 PHY 472)
+
+<ol type="a"></li>
+  <li> Ordinary and partial differential equations, eigenvalue solvers and root finding methods. Can explore interacting two-electron problem with simple rewriting of for example harmonic oscillator problem. The Metropolis algorithm can be used to simulate one and two-body problems like the Helium atom using Variational Monte Carlo. Gives students a feeling for variational calculus which can be included and  taught in PHY415</li>
+</ol>
+
+<li> After completing Electromagnetism 1 PHY481, students should be able to:</li>
+
+<ul>
+  <li> use symbolic computing tools to determine the gradient of various scalar fields</li>
+  <li> use symbolic computing to determine the divergence and curl of various vector fields</li>
+  <li> represent the vector (e.g., electric) field visually using vector plots and stream plots</li>
+  <li> represent a 2D scalar (i.e., potential) field visually using 2D contour plots and 3D surface plots</li>
+  <li> apply motion prediction algorithms Euler, Verlet, and Runge-Kutta to model the motion of charged particles in electric and magnetic fields</li>
+  <li> compare the quality of simulations (i.e., number of iterations, step size, and error control) of charged particle motion that use different motion prediction algorithms</li>
+  <li> apply Coulomb's law iteratively to determine the electric field produced by a given charge distribution</li>
+  <li> apply Biot-Savart's law iteratively to determine the magnetic field produced by a given current distribution</li>
+  <li> explain how the application of superposition iteratively gives rise to approximate field solutions</li>
+  <li> explain how the simple relaxation algorithm works (i.e., iteratively averaging neighboring points) and how it is derived from the properties of the solutions to Laplace's equation</li>
+  <li> apply this simple relaxation method to find the potential for 1D and 2D electrostatic situations where Laplace's equation is satisfied</li>
+  <li> explain how to use the finite-differencing to recast Poisson's equation into a discrete formulation and how the resulting discretized form compares with the simple relaxation method (i.e., iteratively averaging neighboring points)</li>
+  <li> apply the Jacobi and Gauss-Seidel methods to solve 2D Laplace and Poisson problems including graphing the results in three dimensions</li>
+  <li> explain the differences between the Jacobi and Gauss-Seidel methods and how these methods are connected to the derivation using finite differencing</li>
+  <li> Compare the quality of the simulations (i.e., number of iterations, step size, and error control) that employ the Jacobi method and the Gauss-Seidel method</li>
+  <li> See <a href="https://dannycab.github.io/phy481msu/learning_goals.html" target="_self">the detailed learning outcomes for PHY 481</a> for more information.</li>
+</ul>
+
+</ul>
 
 <p>
 <!-- navigation buttons at the bottom of the page -->
 <ul class="pagination">
-  <li class="active"><a href="._PAComp-bs000.html">1</a></li>
-  <li><a href="._PAComp-bs001.html">2</a></li>
-  <li><a href="._PAComp-bs002.html">3</a></li>
-  <li><a href="._PAComp-bs003.html">4</a></li>
-  <li><a href="._PAComp-bs004.html">5</a></li>
-  <li><a href="._PAComp-bs005.html">6</a></li>
+<li><a href="._PAComp-bs013.html">&laquo;</a></li>
+  <li><a href="._PAComp-bs000.html">1</a></li>
+  <li><a href="">...</a></li>
   <li><a href="._PAComp-bs006.html">7</a></li>
   <li><a href="._PAComp-bs007.html">8</a></li>
   <li><a href="._PAComp-bs008.html">9</a></li>
   <li><a href="._PAComp-bs009.html">10</a></li>
-  <li><a href="">...</a></li>
+  <li><a href="._PAComp-bs010.html">11</a></li>
+  <li><a href="._PAComp-bs011.html">12</a></li>
+  <li><a href="._PAComp-bs012.html">13</a></li>
+  <li><a href="._PAComp-bs013.html">14</a></li>
+  <li class="active"><a href="._PAComp-bs014.html">15</a></li>
+  <li><a href="._PAComp-bs015.html">16</a></li>
+  <li><a href="._PAComp-bs016.html">17</a></li>
+  <li><a href="._PAComp-bs017.html">18</a></li>
   <li><a href="._PAComp-bs018.html">19</a></li>
-  <li><a href="._PAComp-bs001.html">&raquo;</a></li>
+  <li><a href="._PAComp-bs015.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->
 
