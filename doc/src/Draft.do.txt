@@ -237,7 +237,7 @@ What follows below is a suggested listed of possible learning outcomes. These su
 We propose that the following courses aim to integrate the above learning outcomes and goals:
 
 
-== Classical Mechanics 1 PHY321 ===
+=== Classical Mechanics 1 PHY321 ===
 After completing Classical Mechanics 1 PHY321, students should be able to:
 
    o Here one could focus on ordinary differential equations like modified Euler, Verlet and perhaps RK methods. There are several interesting problems that can deepen the understanding of newtonian problems, from modeling planetary motion to models for friction and earthquake simulations. With not too advanced programs one can easily bring in actual research problems (friction is a good example).  The classical pendulum is also a good case to illustrate. The code can easily be reused for studies of for example an RLC circuit in electromagnetism. The equations for a buckling beam lead to an eigenvalue problem which can reused in the quantum mechanics course.
