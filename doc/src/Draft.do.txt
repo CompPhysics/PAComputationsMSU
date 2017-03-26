@@ -181,9 +181,9 @@ The following mathematical formulations of problems from the physical sciences p
 In order to achieve a proper pedagogical introduction of these algorithms, it is important that students and teachers alike see how these algorithms are used to solve a variety of physics problems. The same algorithm, for example the solution of a second-order differential equation, can be used to solve the equations for the classical pendulum in a mechanics course or the (with a suitable change of variables) equations for a coupled RLC circuit in the electromagnetism course. Similarly, if students develop a program for studies of celestial bodies in the mechanics course, many of the elements of such a program can be reused in a molecular dynamics calculation in a course on statistical physics and thermal physics. The two-point boundary value problem for a buckling beam
 (discretized as an eigenvalue problem) can be reused in quantum mechanical studies of interacting electrons in oscillator traps, or just to study a particle in a box potential with varying depth and extension.
 
-In order to aid the introduction of computational exercises and projects, we will need to develop educational resources for this. The "PICUP project":"http://www.compadre.org/picup/",  Partnership for Integration of Computation into Undergraduate Physics, develops "resources for teachers and students on the integration of computational  material":"http://www.compadre.org/PICUP/resources/".   We strongly recommend these resources.
+In order to aid the introduction of computational exercises and projects, we will need to develop educational resources for this. The "PICUP project":"http://www.compadre.org/picup/",  Partnership for Integration of Computation into Undergraduate Physics, develops "resources for teachers and students on the integration of computational  material":"http://www.compadre.org/PICUP/resources/".   We strongly recommend these resources.  Physics is an old discipline, with a large wealth of established analytical exercises and projects. In fields like mechanics, we have centuries of pedagogical developments, with a strong emphasis on developing analytical skills. The majority of physics teachers are well familiar with this and in order to see how computing can enlarge this body of exercises and projects, and hopefully add additional insights to the physics behind various phenomena, we find it important to develop a large body of computational examples.
 
-As part of this proposal, we have developed several examples of problems and projects that can be included in our undergraduate courses in physics. You can click on the following links (ipython notebooks or PDF formats)
+As part of this proposal, we are in the process of  developing several examples of problems and projects that can be included in our undergraduate courses in physics. You can click on the following links (ipython notebooks or PDF formats)
 * Mechanics
   o  "Ipython notebook":"https://github.com/CompPhysics/PAComputationsMSU/tree/master/doc/pub/Mechanics/ipynb"
   o  "Standard PDF file":"https://github.com/CompPhysics/PAComputationsMSU/tree/master/doc/pub/Mechanics/pdf/Mechanics-minted.pdf"
@@ -203,6 +203,8 @@ As part of this proposal, we have developed several examples of problems and pro
   o  "Ipython notebook":"https://github.com/CompPhysics/PAComputationsMSU/tree/master/doc/pub/"
   o  "Standard PDF file":"https://github.com/CompPhysics/PAComputationsMSU/tree/master/doc/pub/"
 
+We hope these examples can aid physics teachers in their usage of computing in physics courses. Furthermore, via a consensus and collectively driven approach, the hope is that this body of examples can be continuously enlarged.
+
 === Central tools and programming languages ===
 
 We will strongly recommend that Python is used as the high-level programming language for all the courses proposed below. Other high-level environments like Mathematica and Matlab can also be presented and offered as special courses like PHY102 - Physics Computations I. This means that students can apply their knowledge from CMSE 201, which makes use of Python, and extend their computational knowledge in various physics classes. We recommend strongly that the following tools are used
@@ -220,7 +222,9 @@ Unit testing is a central element in the development of numerical projects, from
 
 =====  Suggested learning goals for specific physics courses =====
 
-For a major in physics degree at Michigan State University, the course "CMSE 201 Introduction to Computational Modeling":"https://cmse.msu.edu/academics/undergraduate-program/undergraduate-courses/cmse-201-introduction-to-computational-modeling/" is compulsory and it lays the foundation for the use of computational exercises and projects in various physics courses.
+For a major in physics degree at Michigan State University, the course "CMSE 201 Introduction to Computational Modeling":"https://cmse.msu.edu/academics/undergraduate-program/undergraduate-courses/cmse-201-introduction-to-computational-modeling/" is compulsory and it lays the foundation for the use of computational exercises and projects in various physics courses. Based on this course, and the various mathematics courses included in a Physics degree, there is a unique possibility to incorporate computinational exercises and projects in various physics courses, without taking away the attention from the basic physics topics to be covered. 
+
+What follows below is a suggested listed of possible learning outcomes. These suggestions are to be viewed as inputs to the ongoing discussions. The list of possible outcomes can be reduced or enlarged. 
 
 #
 # Danny: I have only constructed learning goals for PHY 481. I intend these
@@ -240,14 +244,35 @@ After completing Classical Mechanics 1 PHY321, students should be able to:
 
 === Thermal and Statistical Physics PHY410 ===
 After completing Thermal and Statistical Physics PHY410, students should be able to:
-
-   o Random numbers, random walks, probability distributions, Monte Carlo integration and Metropolis algorithm. Applications to statistical physics. Simulation of simple phase transitions with spin models like the Ising model.  Studies of Brownian motion and diffusion can easily be done.
+  * use central probability distributions and their relation to various expectation values
+  * simulate and visualize central probability distributions like the uniform distributions, the exponential distribution and the normal (Gaussian distribution)
+  * use concept from statistics to understand central ensembles like the microcanonical and the canonical ensembles
+  * simulate Markov processes and understand the links with the process of diffusion (Fick's and Fourier's laws) and the concept of most likely states
+  * understand how to simulate stochastic variables using random number generators
+  * understand central algorithms like the Metropolis algorithm to simulate systems in statistical physics
+  * understand the physics of various phases and phase transitions 
+  * study systems like ideal gas and ideal crystals analytically and numerically
+  * understand the link between various ensembles; both mathematical and physical links
+  * be able to simulate phase transitions via models like the Ising class of models
+  * be able to perform molecular dynamics calculations using the velocity Verlet algorithm and simulate phase transitions and visualize and analyze results using realistic interactions.  
 
 
 === Methods in Theoretical Physics PHY415 ===
-After completing Methods in Theoretical Physics PHY415, students should be able:
 
-   o Here one could discuss algorithms which are relevant for the other physics courses discussed here, such as particular eigenvalue solvers. Furthermore, when solving famous differential equations in physics, one can write functions to generate polynomials like Legendre, Laguerre, Hermite functions etc. Here it would be natural to discuss Gaussian quadrature and how to use this to integrate numerically.
+After completing Methods in Theoretical Physics PHY415, students should be able to:
+  * Understand how to discretize differential equations and understand the mathematical truncation errors
+  * Understand errors in mathematical algorithms
+  * be able to rewrite differential equations using methods from linear algebra
+  * know important algorithms for solving eigenvalue problems
+  * be able to solve initial value and boundary value problems analytically and numerically
+  * know central algorithms for solving eigenvalue problems
+  * Solve differential equations numerically and compare with analytical solutions
+  * understand  important orthogonal orthogonal polynomials like Legendre, Hermite and Laguerre. Be able to set up their recursion relations and visualize the polynomials. 
+  * Understand Fourier transforms and algorithms like Fast Fourier transform
+  * Know tools to analyze time series
+  * more...
+
+Many of these algorithms can be discussed and used in the other courses discussed here.
 
 === Advanced Laboratory course in Physics PHY451 ===
 After completing Advanced Laboratory course in Physics PHY451, students should be able to:
@@ -257,9 +282,21 @@ After completing Advanced Laboratory course in Physics PHY451, students should b
 === Quantum mechanics 1  PHY 471 ===
 
 After completing Quantum mechanics 1  PHY 471, students should be able to:
+  * be able to visualize the solutions of quantum mechanical problems, both stationary and time-dependent problems
+  * be able to scale the equations properly and understand the meaning of natural length scales, from the Bohr radius to simple harmonic oscillator problems with frequency dependent length scale. The same scaling procedure is  used to derive the analytical solutions for several single-particle problems. 
+  * use numerical methods for solving a large variety of one-dimensional differential equations with two-point boundary value problems. For many cases one can compare directly with standard analytical  solutions like the hydrogen-like problems or the harmonic oscillator.
+  * Verification of numerical solutions with analytical results.
+  * be able to rewrite Schroedinger's equation as an eigenvalue problem and use numerical eigenvalue methods for computing a single-particle confined in a one-dimensional infinite potential and compare with analytical results. This problem is the same as the eigenvalue problem of a buckling beam, which can be used the in the mechanics and mathematical methods course. 
+  * use the the same eigenvalue solvers to study a single particle confined to move in a potential well with a finite depth and extension. Study both bound and unbound states and explore the numerical solutions as functions of the potential depth and the extension of the potential. 
+  * The same codes can be used to solve the hydrogen atom and the one-dimensional harmonic oscillator. This part allows for comparison with analytical results. 
+  * Visualize the probability distributions for electrons (or other one-particle problems) confined to move in hydrogen-like and harmonic oscillator like problems. Study the probability distributions for ground and excited states. Discuss unbound states with a finite potential well.
+  * Use the same codes to study double-well potentials. These are problems of great interest in solid state physics.
+  * Rewrite a two-electron (or two-particle problem) problem in terms of the relative and center-of-mass motion and study the role of repulsive Coulomb forces) for electrons (or other fermions) trapped 
+  * Visualize and compute tunneling phenomena for various potentials.
+  * Introduce the  variational principle and introduce variational Monte Carlo methods to study one-particle problems and compare these with analytical results and numerical results from differental equation solvers.  The Metropolis algorithm discussed in Statistical physics can be reused here. Gives the students a further understanding of statistics related topics, including random number generators, probability distributions, mean values and standard deviations. These issues would also be discussed in PHY415. The students will then see central algorithms being used in different physics settings.
 
-   o Ordinary and partial differential equations, eigenvalue solvers and root finding methods. Can explore interacting two-electron problem with simple rewriting of for example harmonic oscillator problem. The Metropolis algorithm can be used to simulate one and two-body problems like the Helium atom using Variational Monte Carlo. Gives students a feeling for variational calculus which can be included and  taught in PHY415 and possible extensions to Quantum mechanics 2 PHY 472
 
+Many of these topics can be included and extended upon i PHY472. 
 === Electromagnetism 1 PHY481 ===
 
 After completing Electromagnetism 1 PHY481, students should be able to:
@@ -280,7 +317,7 @@ After completing Electromagnetism 1 PHY481, students should be able to:
   * Compare the quality of the simulations (i.e., number of iterations, step size, and error control) that employ the Jacobi method and the Gauss-Seidel method
   * See "the detailed learning outcomes for PHY 481":"https://dannycab.github.io/phy481msu/learning_goals.html" for more information.
 
-
+Many of these topics can be included and extended upon i PHY482. 
 
 #
 # Danny: I haven't yet reviewed the material below in detail because I wanted
@@ -328,13 +365,14 @@ These could be (presently some of this is covered by PHY905, sections 002 and 00
   o  Computational quantum mechanics, spanning from Monte Carlo methods to other methods used in atomic, molecular, nuclear, condensed matter and high-energy physics
   o  Computational Statistical mechanics, covering topics spanning from Molecular dynamics to studies of phase transitions, highly relevant for several subdisciplines
   o  Computational Astrophysics and Astronomy
-  o  Data analysis and machine learning tailored to physics problems (PA+CSME?)
-  o  High-performance computing (CSME)
-  o  More...
+  o  Data analysis and machine learning tailored to physics problems. This course can be jointly taught with the new department of Computational Science.
+  o  High-performance computing
+  o  Other courses
 
 ===== A possible Physics major in computational physics and a possible MSc in Computational Physics =====
 
-To be discussed.
+The above advanced courses can form the basis for a MSc in computational physics, as well as, together with 
+CSME courses, a major in computational physics. Need to elaborate a meaningful path here. 
 
 
 #
