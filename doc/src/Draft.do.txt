@@ -1,4 +1,4 @@
-TITLE: Computational Physics at the Physics and Astronomy Department, Michigan State University
+TITLE: Computating in Physics courses  at the Physics and Astronomy Department, Michigan State University
 AUTHOR: Danny Caballero, Sean Couch, Wade Fisher, Connor Glosser, Morten Hjorth-Jensen, Claire Kopenhafer, Brian O'Shea, and Carlo Piermarocchi
 DATE: today
 
@@ -296,7 +296,7 @@ After completing Quantum mechanics 1  PHY 471, students should be able to:
   * Introduce the  variational principle and introduce variational Monte Carlo methods to study one-particle problems and compare these with analytical results and numerical results from differental equation solvers.  The Metropolis algorithm discussed in Statistical physics can be reused here. Gives the students a further understanding of statistics related topics, including random number generators, probability distributions, mean values and standard deviations. These issues would also be discussed in PHY415. The students will then see central algorithms being used in different physics settings.
 
 
-Many of these topics can be included and extended upon i PHY472. 
+Many of these topics can be included and extended upon in PHY472. 
 === Electromagnetism 1 PHY481 ===
 
 After completing Electromagnetism 1 PHY481, students should be able to:
@@ -317,7 +317,7 @@ After completing Electromagnetism 1 PHY481, students should be able to:
   * Compare the quality of the simulations (i.e., number of iterations, step size, and error control) that employ the Jacobi method and the Gauss-Seidel method
   * See "the detailed learning outcomes for PHY 481":"https://dannycab.github.io/phy481msu/learning_goals.html" for more information.
 
-Many of these topics can be included and extended upon i PHY482. 
+Many of these topics can be included and extended upon in PHY482. 
 
 #
 # Danny: I haven't yet reviewed the material below in detail because I wanted
