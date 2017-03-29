@@ -289,7 +289,20 @@ Many of these algorithms can be discussed and used in the other courses discusse
 === Advanced Laboratory course in Physics PHY451 ===
 After completing Advanced Laboratory course in Physics PHY451, students should be able to:
 
-   o Data analysis plays a central role, natural to have algorithms on data fitting, computations  of mean values, variance and standard deviations, covariance, famous distributions. Many of these topics find also their natural place in a course on statistical physics like PHY410.
+- read data from CSV files constructed by oscilloscope or LabView program
+- rescale and plot these data
+- smooth, filter, and transform data as needed for specific experiments 
+- compute numerical derivatives or integrals of data as needed for specific experiments 
+- construct a linear fit, fit to exponentials, and a nonlinear fit to a sum of Gaussians or Lorentzians as needed for specific experiments
+- numerically determine location of peaks in data
+- perform a fast Fourier transform and construct a power spectrum of data as needed
+- make histograms from a single column of data
+- calculate mean, standard deviation of data
+- compare histogram to Poisson distribution 
+with the same mean
+- numerically count number of peaks or dips in a spectrum
+- plot data and fits on same figure
+- numerically determine goodness of a fit using residuals
 
 === Quantum mechanics 1  PHY 471 ===
 
