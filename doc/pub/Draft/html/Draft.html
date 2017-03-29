@@ -178,7 +178,7 @@ On the part of students, this competence involves being able to:
 <li> think algorithmically for the purposes of gaining deeper insights about scientific problems.</li>
 </ul>
 
-All these elements are central for maturing and gaining a better understanding of the modern scientific process <em>per se</em>.
+All these elements are central for maturing and gaining a better understanding of the modern scientific process per se.
 
 <p>
 The power of the scientific method lies in identifying a given problem
@@ -285,13 +285,9 @@ Preparing a problem to be solved numerically (i.e., modeling) is a critical step
 
 <ul>
 <li> The ability to solve real problems from applied sciences by:</li>
-
-<ul>
-  <li> Deriving computational models from basic principles in physics and articulating the underlying assumptions in those models,</li>
-  <li> Constructing models with dimensionless forms to reduce and simplify input data, and</li>
-  <li> Interpreting the model's dimensionless parameters to increase their understanding of the model and its predictions</li>
-</ul>
-
+<li> Deriving computational models from basic principles in physics and articulating the underlying assumptions in those models,</li>
+<li> Constructing models with dimensionless forms to reduce and simplify input data, and</li>
+<li> Interpreting the model's dimensionless parameters to increase their understanding of the model and its predictions</li>
 </ul>
 
 <h3 id="___sec8">Learning outcomes for verification </h3>
@@ -302,15 +298,11 @@ Verifying the model and the resulting outcomes it produces are essential element
 <ul>
 <li> An understanding of how to program testing procedures</li>
 <li> A deep knowledge of testing/verification methods including the use of:</li>
-
-<ul>
-  <li> Exact solutions of numerical models</li>
-  <li> Method of manufactured solutions (i.e., choose solution and fit a problem)</li>
-  <li> Classical analytical solutions including asymptotic solutions</li>
-  <li> Computed asymptotic approximation errors (i.e., convergence rates)</li>
-  <li> Step-wise construction of tests to aid debugging.</li>
-</ul>
-
+<li> Exact solutions of numerical models</li>
+<li> Method of manufactured solutions (i.e., choose solution and fit a problem)</li>
+<li> Classical analytical solutions including asymptotic solutions</li>
+<li> Computed asymptotic approximation errors (i.e., convergence rates)</li>
+<li> Step-wise construction of tests to aid debugging.</li>
 </ul>
 
 <h3 id="___sec9">Learning outcomes for presentation of results </h3>
@@ -342,38 +334,38 @@ The algorithms and tools listed here can be intergated in different ways dependi
 The following mathematical formulations of problems from the physical sciences play a prominent role and should be reflected in how we teach physics:
 
 <ul>
- <li> Ordinary differential equations
+<li> Ordinary differential equations
 
 <ol type="a"></li>
   <li> Euler, modified Euler, Verlet and Runge-Kutta methods with applications to problems in electromagnetism, methods for theoretical physics, quantum mechanics and mechanics.</li>
 </ol>
 
- <li> Partial differential equations
+<li> Partial differential equations
 
 <ol type="a"></li>
   <li> Diffusion in one and two dimensions (statistical physics), wave equation in one and two dimensions (mechanics, electromagnetism, quantum mechanics, methods for theoretical physics) and Laplace's and Poisson's equations (electromagnetism).</li>
 </ol>
 
- <li> Numerical integration
+<li> Numerical integration
 
 <ol type="a"></li>
   <li> Trapezoidal and Simpson's rule and Monte Carlo integration. Applications in statistical physics, methods of theoretical physics, electromagnetism and quantum mechanics.</li>
 </ol>
 
- <li> Statistical analysis, random numbers, random walks, probability distributions, Monte Carlo integration and Metropolis algorithm. Applications to statistical physics and laboratory courses.</li>
- <li> Linear Algebra and eigenvalue problems.
+<li> Statistical analysis, random numbers, random walks, probability distributions, Monte Carlo integration and Metropolis algorithm. Applications to statistical physics and laboratory courses.</li>
+<li> Linear Algebra and eigenvalue problems.
 
 <ol type="a"></li>
   <li> Gaussian elimination, LU-decomposition, eigenvalue solvers, and iterative methods like  Jacobi or Gauss-Seidel for systems of linear equations. Important for several courses, classical mechanics, methods of theoretical physics, electromagnetism and quantum mechanics.</li>
 </ol>
 
- <li> Signal processing
+<li> Signal processing
 
 <ol type="a"></li>
   <li> Discrete (fast) Fourier transforms, Lagrange/spline/Fourier interpolation, numeric convolutions &amp; circulant matrices, filtering. Applications in electromagnetics, quantum mechanics, and experimental physics (data acquisition)</li>
 </ol>
 
- <li> Root finding techniques, used in methods for theoretical physics, quantum mechanics, electromagnetism and mechanics.</li>
+<li> Root finding techniques, used in methods for theoretical physics, quantum mechanics, electromagnetism and mechanics.</li>
 </ul>
 
 In order to achieve a proper pedagogical introduction of these algorithms, it is important that students and teachers alike see how these algorithms are used to solve a variety of physics problems. The same algorithm, for example the solution of a second-order differential equation, can be used to solve the equations for the classical pendulum in a mechanics course or the (with a suitable change of variables) equations for a coupled RLC circuit in the electromagnetism course. Similarly, if students develop a program for studies of celestial bodies in the mechanics course, many of the elements of such a program can be reused in a molecular dynamics calculation in a course on statistical physics and thermal physics. The two-point boundary value problem for a buckling beam
@@ -463,11 +455,11 @@ What follows below is a suggested listed of possible learning outcomes. These su
 
 <p>
 <!--  -->
-<!-- Danny: I have only constructed learning goals for PHY 481. I intend these -->
-<!-- to provide a example of what our goals might look like. They are debatable -->
-<!-- and not set in stone, but what they do is provide us with a starting point -->
-<!-- for discussion and an example of what measurable (i.e., assessable) -->
-<!-- learning goals might look like. -->
+Danny: I have only constructed learning goals for PHY 481. I intend these
+to provide a example of what our goals might look like. They are debatable
+and not set in stone, but what they do is provide us with a starting point
+for discussion and an example of what measurable (i.e., assessable)
+learning goals might look like.
 <!--  -->
 
 <p>
@@ -475,28 +467,41 @@ We propose that the following courses aim to integrate the above learning outcom
 
 <h3 id="___sec14">Classical Mechanics 1 PHY321 </h3>
 
+<p>
 After completing Classical Mechanics 1 PHY321, students should be able to:
 
-<ol>
-  <li> Here one could focus on ordinary differential equations like modified Euler, Verlet and perhaps RK methods. There are several interesting problems that can deepen the understanding of newtonian problems, from modeling planetary motion to models for friction and earthquake simulations. With not too advanced programs one can easily bring in actual research problems (friction is a good example).  The classical pendulum is also a good case to illustrate. The code can easily be reused for studies of for example an RLC circuit in electromagnetism. The equations for a buckling beam lead to an eigenvalue problem which can reused in the quantum mechanics course.</li>
-</ol>
+<ul>
+<li> Represent numbers, complex numbers, vectors, matrices as variables and do simple and appropriate mathematics on these</li>
+<li> Access constants and physical constants defined in libraries</li>
+<li> Construct and slice arrays</li>
+<li> Use functions defined in relevant libraries</li>
+<li> Write functions to perform specialized tasks</li>
+<li> determine the root of an algebraic equation numerically using Newton's method</li> 
+<li> explain Newton's method for finding roots</li>
+<li> solve a system of algebraic equations using Gaussian elimination numerically</li>
+<li> explain Gaussian elimination</li> 
+<li> solve 1st Order, 2nd Order and Coupled ODEs numerically using Euler-Cromer, Verlet, and/or Runge-Kutta algorithms</li> 
+<li> explain the differences between each of the above algorithms</li> 
+<li> compare the quality of simulations (i.e., number of iterations, step size, and error control) of particle motion that use different motion prediction algorithms</li>
+<li> plot solutions</li> 
+</ul>
 
 <h3 id="___sec15">Thermal and Statistical Physics PHY410 </h3>
 
 After completing Thermal and Statistical Physics PHY410, students should be able to:
 
 <ul>
-  <li> use central probability distributions and their relation to various expectation values</li>
-  <li> simulate and visualize central probability distributions like the uniform distributions, the exponential distribution and the normal (Gaussian distribution)</li>
-  <li> use concept from statistics to understand central ensembles like the microcanonical and the canonical ensembles</li>
-  <li> simulate Markov processes and understand the links with the process of diffusion (Fick's and Fourier's laws) and the concept of most likely states</li>
-  <li> understand how to simulate stochastic variables using random number generators</li>
-  <li> understand central algorithms like the Metropolis algorithm to simulate systems in statistical physics</li>
-  <li> understand the physics of various phases and phase transitions</li> 
-  <li> study systems like ideal gas and ideal crystals analytically and numerically</li>
-  <li> understand the link between various ensembles; both mathematical and physical links</li>
-  <li> be able to simulate phase transitions via models like the Ising class of models</li>
-  <li> be able to perform molecular dynamics calculations using the velocity Verlet algorithm and simulate phase transitions and visualize and analyze results using realistic interactions.</li>  
+<li> use central probability distributions and their relation to various expectation values</li>
+<li> simulate and visualize central probability distributions like the uniform distributions, the exponential distribution and the normal (Gaussian distribution)</li>
+<li> use concept from statistics to understand central ensembles like the microcanonical and the canonical ensembles</li>
+<li> simulate Markov processes and understand the links with the process of diffusion (Fick's and Fourier's laws) and the concept of most likely states</li>
+<li> understand how to simulate stochastic variables using random number generators</li>
+<li> understand central algorithms like the Metropolis algorithm to simulate systems in statistical physics</li>
+<li> understand the physics of various phases and phase transitions</li> 
+<li> study systems like ideal gas and ideal crystals analytically and numerically</li>
+<li> understand the link between various ensembles; both mathematical and physical links</li>
+<li> be able to simulate phase transitions via models like the Ising class of models</li>
+<li> be able to perform molecular dynamics calculations using the velocity Verlet algorithm and simulate phase transitions and visualize and analyze results using realistic interactions.</li>  
 </ul>
 
 <h3 id="___sec16">Methods in Theoretical Physics PHY415 </h3>
@@ -505,17 +510,16 @@ After completing Thermal and Statistical Physics PHY410, students should be able
 After completing Methods in Theoretical Physics PHY415, students should be able to:
 
 <ul>
-  <li> Understand how to discretize differential equations and understand the mathematical truncation errors</li>
-  <li> Understand errors in mathematical algorithms</li>
-  <li> be able to rewrite differential equations using methods from linear algebra</li>
-  <li> know important algorithms for solving eigenvalue problems</li>
-  <li> be able to solve initial value and boundary value problems analytically and numerically</li>
-  <li> know central algorithms for solving eigenvalue problems</li>
-  <li> Solve differential equations numerically and compare with analytical solutions</li>
-  <li> understand  important orthogonal orthogonal polynomials like Legendre, Hermite and Laguerre. Be able to set up their recursion relations and visualize the polynomials.</li> 
-  <li> Understand Fourier transforms and algorithms like Fast Fourier transform</li>
-  <li> Know tools to analyze time series</li>
-  <li> more...</li>
+<li> Understand how to discretize differential equations and understand the mathematical truncation errors</li>
+<li> Understand errors in mathematical algorithms</li>
+<li> be able to rewrite differential equations using methods from linear algebra</li>
+<li> know important algorithms for solving eigenvalue problems</li>
+<li> be able to solve initial value and boundary value problems analytically and numerically</li>
+<li> know central algorithms for solving eigenvalue problems</li>
+<li> Solve differential equations numerically and compare with analytical solutions</li>
+<li> understand  important orthogonal orthogonal polynomials like Legendre, Hermite and Laguerre. Be able to set up their recursion relations and visualize the polynomials.</li> 
+<li> Understand Fourier transforms and algorithms like Fast Fourier transform</li>
+<li> Know tools to analyze time series</li>
 </ul>
 
 Many of these algorithms can be discussed and used in the other courses discussed here.
@@ -524,9 +528,21 @@ Many of these algorithms can be discussed and used in the other courses discusse
 
 After completing Advanced Laboratory course in Physics PHY451, students should be able to:
 
-<ol>
-  <li> Data analysis plays a central role, natural to have algorithms on data fitting, computations  of mean values, variance and standard deviations, covariance, famous distributions. Many of these topics find also their natural place in a course on statistical physics like PHY410.</li>
-</ol>
+<ul>
+<li> read data from CSV files constructed by oscilloscope or LabView program</li>
+<li> rescale and plot these data</li>
+<li> smooth, filter, and transform data as needed for specific experiments</li> 
+<li> compute numerical derivatives or integrals of data as needed for specific experiments</li> 
+<li> construct a linear fit, fit to exponentials, and a nonlinear fit to a sum of Gaussians or Lorentzians as needed for specific experiments</li>
+<li> numerically determine location of peaks in data</li>
+<li> perform a fast Fourier transform and construct a power spectrum of data as needed</li>
+<li> make histograms from a single column of data</li>
+<li> calculate mean, standard deviation of data</li>
+<li> compare histogram to Poisson distribution with the same mean</li>
+<li> numerically count number of peaks or dips in a spectrum</li>
+<li> plot data and fits on same figure</li>
+<li> numerically determine goodness of a fit using residuals</li>
+</ul>
 
 <h3 id="___sec18">Quantum mechanics 1  PHY 471 </h3>
 
@@ -534,18 +550,18 @@ After completing Advanced Laboratory course in Physics PHY451, students should b
 After completing Quantum mechanics 1  PHY 471, students should be able to:
 
 <ul>
-  <li> be able to visualize the solutions of quantum mechanical problems, both stationary and time-dependent problems</li>
-  <li> be able to scale the equations properly and understand the meaning of natural length scales, from the Bohr radius to simple harmonic oscillator problems with frequency dependent length scale. The same scaling procedure is  used to derive the analytical solutions for several single-particle problems.</li> 
-  <li> use numerical methods for solving a large variety of one-dimensional differential equations with two-point boundary value problems. For many cases one can compare directly with standard analytical  solutions like the hydrogen-like problems or the harmonic oscillator.</li>
-  <li> Verification of numerical solutions with analytical results.</li>
-  <li> be able to rewrite Schroedinger's equation as an eigenvalue problem and use numerical eigenvalue methods for computing a single-particle confined in a one-dimensional infinite potential and compare with analytical results. This problem is the same as the eigenvalue problem of a buckling beam, which can be used the in the mechanics and mathematical methods course.</li> 
-  <li> use the the same eigenvalue solvers to study a single particle confined to move in a potential well with a finite depth and extension. Study both bound and unbound states and explore the numerical solutions as functions of the potential depth and the extension of the potential.</li> 
-  <li> The same codes can be used to solve the hydrogen atom and the one-dimensional harmonic oscillator. This part allows for comparison with analytical results.</li> 
-  <li> Visualize the probability distributions for electrons (or other one-particle problems) confined to move in hydrogen-like and harmonic oscillator like problems. Study the probability distributions for ground and excited states. Discuss unbound states with a finite potential well.</li>
-  <li> Use the same codes to study double-well potentials. These are problems of great interest in solid state physics.</li>
-  <li> Rewrite a two-electron (or two-particle problem) problem in terms of the relative and center-of-mass motion and study the role of repulsive Coulomb forces) for electrons (or other fermions) trapped</li> 
-  <li> Visualize and compute tunneling phenomena for various potentials.</li>
-  <li> Introduce the  variational principle and introduce variational Monte Carlo methods to study one-particle problems and compare these with analytical results and numerical results from differental equation solvers.  The Metropolis algorithm discussed in Statistical physics can be reused here. Gives the students a further understanding of statistics related topics, including random number generators, probability distributions, mean values and standard deviations. These issues would also be discussed in PHY415. The students will then see central algorithms being used in different physics settings.</li>
+<li> be able to visualize the solutions of quantum mechanical problems, both stationary and time*dependent problems</li>
+<li> be able to scale the equations properly and understand the meaning of natural length scales, from the Bohr radius to simple harmonic oscillator problems with frequency dependent length scale. The same scaling procedure is  used to derive the analytical solutions for several single*particle problems.</li> 
+<li> use numerical methods for solving a large variety of one*dimensional differential equations with two*point boundary value problems. For many cases one can compare directly with standard analytical  solutions like the hydrogen*like problems or the harmonic oscillator.</li>
+<li> Verification of numerical solutions with analytical results.</li>
+<li> be able to rewrite Schroedinger's equation as an eigenvalue problem and use numerical eigenvalue methods for computing a single*particle confined in a one*dimensional infinite potential and compare with analytical results. This problem is the same as the eigenvalue problem of a buckling beam, which can be used the in the mechanics and mathematical methods course.</li> 
+<li> use the the same eigenvalue solvers to study a single particle confined to move in a potential well with a finite depth and extension. Study both bound and unbound states and explore the numerical solutions as functions of the potential depth and the extension of the potential.</li> 
+<li> The same codes can be used to solve the hydrogen atom and the one*dimensional harmonic oscillator. This part allows for comparison with analytical results.</li> 
+<li> Visualize the probability distributions for electrons (or other one*particle problems) confined to move in hydrogen*like and harmonic oscillator like problems. Study the probability distributions for ground and excited states. Discuss unbound states with a finite potential well.</li>
+<li> Use the same codes to study double*well potentials. These are problems of great interest in solid state physics.</li>
+<li> Rewrite a two*electron (or two*particle problem) problem in terms of the relative and center*of*mass motion and study the role of repulsive Coulomb forces) for electrons (or other fermions) trapped</li> 
+<li> Visualize and compute tunneling phenomena for various potentials.</li>
+<li> Introduce the  variational principle and introduce variational Monte Carlo methods to study one*particle problems and compare these with analytical results and numerical results from differental equation solvers.  The Metropolis algorithm discussed in Statistical physics can be reused here. Gives the students a further understanding of statistics related topics, including random number generators, probability distributions, mean values and standard deviations. These issues would also be discussed in PHY415. The students will then see central algorithms being used in different physics settings.</li>
 </ul>
 
 Many of these topics can be included and extended upon in PHY472.
@@ -556,32 +572,32 @@ Many of these topics can be included and extended upon in PHY472.
 After completing Electromagnetism 1 PHY481, students should be able to:
 
 <ul>
-  <li> use symbolic computing tools to determine the gradient of various scalar fields</li>
-  <li> use symbolic computing to determine the divergence and curl of various vector fields</li>
-  <li> represent the vector (e.g., electric) field visually using vector plots and stream plots</li>
-  <li> represent a 2D scalar (i.e., potential) field visually using 2D contour plots and 3D surface plots</li>
-  <li> apply motion prediction algorithms Euler, Verlet, and Runge-Kutta to model the motion of charged particles in electric and magnetic fields</li>
-  <li> compare the quality of simulations (i.e., number of iterations, step size, and error control) of charged particle motion that use different motion prediction algorithms</li>
-  <li> apply Coulomb's law iteratively to determine the electric field produced by a given charge distribution</li>
-  <li> apply Biot-Savart's law iteratively to determine the magnetic field produced by a given current distribution</li>
-  <li> explain how the application of superposition iteratively gives rise to approximate field solutions</li>
-  <li> explain how the simple relaxation algorithm works (i.e., iteratively averaging neighboring points) and how it is derived from the properties of the solutions to Laplace's equation</li>
-  <li> apply this simple relaxation method to find the potential for 1D and 2D electrostatic situations where Laplace's equation is satisfied</li>
-  <li> explain how to use the finite-differencing to recast Poisson's equation into a discrete formulation and how the resulting discretized form compares with the simple relaxation method (i.e., iteratively averaging neighboring points)</li>
-  <li> apply the Jacobi and Gauss-Seidel methods to solve 2D Laplace and Poisson problems including graphing the results in three dimensions</li>
-  <li> explain the differences between the Jacobi and Gauss-Seidel methods and how these methods are connected to the derivation using finite differencing</li>
-  <li> Compare the quality of the simulations (i.e., number of iterations, step size, and error control) that employ the Jacobi method and the Gauss-Seidel method</li>
-  <li> See <a href="https://dannycab.github.io/phy481msu/learning_goals.html" target="_blank">the detailed learning outcomes for PHY 481</a> for more information.</li>
+<li> use symbolic computing tools to determine the gradient of various scalar fields</li>
+<li> use symbolic computing to determine the divergence and curl of various vector fields</li>
+<li> represent the vector (e.g., electric) field visually using vector plots and stream plots</li>
+<li> represent a 2D scalar (i.e., potential) field visually using 2D contour plots and 3D surface plots</li>
+<li> apply motion prediction algorithms Euler, Verlet, and Runge*Kutta to model the motion of charged particles in electric and magnetic fields</li>
+<li> compare the quality of simulations (i.e., number of iterations, step size, and error control) of charged particle motion that use different motion prediction algorithms</li>
+<li> apply Coulomb's law iteratively to determine the electric field produced by a given charge distribution</li>
+<li> apply Biot*Savart's law iteratively to determine the magnetic field produced by a given current distribution</li>
+<li> explain how the application of superposition iteratively gives rise to approximate field solutions</li>
+<li> explain how the simple relaxation algorithm works (i.e., iteratively averaging neighboring points) and how it is derived from the properties of the solutions to Laplace's equation</li>
+<li> apply this simple relaxation method to find the potential for 1D and 2D electrostatic situations where Laplace's equation is satisfied</li>
+<li> explain how to use the finite*differencing to recast Poisson's equation into a discrete formulation and how the resulting discretized form compares with the simple relaxation method (i.e., iteratively averaging neighboring points)</li>
+<li> apply the Jacobi and Gauss*Seidel methods to solve 2D Laplace and Poisson problems including graphing the results in three dimensions</li>
+<li> explain the differences between the Jacobi and Gauss*Seidel methods and how these methods are connected to the derivation using finite differencing</li>
+<li> Compare the quality of the simulations (i.e., number of iterations, step size, and error control) that employ the Jacobi method and the Gauss*Seidel method</li>
+<li> See <a href="https://dannycab.github.io/phy481msu/learning_goals.html" target="_blank">the detailed learning outcomes for PHY 481</a> for more information.</li>
 </ul>
 
 Many of these topics can be included and extended upon in PHY482.
 
 <p>
 <!--  -->
-<!-- Danny: I haven't yet reviewed the material below in detail because I wanted -->
-<!-- us to spend time discussing the learning outcomes. These learning outcomes -->
-<!-- are connected to the work that the Physics Education Research Lab would do -->
-<!-- as we help to develop assessments and evaluations to share with the faculty -->
+Danny: I haven't yet reviewed the material below in detail because I wanted
+us to spend time discussing the learning outcomes. These learning outcomes
+are connected to the work that the Physics Education Research Lab would do
+as we help to develop assessments and evaluations to share with the faculty
 <!--  -->
 
 <h2 id="___sec20">Physics Education research and computing in science education </h2>
@@ -590,10 +606,10 @@ Many of these topics can be included and extended upon in PHY482.
 The introduction of computational elements in the various courses should be stronly integrated with ongoing research on physics education.
 
 <p>
-The Physics and Astronomy department at MSU is in a unique position due to its strong research group in physics education, the <a href="http://www.pa.msu.edu/research/physics-education-lab" target="_blank">PERL group</a>.
+The Physics and Astronomy department at MSU is in a unique position due to its strong research group in physics education, the <a href="http://www.pa.msu.edu/research/physics*education*lab" target="_blank">PERL group</a>.
 This means that it is possible to
 develop research motivated curricular changes.  There are many interesting challenges here, like
-which are the main obstacles when transferring from a classical pen and paper approach to actually have a working program which solves the same (and more general problems). What is a good progression in presenting numerical topics in physics courses? Are there specific mathematical skills we would like our students to have? How do we integrate student-active teaching, how do we develop and test various assessment methods?
+which are the main obstacles when transferring from a classical pen and paper approach to actually have a working program which solves the same (and more general problems). What is a good progression in presenting numerical topics in physics courses? Are there specific mathematical skills we would like our students to have? How do we integrate student*active teaching, how do we develop and test various assessment methods?
 
 <h2 id="___sec21">Advanced computational physics courses </h2>
 
@@ -603,17 +619,17 @@ Furthemore, such a course, like the present <a href="https://github.com/CompPhys
 The  course could cover
 
 <ul>
-  <li> C++ and/or Fortran programming</li>
-  <li> Numerical derivation and integration</li>
-  <li> Random numbers and Monte Carlo integration</li>
-  <li> Monte Carlo methods in statistical physics</li>
-  <li> Quantum Monte Carlo methods</li>
-  <li> Linear algebra and eigenvalue problems</li>
-  <li> Non-linear equations and roots of polynomials</li>
-  <li> Ordinary differential equations</li>
-  <li> Partial differential equations</li>
-  <li> Parallelization of codes</li>
-  <li> High-performance computing aspects and optimization of codes</li>
+<li> C++ and/or Fortran programming</li>
+<li> Numerical derivation and integration</li>
+<li> Random numbers and Monte Carlo integration</li>
+<li> Monte Carlo methods in statistical physics</li>
+<li> Quantum Monte Carlo methods</li>
+<li> Linear algebra and eigenvalue problems</li>
+<li> Non*linear equations and roots of polynomials</li>
+<li> Ordinary differential equations</li>
+<li> Partial differential equations</li>
+<li> Parallelization of codes</li>
+<li> High*performance computing aspects and optimization of codes</li>
 </ul>
 
 During the last years, we have witnessed an enhanced background in computing and programming skills among our students. Our students will however always form a heteregeneous group, with often differing competences, experiences and interests. In order to be able to offer a wider spectrum of computational physics courses, the present working group would like to propose courses that can be used in both a major in computational physics, or a Master of Science in computational physics, or a dual degree from the Physics and Astronomy department and the new Computational Mathematics, Science and Engineering (CMSE) department, or just satisfy the scientific interests of our students
@@ -624,7 +640,7 @@ consider more advanced (at the graduate level) courses which cover specialized t
 These could be (presently some of these topics  are covered by PHY905, sections 002 and 003)
 
 <ol>
-  <li> Computational quantum mechanics, spanning from Monte Carlo methods to other methods used in atomic, molecular, nuclear, condensed matter and high-energy physics</li>
+  <li> Computational quantum mechanics, spanning from Monte Carlo methods to other methods used in atomic, molecular, nuclear, condensed matter and high*energy physics</li>
   <li> Computational Statistical mechanics, covering topics spanning from Molecular dynamics to studies of phase transitions, highly relevant for several subdisciplines</li>
   <li> Computational Astrophysics and Astronomy</li>
   <li> Data analysis and machine learning tailored to physics problems. This course can be jointly taught with the new department of Computational Science.</li>
@@ -650,27 +666,23 @@ The Master of Science in Computational Physics has a duration of two years, with
 <ol>
 <li> The thesis work is to be conducted with one or more research groups at the Department of Physics and Astronomy. It can also be of a more interdisciplinary character and can be a joint thesis with another department at the College of Natural Science and College of Engineering.</li> 
 <li> Core physics courses (these courses should be compulsory)</li> 
-
-<ul>
-  <li> PHY 810 - Methods of Theoretical Physics, 3 credits, fall semester</li>
-  <li> PHY 820 - Classical Mechanics, 3 credits, fall semester</li> 
-  <li> PHY 851 - Quantum Mechanics I, 3 credits, fall semester</li> 
-  <li> PHY 841 - Classical Electrodynamics I, 3 credits, spring semester</li> 
-  <li> PHY 831 - Statistical Mechanics, 3 credits, fall semester</li>
-</ul>
-
+<li> PHY 810 * Methods of Theoretical Physics, 3 credits, fall semester</li>
+<li> PHY 820 * Classical Mechanics, 3 credits, fall semester</li> 
+<li> PHY 851 * Quantum Mechanics I, 3 credits, fall semester</li> 
+<li> PHY 841 * Classical Electrodynamics I, 3 credits, spring semester</li> 
+<li> PHY 831 * Statistical Mechanics, 3 credits, fall semester</li>
 <li> Computational Science and Physics courses, select in order to fill up necessary credit requirements.</li>
 
 <ul>
-   <li> Computational quantum mechanics, spanning from Monte Carlo methods to other methods used in atomic, molecular, nuclear, condensed matter and high-energy physics</li>
-   <li> Computational Statistical mechanics, covering topics spanning from Molecular dynamics to studies of phase transitions, highly relevant for several subdisciplines</li>
-   <li> Computational Astrophysics and Astronomy</li>
-   <li> Data analysis and machine learning tailored to physics problems. This course can be jointly taught with the new department of Computational Science.</li>
-   <li> CMSE 802, Methods in Computational Modeling, 3 credits, spring and fall semesters</li>
-   <li> CMSE 820, Mathematical Foundations of Data Science, 3 credits, spring semester</li>
-   <li> CMSE 821, Numerical Methods for Differential Equations, 3 credits, spring semester</li>
-   <li> CMSE/CSE 822, Parallel Computing, 3 credits, fall semester</li>
-   <li> CMSE 823, Numerical Linear Algebra, I, 3 credits, fall semester</li>
+ <li> Computational quantum mechanics, spanning from Monte Carlo methods to other methods used in atomic, molecular, nuclear, condensed matter and high*energy physics</li>
+ <li> Computational Statistical mechanics, covering topics spanning from Molecular dynamics to studies of phase transitions, highly relevant for several subdisciplines</li>
+ <li> Computational Astrophysics and Astronomy</li>
+ <li> Data analysis and machine learning tailored to physics problems. This course can be jointly taught with the new department of Computational Science.</li>
+ <li> CMSE 802, Methods in Computational Modeling, 3 credits, spring and fall semesters</li>
+ <li> CMSE 820, Mathematical Foundations of Data Science, 3 credits, spring semester</li>
+ <li> CMSE 821, Numerical Methods for Differential Equations, 3 credits, spring semester</li>
+ <li> CMSE/CSE 822, Parallel Computing, 3 credits, fall semester</li>
+ <li> CMSE 823, Numerical Linear Algebra, I, 3 credits, fall semester</li>
 </ul>
 
 </ol>
