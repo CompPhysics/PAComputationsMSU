@@ -222,9 +222,9 @@ Unit testing is a central element in the development of numerical projects, from
 
 =====  Suggested learning goals for specific physics courses =====
 
-For a major in physics degree at Michigan State University, the course "CMSE 201 Introduction to Computational Modeling":"https://cmse.msu.edu/academics/undergraduate-program/undergraduate-courses/cmse-201-introduction-to-computational-modeling/" is compulsory and it lays the foundation for the use of computational exercises and projects in various physics courses. Based on this course, and the various mathematics courses included in a Physics degree, there is a unique possibility to incorporate computational exercises and projects in various physics courses, without taking away the attention from the basic physics topics to be covered. 
+For a major in physics degree at Michigan State University, the course "CMSE 201 Introduction to Computational Modeling":"https://cmse.msu.edu/academics/undergraduate-program/undergraduate-courses/cmse-201-introduction-to-computational-modeling/" is compulsory and it lays the foundation for the use of computational exercises and projects in various physics courses. Based on this course, and the various mathematics courses included in a Physics degree, there is a unique possibility to incorporate computational exercises and projects in various physics courses, without taking away the attention from the basic physics topics to be covered.
 
-What follows below is a suggested listed of possible learning outcomes. These suggestions are to be viewed as inputs to the ongoing discussions. The list of possible outcomes can be reduced or enlarged. 
+What follows below is a suggested listed of possible learning outcomes. These suggestions are to be viewed as inputs to the ongoing discussions. The list of possible outcomes can be reduced or enlarged.
 
 #
 Danny: I have only constructed learning goals for PHY 481. I intend these
@@ -245,14 +245,14 @@ After completing Classical Mechanics 1 PHY321, students should be able to:
 * Construct and slice arrays
 * Use functions defined in relevant libraries
 * Write functions to perform specialized tasks
-* determine the root of an algebraic equation numerically using Newton's method 
+* determine the root of an algebraic equation numerically using Newton's method
 * explain Newton's method for finding roots
 * solve a system of algebraic equations using Gaussian elimination numerically
-* explain Gaussian elimination 
-* solve 1st Order, 2nd Order and Coupled ODEs numerically using Euler-Cromer, Verlet, and/or Runge-Kutta algorithms 
-* explain the differences between each of the above algorithms 
+* explain Gaussian elimination
+* solve 1st Order, 2nd Order and Coupled ODEs numerically using Euler-Cromer, Verlet, and/or Runge-Kutta algorithms
+* explain the differences between each of the above algorithms
 * compare the quality of simulations (i.e., number of iterations, step size, and error control) of particle motion that use different motion prediction algorithms
-* plot solutions 
+* plot solutions
 
 === Thermal and Statistical Physics PHY410 ===
 After completing Thermal and Statistical Physics PHY410, students should be able to:
@@ -262,11 +262,11 @@ After completing Thermal and Statistical Physics PHY410, students should be able
 * simulate Markov processes and understand the links with the process of diffusion (Fick's and Fourier's laws) and the concept of most likely states
 * understand how to simulate stochastic variables using random number generators
 * understand central algorithms like the Metropolis algorithm to simulate systems in statistical physics
-* understand the physics of various phases and phase transitions 
+* understand the physics of various phases and phase transitions
 * study systems like ideal gas and ideal crystals analytically and numerically
 * understand the link between various ensembles; both mathematical and physical links
 * be able to simulate phase transitions via models like the Ising class of models
-* be able to perform molecular dynamics calculations using the velocity Verlet algorithm and simulate phase transitions and visualize and analyze results using realistic interactions.  
+* be able to perform molecular dynamics calculations using the velocity Verlet algorithm and simulate phase transitions and visualize and analyze results using realistic interactions.
 
 
 === Methods in Theoretical Physics PHY415 ===
@@ -279,7 +279,7 @@ After completing Methods in Theoretical Physics PHY415, students should be able 
 * be able to solve initial value and boundary value problems analytically and numerically
 * know central algorithms for solving eigenvalue problems
 * Solve differential equations numerically and compare with analytical solutions
-* understand  important orthogonal orthogonal polynomials like Legendre, Hermite and Laguerre. Be able to set up their recursion relations and visualize the polynomials. 
+* understand  important orthogonal orthogonal polynomials like Legendre, Hermite and Laguerre. Be able to set up their recursion relations and visualize the polynomials.
 * Understand Fourier transforms and algorithms like Fast Fourier transform
 * Know tools to analyze time series
 
@@ -291,8 +291,8 @@ After completing Advanced Laboratory course in Physics PHY451, students should b
 
 * read data from CSV files constructed by oscilloscope or LabView program
 * rescale and plot these data
-* smooth, filter, and transform data as needed for specific experiments 
-* compute numerical derivatives or integrals of data as needed for specific experiments 
+* smooth, filter, and transform data as needed for specific experiments
+* compute numerical derivatives or integrals of data as needed for specific experiments
 * construct a linear fit, fit to exponentials, and a nonlinear fit to a sum of Gaussians or Lorentzians as needed for specific experiments
 * numerically determine location of peaks in data
 * perform a fast Fourier transform and construct a power spectrum of data as needed
@@ -302,25 +302,26 @@ After completing Advanced Laboratory course in Physics PHY451, students should b
 * numerically count number of peaks or dips in a spectrum
 * plot data and fits on same figure
 * numerically determine goodness of a fit using residuals
+* propagating uncertainty when combining fit parameters using the covariance matrix
 
 === Quantum mechanics 1  PHY 471 ===
 
 After completing Quantum mechanics 1  PHY 471, students should be able to:
 * be able to visualize the solutions of quantum mechanical problems, both stationary and time*dependent problems
-* be able to scale the equations properly and understand the meaning of natural length scales, from the Bohr radius to simple harmonic oscillator problems with frequency dependent length scale. The same scaling procedure is  used to derive the analytical solutions for several single*particle problems. 
+* be able to scale the equations properly and understand the meaning of natural length scales, from the Bohr radius to simple harmonic oscillator problems with frequency dependent length scale. The same scaling procedure is  used to derive the analytical solutions for several single*particle problems.
 * use numerical methods for solving a large variety of one*dimensional differential equations with two*point boundary value problems. For many cases one can compare directly with standard analytical  solutions like the hydrogen*like problems or the harmonic oscillator.
 * Verification of numerical solutions with analytical results.
-* be able to rewrite Schroedinger's equation as an eigenvalue problem and use numerical eigenvalue methods for computing a single*particle confined in a one*dimensional infinite potential and compare with analytical results. This problem is the same as the eigenvalue problem of a buckling beam, which can be used the in the mechanics and mathematical methods course. 
-* use the the same eigenvalue solvers to study a single particle confined to move in a potential well with a finite depth and extension. Study both bound and unbound states and explore the numerical solutions as functions of the potential depth and the extension of the potential. 
-* The same codes can be used to solve the hydrogen atom and the one*dimensional harmonic oscillator. This part allows for comparison with analytical results. 
+* be able to rewrite Schroedinger's equation as an eigenvalue problem and use numerical eigenvalue methods for computing a single*particle confined in a one*dimensional infinite potential and compare with analytical results. This problem is the same as the eigenvalue problem of a buckling beam, which can be used the in the mechanics and mathematical methods course.
+* use the the same eigenvalue solvers to study a single particle confined to move in a potential well with a finite depth and extension. Study both bound and unbound states and explore the numerical solutions as functions of the potential depth and the extension of the potential.
+* The same codes can be used to solve the hydrogen atom and the one*dimensional harmonic oscillator. This part allows for comparison with analytical results.
 * Visualize the probability distributions for electrons (or other one*particle problems) confined to move in hydrogen*like and harmonic oscillator like problems. Study the probability distributions for ground and excited states. Discuss unbound states with a finite potential well.
 * Use the same codes to study double*well potentials. These are problems of great interest in solid state physics.
-* Rewrite a two*electron (or two*particle problem) problem in terms of the relative and center*of*mass motion and study the role of repulsive Coulomb forces) for electrons (or other fermions) trapped 
+* Rewrite a two*electron (or two*particle problem) problem in terms of the relative and center*of*mass motion and study the role of repulsive Coulomb forces) for electrons (or other fermions) trapped
 * Visualize and compute tunneling phenomena for various potentials.
 * Introduce the  variational principle and introduce variational Monte Carlo methods to study one*particle problems and compare these with analytical results and numerical results from differental equation solvers.  The Metropolis algorithm discussed in Statistical physics can be reused here. Gives the students a further understanding of statistics related topics, including random number generators, probability distributions, mean values and standard deviations. These issues would also be discussed in PHY415. The students will then see central algorithms being used in different physics settings.
 
 
-Many of these topics can be included and extended upon in PHY472. 
+Many of these topics can be included and extended upon in PHY472.
 === Electromagnetism 1 PHY481 ===
 
 After completing Electromagnetism 1 PHY481, students should be able to:
@@ -341,7 +342,7 @@ After completing Electromagnetism 1 PHY481, students should be able to:
 * Compare the quality of the simulations (i.e., number of iterations, step size, and error control) that employ the Jacobi method and the Gauss*Seidel method
 * See "the detailed learning outcomes for PHY 481":"https://dannycab.github.io/phy481msu/learning_goals.html" for more information.
 
-Many of these topics can be included and extended upon in PHY482. 
+Many of these topics can be included and extended upon in PHY482.
 
 #
 Danny: I haven't yet reviewed the material below in detail because I wanted
@@ -391,24 +392,24 @@ These could be (presently some of these topics  are covered by PHY905, sections 
   o  Data analysis and machine learning tailored to physics problems. This course can be jointly taught with the new department of Computational Science.
   o  Additional CMSE courses, see list below.
 
-The CMSE department offers in addition a series "of courses at all levels":"https://cmse.msu.edu/academics/". 
+The CMSE department offers in addition a series "of courses at all levels":"https://cmse.msu.edu/academics/".
 
 ===== A possible Physics major in computational physics and a possible MSc in Computational Physics =====
 
-The above advanced courses can form the basis for a MSc in computational physics, as well as, together with 
-CSME courses, a major in computational physics. 
+The above advanced courses can form the basis for a MSc in computational physics, as well as, together with
+CSME courses, a major in computational physics.
 
 The following is a suggestion for a major in Computational physics and a Master of Science degree in Computational Physics.
 
 === Master of Science in Computational Physics ===
 
 The Master of Science in Computational Physics has a duration of two years, with three semesters  of course work and one semester of thesis work. (discuss whether we should have the flexibility of two semesters of course work and two semesters of thesis work).
-o The thesis work is to be conducted with one or more research groups at the Department of Physics and Astronomy. It can also be of a more interdisciplinary character and can be a joint thesis with another department at the College of Natural Science and College of Engineering. 
-o Core physics courses (these courses should be compulsory) 
+o The thesis work is to be conducted with one or more research groups at the Department of Physics and Astronomy. It can also be of a more interdisciplinary character and can be a joint thesis with another department at the College of Natural Science and College of Engineering.
+o Core physics courses (these courses should be compulsory)
   * PHY 810, Methods of Theoretical Physics, 3 credits, fall semester
-  * PHY 820, Classical Mechanics, 3 credits, fall semester 
-  * PHY 851, Quantum Mechanics I, 3 credits, fall semester 
-  * PHY 841, Classical Electrodynamics I, 3 credits, spring semester 
+  * PHY 820, Classical Mechanics, 3 credits, fall semester
+  * PHY 851, Quantum Mechanics I, 3 credits, fall semester
+  * PHY 841, Classical Electrodynamics I, 3 credits, spring semester
   * PHY 831, Statistical Mechanics, 3 credits, fall semester
 o Computational Science and Physics courses, select in order to fill up necessary credit requirements.
   * Computational quantum mechanics, spanning from Monte Carlo methods to other methods used in atomic, molecular, nuclear, condensed matter and high*energy physics
@@ -424,11 +425,11 @@ o Computational Science and Physics courses, select in order to fill up necessar
 
 === Major of Science in Computational Physics ===
 
-The major of science in Computational Physics replaces all physics laboratory courses with either Computational physics courses and/or CMSE courses. Need more input here. 
+The major of science in Computational Physics replaces all physics laboratory courses with either Computational physics courses and/or CMSE courses. Need more input here.
 
 ===== Links with CMSE and Mathematics courses =====
 
-We would like to propose to establish a working group which studies an eventual  integration and possibly coordination of many of the 
-abovementioned algorithms in the mathematics courses our physics students take. For example, algorithms from linear algebra play a central role, and with CS201 as background, there is a unique opportunity to enlarge the body of mathematical examples with numerical tools and algorithms. The most likely scenario in the next five to ten years is that our students will be better educated in programming and computations. This should ease the introduction of numerical algorithms and exercises in many of the basic mathematics courses. 
+We would like to propose to establish a working group which studies an eventual  integration and possibly coordination of many of the
+abovementioned algorithms in the mathematics courses our physics students take. For example, algorithms from linear algebra play a central role, and with CS201 as background, there is a unique opportunity to enlarge the body of mathematical examples with numerical tools and algorithms. The most likely scenario in the next five to ten years is that our students will be better educated in programming and computations. This should ease the introduction of numerical algorithms and exercises in many of the basic mathematics courses.
 
-With such a background, it is easier for physics teachers, with proper repetitions and adequate material, to introduce numerical exercises and projects in many basic physics courses. 
+With such a background, it is easier for physics teachers, with proper repetitions and adequate material, to introduce numerical exercises and projects in many basic physics courses.
