@@ -1,0 +1,3 @@
+\usepackage[margin=1in]{geometry}
+\usepackage{helvet}					
+\renewcommand{\familydefault}{\sfdefault}

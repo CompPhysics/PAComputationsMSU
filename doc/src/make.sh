@@ -52,7 +52,7 @@ system doconce split_html $html.html --method=split --pagination --nav_button=bo
 
 # Ordinary plain LaTeX document
 rm -f *.aux  # important after beamer
-system doconce format pdflatex $name --minted_latex_style=trac --latex_admon=paragraph $opt
+system doconce format pdflatex $name --minted_latex_style=trac --latex_preamble=generic.preamble --latex_admon=paragraph $opt
 system doconce ptex2tex $name envir=minted
 # Add special packages
 doconce subst "% Add user's preamble" "\g<1>\n\\usepackage{simplewick}" $name.tex
