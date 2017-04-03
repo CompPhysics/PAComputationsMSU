@@ -16,4 +16,13 @@ For all of the reasons outlined above, it is critical to ensure that students gr
 
 ===== Proposal =====
 
-we propose to...
+By early in the Fall 2017 term (in time to make any necessary curricular changes for the 2018-19 academic year), this committee will present a document to the faculty of the Department of Physics and Astronomy that (1) outlines proposed learning outcomes relating to computational modeling and data analysis within the upper-division physics curriculum, (2) a concrete and realistic plan of action that will allow us to attain these learning outcomes, and (3) a plan to assess the progress of our efforts.  Prior to Fall 2017, the committee will pursue several goals.  We will:
+
+o  Engage the faculty in the department to understand current best practices, to identify areas of concern, and to solicit ideas for desired learning outcomes and curriculum modifications.
+o  Survey current undergraduate students to understand their experiences thus far and identify the types of training that they would like to receive with regards to these subjects.
+o  Survey students who recently received a bachelor's degree in physics or astrophysics to identify what aspects of their education have been useful to them thus far, and what they would have liked to have learned while here at MSU.
+o  Identify possible areas of collaboration with the Department of Computational Mathematics, Science and Engineering, and explore the possibility of more in-depth educational options (i.e., a computational physics degree).
+o  Contact faculty at other institutions that have pursued similar reform efforts to learn about potential opportunities and pitfalls.
+o  Synthesize the results obtained from the previous points into a coherent document that will be presented to the faculty for discussion.
+
+We anticipate that this proposal will build upon the Department's recent vote to require physics students to make CMSE 201 ("Introduction to Computational Modeling") a requirement and a prerequisite to PHY 321 ("Classical Mechanics I").  Depending on the outcomes of the investigations described previously, this proposal may include recommendations to add computational elements to some or all of the required 300- and 400-level courses (PHY 321, 410, 451, 471, and 481).  We strongly encourage faculty who are interested in sharing their views on this subject to contact any of the members of the committee in person or via email!
