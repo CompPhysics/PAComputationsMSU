@@ -26,3 +26,4 @@ o  Contact faculty at other institutions that have pursued similar reform effort
 o  Synthesize the results obtained from the previous points into a coherent document that will be presented to the faculty for discussion.
 
 We anticipate that this proposal will build upon the Department's recent vote to require physics students to make CMSE 201 ("Introduction to Computational Modeling") a requirement and a prerequisite to PHY 321 ("Classical Mechanics I").  Depending on the outcomes of the investigations described previously, this proposal may include recommendations to add computational elements to some or all of the required 300- and 400-level courses (PHY 321, 410, 451, 471, and 481).  We strongly encourage faculty who are interested in sharing their views on this subject to contact any of the members of the committee in person or via email!
+
