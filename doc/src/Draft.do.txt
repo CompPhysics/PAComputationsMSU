@@ -8,7 +8,7 @@ DATE: today
 Numerical simulations of various systems in science are central to our
 basic understanding of nature and technology.
 The increase in computational power,
-improved algorithms for solving problems in science as well as access
+improved algorithms for solving problems in science, as well as access
 to high-performance facilities, allow researchers to study
 complicated systems across many length and energy scales. Applications
 span from studying quantum physical systems in nanotechnology and the
@@ -33,12 +33,12 @@ always been a central part of education in the sciences and engineering discipli
 On the part of students, this competence involves being able to:
 
 * understand how algorithms are used to solve mathematical problems,
-* derive, verify, and implement algorithms,
+* derive, verify and implement algorithms,
 * understand what can go wrong with algorithms,
 * use these algorithms to construct reproducible scientific outcomes and to engage in science in ethical ways, and
 * think algorithmically for the purposes of gaining deeper insights about scientific problems.
 
-All these elements are central for maturing and gaining a better understanding of the modern scientific process per se.
+All these elements are central for maturing and gaining a better understanding of the scientific process.
 
 The power of the scientific method lies in identifying a given problem
 as a special case of an abstract class of problems, identifying
@@ -53,7 +53,7 @@ particular problem.
 Computing competence represents a central element
 in scientific problem solving, from basic education and research to
 essentially almost all advanced problems in modern
-societies. Computing competence is simply central to further
+societies. Computing competence is central to further
 progress. It enlarges the body of tools available to students and
 scientists beyond classical tools and allows for a more generic
 handling of problems. Focusing on algorithmic aspects results in
@@ -86,7 +86,7 @@ Not only is computing via programming a very powerful tool, it can also be a gre
 For the mathematical training, there is one major new component among the arguments above: understanding abstractions and generalization. While many of the classical methods developed for continuous models are specialized for a particular problem or a narrow class of problems, computing-based algorithms are often developed for problems in a generic form and hence applicable to a large problem class.
 
 
-Computing competence represents a central element in scientific problem solving, from basic education and research to essentially almost all advanced problems in modern societies. Computing competence is simply central to further progress. It enlarges the body of tools available to students and scientists beyond classical tools and allows for a more generic handling of problems. Focusing on algorithmic aspects results in deeper insights about scientific problems.
+Computing competence represents a central element in scientific problem solving, from basic education and research to essentially almost all advanced problems in modern societies. It enlarges the body of tools available to students and scientists beyond classical tools and allows for a more generic handling of problems. Focusing on algorithmic aspects results in deeper insights about scientific problems.
 
 Moreover, today's projects in science and industry tend to involve larger teams. Tools for reliable collaboration must therefore be mastered (e.g., version control systems, automated computer experiments for reproducibility, software and method documentation).
 
@@ -110,7 +110,7 @@ Numerical algorithms form the basis for solving science and engineering problems
 Symbolic computing is a helpful tool for addressing certain classes of problems where a functional representation of the solution (or part of the solution) is needed. Through engaging with symbolic computing platforms, we aim for students to have developed:
 
 * A working knowledge of at least one computer algebra system (CAS)
-* The ability to apply a CAS to perform classical mathematics including calculus, linear algebra, differential equations
+* The ability to apply a CAS to perform classical mathematics including calculus, linear algebra anddifferential equations
 * The ability to verify the results produced by the CAS using some other means
 
 === Learning outcomes for programming ===
@@ -120,21 +120,20 @@ Programming is a necessary aspect of learning computing for science and engineer
 * An understanding of programming in a high-level language (e.g., MATLAB, Python, R).
 * An understanding of programming in a compiled language (e.g., Fortran, C, C++).
 * The ability to to implement and apply numerical algorithms in reusable software that acknowledges the generic nature of the mathematical algorithms.
-* A working knowledge of basic software engineering elements including functions, classes, modules/libraries, testing procedures and frameworks, scripting for automated and reproducible experiments, documentation tools, and version control systems (e.g., GitHub).
+* A working knowledge of basic software engineering elements including functions, classes, modules/libraries, testing procedures and frameworks, scripting for automated and reproducible experiments, documentation tools, and version control systems (e.g., Git).
 * An understanding of debugging software, e.g., as part of implementing comprehensive tests.
 
 === Learning outcomes for mathematical modeling ===
 
-Preparing a problem to be solved numerically (i.e., modeling) is a critical step in making progress towards an eventual solution. By providing opportunities for students engage in modeling, we aim for them to develop:
+Preparing a problem to be solved numerically (i.e., modeling) is a critical step in making progress towards an eventual solution. By providing opportunities for students engage in modeling, we aim for them to developt he ability to solve real problems from applied sciences by:
 
-* The ability to solve real problems from applied sciences by:
 * Deriving computational models from basic principles in physics and articulating the underlying assumptions in those models,
 * Constructing models with dimensionless forms to reduce and simplify input data, and
 * Interpreting the model's dimensionless parameters to increase their understanding of the model and its predictions
 
 === Learning outcomes for verification ===
 
-Verifying the model and the resulting outcomes it produces are essential elements to generating confidence in the model itself. Moreover, such verifications provide evidence that the work is reproducible. By engaging in verification practices, we aim for for students to develop:
+Verifying a model and the resulting outcomes it produces are essential elements to generating confidence in the model itself. Moreover, such verifications provide evidence that the work is reproducible. By engaging in verification practices, we aim for for students to develop:
 
 * An understanding of how to program testing procedures
 * A deep knowledge of testing/verification methods including the use of:
@@ -158,7 +157,7 @@ The results of a computation need to be communicated in some format (i.e., throu
 The above learning goals and outcomes are of a more generic character. What follows here are specific
 algorithms that occur frequently in scientific problems. The implementation of these algorithms in various physics courses, together with problem and project solving, is a way to implement large fractions of the above learning goals. we reserve the coupling of the the broad learning goals above to the algorithms articulated below to our discussion of specific course (or topical) learning goals.
 
-We list also tools that are important in developing
+We list as well tools that are important in developing
 numerical projects. These tools allow students to develop a better understanding of the scientific process. In addition, use of the algorithms can facilitate instruction in an ethical approach to science.
 
 The algorithms and tools listed here can be intergated in different ways depending on the specific learning goals for the course or topic. Furthermore, several of these algorithms can be used and, then, revisited in the various courses.
@@ -220,21 +219,17 @@ collaborative efforts among students. Using version control can also be used to 
 
 Unit testing is a central element in the development of numerical projects, from microtests of code fragments, to intermediate merging of functions to final test of the correctness of a code.
 
-=====  Suggested learning goals for specific physics courses =====
+=====  Suggested learning goals and computational topics for specific physics courses =====
 
 For a major in physics degree at Michigan State University, the course "CMSE 201 Introduction to Computational Modeling":"https://cmse.msu.edu/academics/undergraduate-program/undergraduate-courses/cmse-201-introduction-to-computational-modeling/" is compulsory and it lays the foundation for the use of computational exercises and projects in various physics courses. Based on this course, and the various mathematics courses included in a Physics degree, there is a unique possibility to incorporate computational exercises and projects in various physics courses, without taking away the attention from the basic physics topics to be covered.
 
 What follows below is a suggested listed of possible learning outcomes. These suggestions are to be viewed as inputs to the ongoing discussions. The list of possible outcomes can be reduced or enlarged.
 
-#
-Danny: I have only constructed learning goals for PHY 481. I intend these
-to provide a example of what our goals might look like. They are debatable
-and not set in stone, but what they do is provide us with a starting point
-for discussion and an example of what measurable (i.e., assessable)
-learning goals might look like.
-#
 
-We propose that the following courses aim to integrate the above learning outcomes and goals:
+
+_What follows is a list of possible learning outcomes and numerical topics._
+The hope is that the various points listed here can serve as a good starting point for future discussions and developments. In order to get the discussion started, 
+we propose that the following courses aim to integrate the above learning outcomes and goals:
 
 
 === Classical Mechanics 1 PHY321 ===
@@ -279,7 +274,7 @@ After completing Methods in Theoretical Physics PHY415, students should be able 
 * be able to solve initial value and boundary value problems analytically and numerically
 * know central algorithms for solving eigenvalue problems
 * Solve differential equations numerically and compare with analytical solutions
-* understand  important orthogonal orthogonal polynomials like Legendre, Hermite and Laguerre. Be able to set up their recursion relations and visualize the polynomials.
+* understand  important orthogonal polynomials like Legendre, Hermite and Laguerre. Be able to set up their recursion relations and visualize the polynomials.
 * Understand Fourier transforms and algorithms like Fast Fourier transform
 * Know tools to analyze time series
 
@@ -307,18 +302,18 @@ After completing Advanced Laboratory course in Physics PHY451, students should b
 === Quantum mechanics 1  PHY 471 ===
 
 After completing Quantum mechanics 1  PHY 471, students should be able to:
-* be able to visualize the solutions of quantum mechanical problems, both stationary and time*dependent problems
-* be able to scale the equations properly and understand the meaning of natural length scales, from the Bohr radius to simple harmonic oscillator problems with frequency dependent length scale. The same scaling procedure is  used to derive the analytical solutions for several single*particle problems.
-* use numerical methods for solving a large variety of one*dimensional differential equations with two*point boundary value problems. For many cases one can compare directly with standard analytical  solutions like the hydrogen*like problems or the harmonic oscillator.
+* be able to visualize the solutions of quantum mechanical problems, both stationary and time-dependent problems
+* be able to scale the equations properly and understand the meaning of natural length scales, from the Bohr radius to simple harmonic oscillator problems with frequency dependent length scale. The same scaling procedure is  used to derive the analytical solutions for several single-particle problems.
+* use numerical methods for solving a large variety of one-dimensional differential equations with two-point boundary value problems. For many cases one can compare directly with standard analytical  solutions like the hydrogen-like problems or the harmonic oscillator.
 * Verification of numerical solutions with analytical results.
-* be able to rewrite Schroedinger's equation as an eigenvalue problem and use numerical eigenvalue methods for computing a single*particle confined in a one*dimensional infinite potential and compare with analytical results. This problem is the same as the eigenvalue problem of a buckling beam, which can be used the in the mechanics and mathematical methods course.
+* be able to rewrite Schroedinger's equation as an eigenvalue problem and use numerical eigenvalue methods for computing a single particle confined in a one-dimensional infinite potential and compare with analytical results. This problem is the same as the eigenvalue problem of a buckling beam, which can be used the in the mechanics and mathematical methods course.
 * use the the same eigenvalue solvers to study a single particle confined to move in a potential well with a finite depth and extension. Study both bound and unbound states and explore the numerical solutions as functions of the potential depth and the extension of the potential.
-* The same codes can be used to solve the hydrogen atom and the one*dimensional harmonic oscillator. This part allows for comparison with analytical results.
-* Visualize the probability distributions for electrons (or other one*particle problems) confined to move in hydrogen*like and harmonic oscillator like problems. Study the probability distributions for ground and excited states. Discuss unbound states with a finite potential well.
-* Use the same codes to study double*well potentials. These are problems of great interest in solid state physics.
-* Rewrite a two*electron (or two*particle problem) problem in terms of the relative and center*of*mass motion and study the role of repulsive Coulomb forces) for electrons (or other fermions) trapped
+* The same codes can be used to solve the hydrogen atom and the one-dimensional harmonic oscillator. This part allows for comparison with analytical results.
+* Visualize the probability distributions for electrons (or other one-particle problems) confined to move in hydrogen*like and harmonic oscillator like problems. Study the probability distributions for ground and excited states. Discuss unbound states with a finite potential well.
+* Use the same codes to study double well potentials. These are problems of great interest in solid state physics.
+* Rewrite a two-electron (or two-particle problem) problem in terms of the relative and center-of-mass motion and study the role of repulsive Coulomb forces) for electrons (or other fermions) trapped
 * Visualize and compute tunneling phenomena for various potentials.
-* Introduce the  variational principle and introduce variational Monte Carlo methods to study one*particle problems and compare these with analytical results and numerical results from differental equation solvers.  The Metropolis algorithm discussed in Statistical physics can be reused here. Gives the students a further understanding of statistics related topics, including random number generators, probability distributions, mean values and standard deviations. These issues would also be discussed in PHY415. The students will then see central algorithms being used in different physics settings.
+* Introduce the  variational principle and introduce variational Monte Carlo methods to study one-particle problems and compare these with analytical results and numerical results from differental equation solvers.  The Metropolis algorithm discussed in Statistical physics can be reused here. Gives the students a further understanding of statistics related topics, including random number generators, probability distributions, mean values and standard deviations. These topics could also be discussed in PHY415. The students will then see central algorithms being used in different physics settings.
 
 
 Many of these topics can be included and extended upon in PHY472.
@@ -329,36 +324,31 @@ After completing Electromagnetism 1 PHY481, students should be able to:
 * use symbolic computing to determine the divergence and curl of various vector fields
 * represent the vector (e.g., electric) field visually using vector plots and stream plots
 * represent a 2D scalar (i.e., potential) field visually using 2D contour plots and 3D surface plots
-* apply motion prediction algorithms Euler, Verlet, and Runge*Kutta to model the motion of charged particles in electric and magnetic fields
+* apply motion prediction algorithms Euler, Verlet, and Runge-Kutta to model the motion of charged particles in electric and magnetic fields
 * compare the quality of simulations (i.e., number of iterations, step size, and error control) of charged particle motion that use different motion prediction algorithms
 * apply Coulomb's law iteratively to determine the electric field produced by a given charge distribution
-* apply Biot*Savart's law iteratively to determine the magnetic field produced by a given current distribution
+* apply Biot-Savart's law iteratively to determine the magnetic field produced by a given current distribution
 * explain how the application of superposition iteratively gives rise to approximate field solutions
 * explain how the simple relaxation algorithm works (i.e., iteratively averaging neighboring points) and how it is derived from the properties of the solutions to Laplace's equation
 * apply this simple relaxation method to find the potential for 1D and 2D electrostatic situations where Laplace's equation is satisfied
-* explain how to use the finite*differencing to recast Poisson's equation into a discrete formulation and how the resulting discretized form compares with the simple relaxation method (i.e., iteratively averaging neighboring points)
-* apply the Jacobi and Gauss*Seidel methods to solve 2D Laplace and Poisson problems including graphing the results in three dimensions
-* explain the differences between the Jacobi and Gauss*Seidel methods and how these methods are connected to the derivation using finite differencing
-* Compare the quality of the simulations (i.e., number of iterations, step size, and error control) that employ the Jacobi method and the Gauss*Seidel method
+* explain how to use  finite-difference methods to recast Poisson's equation into a discrete formulation and how the resulting discretized form compares with the simple relaxation method (i.e., iteratively averaging neighboring points)
+* apply the Jacobi and Gauss-Seidel methods to solve 2D Laplace and Poisson problems including graphing the results in three dimensions
+* explain the differences between the Jacobi and Gauss-Seidel methods and how these methods are connected to the derivation using finite differencing
+* Compare the quality of the simulations (i.e., number of iterations, step size, and error control) that employ the Jacobi method and the Gauss-Seidel method
 * See "the detailed learning outcomes for PHY 481":"https://dannycab.github.io/phy481msu/learning_goals.html" for more information.
 
 Many of these topics can be included and extended upon in PHY482.
 
-#
-Danny: I haven't yet reviewed the material below in detail because I wanted
-us to spend time discussing the learning outcomes. These learning outcomes
-are connected to the work that the Physics Education Research Lab would do
-as we help to develop assessments and evaluations to share with the faculty
-#
+
 
 ===== Physics Education research and computing in science education =====
 
 The introduction of computational elements in the various courses should be stronly integrated with ongoing research on physics education.
 
-The Physics and Astronomy department at MSU is in a unique position due to its strong research group in physics education, the "PERL group":"http://www.pa.msu.edu/research/physics*education*lab".
+The Physics and Astronomy department at MSU is in a unique position due to its strong research group in physics education, the "PERL group":"http://www.pa.msu.edu/research/physics-education-lab".
 This means that it is possible to
 develop research motivated curricular changes.  There are many interesting challenges here, like
-which are the main obstacles when transferring from a classical pen and paper approach to actually have a working program which solves the same (and more general problems). What is a good progression in presenting numerical topics in physics courses? Are there specific mathematical skills we would like our students to have? How do we integrate student*active teaching, how do we develop and test various assessment methods?
+which are the main obstacles when transferring from a classical pen and paper approach to actually have a working program which solves the same (and more general problems). What is a good progression in presenting numerical topics in physics courses? Are there specific mathematical skills we would like our students to have? How do we integrate student-active teaching, how do we develop and test various assessment methods?
 
 
 
@@ -375,18 +365,18 @@ The  course could cover
 * Monte Carlo methods in statistical physics
 * Quantum Monte Carlo methods
 * Linear algebra and eigenvalue problems
-* Non*linear equations and roots of polynomials
+* Non-linear equations and roots of polynomials
 * Ordinary differential equations
 * Partial differential equations
 * Parallelization of codes
-* High*performance computing aspects and optimization of codes
+* High-performance computing aspects and optimization of codes
 
 During the last years, we have witnessed an enhanced background in computing and programming skills among our students. Our students will however always form a heteregeneous group, with often differing competences, experiences and interests. In order to be able to offer a wider spectrum of computational physics courses, the present working group would like to propose courses that can be used in both a major in computational physics, or a Master of Science in computational physics, or a dual degree from the Physics and Astronomy department and the new Computational Mathematics, Science and Engineering (CMSE) department, or just satisfy the scientific interests of our students
 
 In addition to PHY480, we may
 consider more advanced (at the graduate level) courses which cover specialized topics.
 These could be (presently some of these topics  are covered by PHY905, sections 002 and 003)
-  o  Computational quantum mechanics, spanning from Monte Carlo methods to other methods used in atomic, molecular, nuclear, condensed matter and high*energy physics
+  o  Computational quantum mechanics, spanning from Monte Carlo methods to other methods used in atomic, molecular, nuclear, condensed matter and high-energy physics
   o  Computational Statistical mechanics, covering topics spanning from Molecular dynamics to studies of phase transitions, highly relevant for several subdisciplines
   o  Computational Astrophysics and Astronomy
   o  Data analysis and machine learning tailored to physics problems. This course can be jointly taught with the new department of Computational Science.
@@ -412,7 +402,7 @@ o Core physics courses (these courses should be compulsory)
   * PHY 841, Classical Electrodynamics I, 3 credits, spring semester
   * PHY 831, Statistical Mechanics, 3 credits, fall semester
 o Computational Science and Physics courses, select in order to fill up necessary credit requirements.
-  * Computational quantum mechanics, spanning from Monte Carlo methods to other methods used in atomic, molecular, nuclear, condensed matter and high*energy physics
+  * Computational quantum mechanics, spanning from Monte Carlo methods to other methods used in atomic, molecular, nuclear, condensed matter and high-energy physics
   * Computational Statistical mechanics, covering topics spanning from Molecular dynamics to studies of phase transitions, highly relevant for several subdisciplines
   * Computational Astrophysics and Astronomy
   * Data analysis and machine learning tailored to physics problems. This course can be jointly taught with the new department of Computational Science.
