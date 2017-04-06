@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="description" content="Integrating a computational perspective in physics courses">
+
+<title>Integrating a computational perspective in physics courses</title>
+
+
+
+
+<script src="http://sagecell.sagemath.org/static/jquery.min.js"></script>
+<script src="http://sagecell.sagemath.org/embedded_sagecell.js"></script>
+<link rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
+<script>
+$(function () {
+    // Make the div with id 'mycell' a Sage cell
+    sagecell.makeSagecell({inputLocation:  '#mycell',
+                           template:       sagecell.templates.minimal,
+                           evalButtonText: 'Activate'});
+    // Make *any* div with class 'compute' a Sage cell
+    sagecell.makeSagecell({inputLocation: 'div.compute',
+                           evalButtonText: 'Evaluate'});
+});
+</script>
+
+
+
+
+<!-- reveal.js: http://lab.hakim.se/reveal-js/ -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+<link rel="stylesheet" href="reveal.js/css/reveal.css">
+<link rel="stylesheet" href="reveal.js/css/theme/beige.css" id="theme">
+<!--
+<link rel="stylesheet" href="reveal.js/css/reveal.css">
+<link rel="stylesheet" href="reveal.js/css/theme/beige.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/beigesmall.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/solarized.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/serif.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/night.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/moon.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/sky.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/darkgray.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/cbc.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/simula.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/white.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/league.css" id="theme">
+-->
+
+<!-- For syntax highlighting -->
+<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+<!-- Printing and PDF exports -->
+<script>
+var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+
+<style type="text/css">
+    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+    p.caption { width: 80%; font-size: 60%; font-style: italic; text-align: left; }
+    hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+    .reveal .alert-text-small   { font-size: 80%;  }
+    .reveal .alert-text-large   { font-size: 130%; }
+    .reveal .alert-text-normal  { font-size: 90%;  }
+    .reveal .alert {
+             padding:8px 35px 8px 14px; margin-bottom:18px;
+             text-shadow:0 1px 0 rgba(255,255,255,0.5);
+             border:5px solid #bababa;
+             -webkit-border-radius: 14px; -moz-border-radius: 14px;
+             border-radius:14px;
+             background-position: 10px 10px;
+             background-repeat: no-repeat;
+             background-size: 38px;
+             padding-left: 30px; /* 55px; if icon */
+     }
+     .reveal .alert-block {padding-top:14px; padding-bottom:14px}
+     .reveal .alert-block > p, .alert-block > ul {margin-bottom:1em}
+     /*.reveal .alert li {margin-top: 1em}*/
+     .reveal .alert-block p+p {margin-top:5px}
+     /*.reveal .alert-notice { background-image: url(http://hplgit.github.io/doconce/bundled/html_images/small_gray_notice.png); }
+     .reveal .alert-summary  { background-image:url(http://hplgit.github.io/doconce/bundled/html_images/small_gray_summary.png); }
+     .reveal .alert-warning { background-image: url(http://hplgit.github.io/doconce/bundled/html_images/small_gray_warning.png); }
+     .reveal .alert-question {background-image:url(http://hplgit.github.io/doconce/bundled/html_images/small_gray_question.png); } */
+
+</style>
+
+
+
+<!-- Styles for table layout of slides -->
+<style type="text/css">
+td.padding {
+  padding-top:20px;
+  padding-bottom:20px;
+  padding-right:50px;
+  padding-left:50px;
+}
+</style>
+
+</head>
+
+<body>
+<div class="reveal">
+
+<!-- Any section element inside the <div class="slides"> container
+     is displayed as a slide -->
+
+<div class="slides">
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript"
+ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+
+
+
+<section>
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<center><h1 style="text-align: center;">Integrating a computational perspective in physics courses</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): Danny Caballero, Sean Couch, Wade Fisher, Connor Glosser, Morten Hjorth-Jensen, Claire Kopenhafer, Brian O'Shea, and Carlo Piermarocchi -->
+
+<center>
+<b>Danny Caballero, Sean Couch, Wade Fisher, Connor Glosser, Morten Hjorth-Jensen, Claire Kopenhafer, Brian O'Shea, and Carlo Piermarocchi</b> 
+</center>
+
+<p>&nbsp;<br>
+<!-- institution(s) -->
+
+<br>
+<p>&nbsp;<br>
+<center><h4>Apr 5, 2017</h4></center> <!-- date -->
+<br>
+</section>
+
+
+<section>
+<h2 id="___sec0">Wouldn't it be cool if your mechanics students could reproduce results in a PRL? </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<!-- FIGURE: [figures/prl1.png, width=800 frac=0.5] -->
+And find problems with the article?
+</div>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<!-- FIGURE: [figures/prl2.png, width=700 frac=0.5] -->
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec1">Introduction: Scientific and educational motivation </h2>
+
+<p>
+Numerical simulations of various systems in science are central to our
+basic understanding of nature and technology.
+The increase in computational power,
+improved algorithms for solving problems in science as well as access
+to high-performance facilities, allow researchers to study
+complicated systems across many length and energy scales. Applications
+span from studying quantum physical systems in nanotechnology and the
+characteristics of new materials or subatomic physics at its smallest
+length scale, to simulating galaxies and the evolution of the universe.
+In between, simulations are key to understanding
+cancer treatment and how the brain works,
+predicting climate changes and this week's weather,
+simulating natural disasters, semi-conductor devices,
+quantum computers, as well as assessing risk in the insurance and
+financial industry.
+</section>
+
+
+<section>
+<h2 id="___sec2">Computing competence </h2>
+
+<p>
+Computing means solving scientific problems using computers. It covers
+numerical as well as symbolic computing. Computing is also about
+developing an understanding of the scientific process by enhancing
+algorithmic thinking when solving problems.  Computing competence has
+always been a central part of education in the sciences and engineering disciplines.
+
+<p>
+On the part of students, this competence involves being able to:
+
+<ul>
+<p><li> understand how algorithms are used to solve mathematical problems,</li>
+<p><li> derive, verify, and implement algorithms,</li>
+<p><li> understand what can go wrong with algorithms,</li>
+<p><li> use these algorithms to construct reproducible scientific outcomes and to engage in science in ethical ways, and</li>
+<p><li> think algorithmically for the purposes of gaining deeper insights about scientific problems.</li>
+</ul>
+<p>
+
+All these elements are central for maturing and gaining a better understanding of the modern scientific process <em>per se</em>.
+
+<p>
+The power of the scientific method lies in identifying a given problem
+as a special case of an abstract class of problems, identifying
+general solution methods for this class of problems, and applying a
+general method to the specific problem (applying means, in the case of
+computing, calculations by pen and paper, symbolic computing, or
+numerical computing by ready-made and/or self-written software). This
+generic view on problems and methods is particularly important for
+understanding how to apply available, generic software to solve a
+particular problem.
+
+<p>
+Computing competence represents a central element
+in scientific problem solving, from basic education and research to
+essentially almost all advanced problems in modern
+societies. Computing competence is simply central to further
+progress. It enlarges the body of tools available to students and
+scientists beyond classical tools and allows for a more generic
+handling of problems. Focusing on algorithmic aspects results in
+deeper insights about scientific problems.
+</section>
+
+
+<section>
+<h2 id="___sec3">Why should basic university education undergo a shift towards modern computing?  </h2>
+
+<ul>
+<p><li> Algorithms involving pen and paper are traditionally aimed at what we often refer to as continuous models.</li>
+<p><li> Application of computers calls for approximate discrete models.</li>
+<p><li> Much of the development of methods for continuous models are now being replaced by methods  for discrete models in science and industry, simply because much larger classes of problems can be addressed with discrete models, often also by simpler and more generic methodologies.</li>
+</ul>
+<p>
+
+However, verification of algorithms and understanding their limitations requires much of the classical knowledge about continuous models.
+
+<p>
+So, why should basic university education undergo a shift towards modern computing?
+
+<p>
+The impact of the computer on mathematics and science is tremendous: science and industry now rely on solving mathematical problems through computing.
+
+<ul>
+<p><li> Computing can increase the relevance in education by solving more realistic problems earlier.</li>
+<p><li> Computing through programming can be excellent training of creativity.</li>
+<p><li> Computing can enhance the understanding of abstractions and generalization.</li>
+<p><li> Computing can decrease the need for special tricks and tedious algebra, and shifts the focus to problem definition, visualization, and "what if" discussions.</li>
+</ul>
+</section>
+
+
+<section>
+<h2 id="___sec4">Computing competence </h2>
+
+<p>
+Computing competence represents a central element in scientific problem solving, from basic education and research to essentially almost all advanced problems in modern societies. Computing competence is simply central to further progress. It enlarges the body of tools available to students and scientists beyond classical tools and allows for a more generic handling of problems. Focusing on algorithmic aspects results in deeper insights about scientific problems.
+</section>
+
+
+<section>
+<h2 id="___sec5">Integration by Trapezoidal Rule  </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<ul>
+<p><li> The algorithm for computing the  integral vha the Trapezoidal rule for an interval \( x \in [a,b] \)</li>
+</ul>
+<p>&nbsp;<br>
+$$
+  \int_a^b(f(x) dx \approx \frac{1}{2}\left [f(a)+2f(a+h)+\dots+2f(b-h)+f(b)\right] 
+$$
+<p>&nbsp;<br>
+
+
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec6">Typical implementation  </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Integration by Trapezoidal Rule.</b>
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">math</span> <span style="color: #8B008B; font-weight: bold">import</span> exp, log, sin
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">Trapez</span>(a,b,f,n):
+   h = (b-a)/<span style="color: #658b00">float</span>(n)
+   s = <span style="color: #B452CD">0</span>
+   x = a
+   <span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(<span style="color: #B452CD">1</span>,n,<span style="color: #B452CD">1</span>):
+       x = x+h
+       s = s+ f(x)
+   s = <span style="color: #B452CD">0.5</span>*(f(a)+f(b)) +s
+   <span style="color: #8B008B; font-weight: bold">return</span> h*s
+
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">f1</span>(x):
+    <span style="color: #8B008B; font-weight: bold">return</span> exp(-x*x)*log(<span style="color: #B452CD">1</span>+x*sin(x))
+
+a = <span style="color: #B452CD">1</span>;  b = <span style="color: #B452CD">3</span>; n = <span style="color: #B452CD">1000</span>
+result = Trapez(a,b,f1,n)
+<span style="color: #8B008B; font-weight: bold">print</span> result
+</pre></div>
+
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec7">Symbolic calculations and numerical calculations in one code  </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+Python offers an  extremely versatile programming  environment, allowing for
+the inclusion of analytical studies in a numerical program. Here we show an
+example code with the <b>trapezoidal rule</b> using <b>SymPy</b> to evaluate an integral and compute the absolute error
+with respect to the numerically evaluated one of the integral
+\( 4\int_0^1 dx/(1+x^2) = \pi \):
+<p>
+
+
+<div class="compute"><script type="text/x-sage">
+from math import *
+from sympy import *
+def Trapez(a,b,f,n):
+   h = (b-a)/float(n)
+   s = 0
+   x = a
+   for i in range(1,n,1):
+       x = x+h
+       s = s+ f(x)
+   s = 0.5*(f(a)+f(b)) +s
+   return h*s
+
+#  function to compute pi
+def function(x):
+    return 4.0/(1+x*x)
+
+a = 0.0;  b = 1.0; n = 100
+result = Trapez(a,b,function,n)
+print "Trapezoidal rule=", result
+# define x as a symbol to be used by sympy
+x = Symbol('x')
+exact = integrate(function(x), (x, 0.0, 1.0))
+print "Sympy integration=", exact
+# Find relative error
+print "Relative error", abs((exact-result)/exact)
+
+</script></div>
+
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec8">Error analysis </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+The following extended version of the trapezoidal rule allows you  to plot the relative error by comparing with the exact result. By increasing to \( 10^8 \) points one arrives at a region where numerical errors start to accumulate.
+<p>
+
+
+<div class="compute"><script type="text/x-sage">
+from math import log10
+import numpy as np
+from sympy import Symbol, integrate
+import matplotlib.pyplot as plt
+# function for the trapezoidal rule
+def Trapez(a,b,f,n):
+   h = (b-a)/float(n)
+   s = 0
+   x = a
+   for i in range(1,n,1):
+       x = x+h
+       s = s+ f(x)
+   s = 0.5*(f(a)+f(b)) +s
+   return h*s
+#  function to compute pi
+def function(x):
+    return 4.0/(1+x*x)
+# define integration limits
+a = 0.0;  b = 1.0;
+# find result from sympy
+# define x as a symbol to be used by sympy
+x = Symbol('x')
+exact = integrate(function(x), (x, a, b))
+# set up the arrays for plotting the relative error
+n = np.zeros(9); y = np.zeros(9);
+# find the relative error as function of integration points
+for i in range(1, 8, 1):
+    npts = 10**i
+    result = Trapez(a,b,function,npts)
+    RelativeError = abs((exact-result)/exact)
+    n[i] = log10(npts); y[i] = log10(RelativeError);
+plt.plot(n,y, 'ro')
+plt.xlabel('n')
+plt.ylabel('Relative error')
+plt.show()
+
+</script></div>
+
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec9">Integrating numerical mathematics with calculus </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+The last example shows the potential of combining numerical algorithms with symbolic calculations, allowing thereby students and teachers to
+
+<ul>
+<p><li> Validate and verify  their  algorithms.</li> 
+<p><li> Including concepts like unit testing, one has the possibility to test and validate several or all parts of the code.</li>
+<p><li> Validation and verification are then included <em>naturally</em> and one can develop a better attitude to what is meant with an ethically sound scientific approach.</li>
+<p><li> The above example allows the student to also test the mathematical error of the algorithm for the trapezoidal rule by changing the number of integration points. The students get trained from day one to think error analysis.</li> 
+<p><li> With an ipython notebook the students can keep exploring similar examples and turn them in as their own notebooks.</li> 
+</ul>
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec10">Examples of simple algorithms, two-point boundary value problems and scaling </h2>
+
+<ol>
+<p><li> The buckling beam and Toeplitz matrices (mechanics and math methods), eigenvalue problems</li>
+<p><li> A particle in an infinite potential well, quantum eigenvalue problems</li>
+<p><li> A particle (or two) in a general quantum well, quantum eigenvalue problems</li>
+<p><li> Poisson's  equation in one dim, lin algebra (elmag)</li>
+<p><li> The diffusion equation in one dim, the same matrix again, lin algebra</li>
+</ol>
+</section>
+
+
+<section>
+<h2 id="___sec11">Examples of simple algorithms, initial value problems and scaling </h2>
+
+<ol>
+<p><li> ODE RLC circuit</li>
+<p><li> ODE Classical pendulum</li>
+<p><li> ODE Solar system</li>
+</ol>
+</section>
+
+
+<section>
+<h2 id="___sec12">Mechanics, Realistic Pendulum </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+Classical pendulum with damping and external force
+<p>&nbsp;<br>
+$$
+  ml\frac{d^2\theta}{dt^2}+\nu\frac{d\theta}{dt}  +mgsin(\theta)=Asin(\omega t).
+$$
+<p>&nbsp;<br>
+
+Easy to solve numerically without classical simplification, and then visualize the solution.  Done in first semester!
+Same equation for an RLC circuit 
+<p>&nbsp;<br>
+$$
+L\frac{d^2Q}{dt^2}+\frac{Q}{C}+R\frac{dQ}{dt}=V(t).
+$$
+<p>&nbsp;<br>
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec13">Electromagnetism, RLC circuit  </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+Same equation as the pendulum for an RLC circuit 
+<p>&nbsp;<br>
+$$
+L\frac{d^2Q}{dt^2}+\frac{Q}{C}+R\frac{dQ}{dt}=V(t).
+$$
+<p>&nbsp;<br>
+
+From the numerics, 
+the students found the optimal parameters for studying experimentally chaos
+in an RLC circuit. Then they did the experiment.
+
+
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec14">More Examples from Physics Courses </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<ul>
+<p><li> Air resistance in two and three dimensions with quadratic velocity dependence.</li>
+<p><li> Launching a probe into a tornado</li>
+<p><li> Rocket launching with realistic parameters, gravity assist</li>
+<p><li> How to kick a football and model its trajectory.</li>
+<p><li> Planet motion and position of planets</li>
+<p><li> Magnetic fields with various geometries based on Biot-Savart's law</li>
+<p><li> Harmonic oscillations and various forms of electromagnetic waves.</li>
+<p><li> Combined effect of different potentials such as the electrostatic potential and the gravitational potential.</li>
+<p><li> Simple studies of atoms and molecules, and much more</li>
+</ul>
+</div>
+</section>
+
+
+
+</div> <!-- class="slides" -->
+</div> <!-- class="reveal" -->
+
+<script src="reveal.js/lib/js/head.min.js"></script>
+<script src="reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+    // Display navigation controls in the bottom right corner
+    controls: true,
+
+    // Display progress bar (below the horiz. slider)
+    progress: true,
+
+    // Display the page number of the current slide
+    slideNumber: true,
+
+    // Push each slide change to the browser history
+    history: false,
+
+    // Enable keyboard shortcuts for navigation
+    keyboard: true,
+
+    // Enable the slide overview mode
+    overview: true,
+
+    // Vertical centering of slides
+    //center: true,
+    center: false,
+
+    // Enables touch navigation on devices with touch input
+    touch: true,
+
+    // Loop the presentation
+    loop: false,
+
+    // Change the presentation direction to be RTL
+    rtl: false,
+
+    // Turns fragments on and off globally
+    fragments: true,
+
+    // Flags if the presentation is running in an embedded mode,
+    // i.e. contained within a limited portion of the screen
+    embedded: false,
+
+    // Number of milliseconds between automatically proceeding to the
+    // next slide, disabled when set to 0, this value can be overwritten
+    // by using a data-autoslide attribute on your slides
+    autoSlide: 0,
+
+    // Stop auto-sliding after user input
+    autoSlideStoppable: true,
+
+    // Enable slide navigation via mouse wheel
+    mouseWheel: false,
+
+    // Hides the address bar on mobile devices
+    hideAddressBar: true,
+
+    // Opens links in an iframe preview overlay
+    previewLinks: false,
+
+    // Transition style
+    transition: 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+    // Transition speed
+    transitionSpeed: 'default', // default/fast/slow
+
+    // Transition style for full page slide backgrounds
+    backgroundTransition: 'default', // default/none/slide/concave/convex/zoom
+
+    // Number of slides away from the current that are visible
+    viewDistance: 3,
+
+    // Parallax background image
+    //parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+    // Parallax background size
+    //parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
+
+    theme: Reveal.getQueryHash().theme, // available themes are in reveal.js/css/theme
+    transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+});
+
+Reveal.initialize({
+    dependencies: [
+        // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+        { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+        // Interpret Markdown in <section> elements
+        { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+
+        // Syntax highlight for <code> elements
+        { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+        // Zoom in and out with Alt+click
+        { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+
+        // Speaker notes
+        { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+        // Remote control your reveal.js presentation using a touch device
+        //{ src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+        // MathJax
+        //{ src: 'reveal.js/plugin/math/math.js', async: true }
+    ]
+});
+
+Reveal.initialize({
+
+    // The "normal" size of the presentation, aspect ratio will be preserved
+    // when the presentation is scaled to fit different resolutions. Can be
+    // specified using percentage units.
+    width: 1170,  // original: 960,
+    height: 700,
+
+    // Factor of the display size that should remain empty around the content
+    margin: 0.1,
+
+    // Bounds for smallest/largest possible scale to apply to content
+    minScale: 0.2,
+    maxScale: 1.0
+
+});
+</script>
+
+<!-- begin footer logo
+<div style="position: absolute; bottom: 0px; left: 0; margin-left: 0px">
+<img src="somelogo.png">
+</div>
+     end footer logo -->
+
+
+
+</body>
+</html>
