@@ -160,7 +160,7 @@ MathJax.Hub.Config({
 
 <br>
 <p>&nbsp;<br>
-<center><h4>Apr 5, 2017</h4></center> <!-- date -->
+<center><h4>Apr 7, 2017</h4></center> <!-- date -->
 <br>
 </section>
 
@@ -533,6 +533,335 @@ in an RLC circuit. Then they did the experiment.
 <p><li> Combined effect of different potentials such as the electrostatic potential and the gravitational potential.</li>
 <p><li> Simple studies of atoms and molecules, and much more</li>
 </ul>
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec15">The Python code </h2>
+The code sets up the Hamiltonian matrix by defining the the minimun and maximum values of \( r \) with a
+maximum value of integration points.  These are set in the initialization function. It plots the 
+eigenfunctions of the three lowest eigenstates.
+<p>
+
+
+<div class="compute"><script type="text/x-sage">
+#Program which solves the one-particle Schrodinger equation 
+#for a potential specified in function
+#potential(). 
+
+from  matplotlib import pyplot as plt
+import numpy as np
+#Function for initialization of parameters
+def initialize():
+    RMin = 0.0
+    RMax = 10.0
+    lOrbital = 0
+    Dim = 400
+    return RMin, RMax, lOrbital, Dim
+# Here we set up the harmonic oscillator potential
+def potential(r):
+    return r*r
+
+#Get the boundary, orbital momentum and number of integration points
+RMin, RMax, lOrbital, Dim = initialize()
+
+#Initialize constants
+Step    = RMax/(Dim+1)
+DiagConst = 2.0 / (Step*Step)
+NondiagConst =  -1.0 / (Step*Step)
+OrbitalFactor = lOrbital * (lOrbital + 1.0)
+
+#Calculate array of potential values
+v = np.zeros(Dim)
+r = np.linspace(RMin,RMax,Dim)
+for i in xrange(Dim):
+    r[i] = RMin + (i+1) * Step;
+    v[i] = potential(r[i]) + OrbitalFactor/(r[i]*r[i]);
+
+#Setting up a tridiagonal matrix and finding eigenvectors and eigenvalues
+Hamiltonian = np.zeros((Dim,Dim))
+Hamiltonian[0,0] = DiagConst + v[0];
+Hamiltonian[0,1] = NondiagConst;
+for i in xrange(1,Dim-1):
+    Hamiltonian[i,i-1]  = NondiagConst;
+    Hamiltonian[i,i]    = DiagConst + v[i];
+    Hamiltonian[i,i+1]  = NondiagConst;
+Hamiltonian[Dim-1,Dim-2] = NondiagConst;
+Hamiltonian[Dim-1,Dim-1] = DiagConst + v[Dim-1];
+# diagonalize and obtain eigenvalues, not necessarily sorted
+EigValues, EigVectors = np.linalg.eig(Hamiltonian)
+# sort eigenvectors and eigenvalues
+permute = EigValues.argsort()
+EigValues = EigValues[permute]
+EigVectors = EigVectors[:,permute]
+# now plot the results for the three lowest lying eigenstates
+for i in xrange(3):
+    print EigValues[i]
+FirstEigvector = EigVectors[:,0]
+SecondEigvector = EigVectors[:,1]
+ThirdEigvector = EigVectors[:,2]
+plt.plot(r, FirstEigvector**2 ,'b-',r, SecondEigvector**2 ,'g-',r, ThirdEigvector**2 ,'r-')
+plt.axis([0,4.6,0.0, 0.025])
+plt.xlabel(r'$r$')
+plt.ylabel(r'Radial probability $r^2|R(r)|^2$')
+plt.title(r'Radial probability distributions for three lowest-lying states')
+plt.savefig('eigenvector.pdf')
+plt.show()
+
+</script></div>
+</section>
+
+
+<section>
+<h2 id="___sec16">Discussion of project 2 </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+Start adding material about rewriting  differential equation in terms of a discretized equation with approximations to the 
+derivatives as
+<p>&nbsp;<br>
+$$
+    -\frac{u_{i+1} -2u_i +u_{i-i}}{h^2}=f(x_i,u(x_i)),
+$$
+<p>&nbsp;<br>
+
+with \( i=1,2,\dots, n \). We need to add to this system the two boundary conditions \( u(a) =u_0 \) and \( u(b) = u_{n+1} \).
+If we define a matrix
+<p>&nbsp;<br>
+$$
+    \mathbf{A} = \frac{1}{h^2}\left(\begin{array}{cccccc}
+                          2 & -1 &  &   &  & \\
+                          -1 & 2 & -1 & & & \\
+                           & -1 & 2 & -1 & &  \\
+                           & \dots   & \dots &\dots   &\dots & \dots \\
+                           &   &  &-1  &2& -1 \\
+                           &    &  &   &-1 & 2 \\
+                      \end{array} \right)
+$$
+<p>&nbsp;<br>
+
+and the corresponding vectors \( \mathbf{u} = (u_1, u_2, \dots,u_n)^T \) and 
+\( \mathbf{f}(\mathbf{u}) = f(x_1,x_2,\dots, x_n,u_1, u_2, \dots,u_n)^T \)  we can rewrite the differential equation
+including the boundary conditions as a system of linear equations with  a large number of unknowns 
+<p>&nbsp;<br>
+$$
+   \mathbf{A}\mathbf{u} = \mathbf{f}(\mathbf{u}).
+ $$
+<p>&nbsp;<br>
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec17">From a buckling beam to qantum  </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+We are first interested in the solution of the radial part of Schroedinger's equation for one electron. This equation reads
+<p>&nbsp;<br>
+$$
+  -\frac{\hbar^2}{2 m} \left ( \frac{1}{r^2} \frac{d}{dr} r^2
+  \frac{d}{dr} - \frac{l (l + 1)}{r^2} \right )R(r) 
+     + V(r) R(r) = E R(r).
+$$
+<p>&nbsp;<br>
+
+In our case \( V(r) \) is the harmonic oscillator potential \( (1/2)kr^2 \) with
+\( k=m\omega^2 \) and \( E \) is
+the energy of the harmonic oscillator in three dimensions.
+The oscillator frequency is \( \omega \) and the energies are
+<p>&nbsp;<br>
+$$
+E_{nl}=  \hbar \omega \left(2n+l+\frac{3}{2}\right),
+$$
+<p>&nbsp;<br>
+
+with \( n=0,1,2,\dots \) and \( l=0,1,2,\dots \).
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec18">Radial Schroedinger equation  </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+Since we have made a transformation to spherical coordinates it means that 
+\( r\in [0,\infty) \).  
+The quantum number
+\( l \) is the orbital momentum of the electron.   Then we substitute \( R(r) = (1/r) u(r) \) and obtain
+<p>&nbsp;<br>
+$$
+  -\frac{\hbar^2}{2 m} \frac{d^2}{dr^2} u(r) 
+       + \left ( V(r) + \frac{l (l + 1)}{r^2}\frac{\hbar^2}{2 m}
+                                    \right ) u(r)  = E u(r) .
+$$
+<p>&nbsp;<br>
+
+The boundary conditions are \( u(0)=0 \) and \( u(\infty)=0 \).
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec19">Scaling the equations  </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+We introduce a dimensionless variable \( \rho = (1/\alpha) r \)
+where \( \alpha \) is a constant with dimension length and get
+<p>&nbsp;<br>
+$$
+  -\frac{\hbar^2}{2 m \alpha^2} \frac{d^2}{d\rho^2} u(\rho) 
+       + \left ( V(\rho) + \frac{l (l + 1)}{\rho^2}
+         \frac{\hbar^2}{2 m\alpha^2} \right ) u(\rho)  = E u(\rho) .
+$$
+<p>&nbsp;<br>
+
+In project 2 we choose \( l=0 \).
+Inserting \( V(\rho) = (1/2) k \alpha^2\rho^2 \) we end up with
+<p>&nbsp;<br>
+$$
+  -\frac{\hbar^2}{2 m \alpha^2} \frac{d^2}{d\rho^2} u(\rho) 
+       + \frac{k}{2} \alpha^2\rho^2u(\rho)  = E u(\rho) .
+$$
+<p>&nbsp;<br>
+
+We multiply thereafter with \( 2m\alpha^2/\hbar^2 \) on both sides and obtain
+<p>&nbsp;<br>
+$$
+  -\frac{d^2}{d\rho^2} u(\rho) 
+       + \frac{mk}{\hbar^2} \alpha^4\rho^2u(\rho)  = \frac{2m\alpha^2}{\hbar^2}E u(\rho) .
+$$
+<p>&nbsp;<br>
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec20">A natural length scale comes out automagically when scaling </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+We have thus
+<p>&nbsp;<br>
+$$
+  -\frac{d^2}{d\rho^2} u(\rho) 
+       + \frac{mk}{\hbar^2} \alpha^4\rho^2u(\rho)  = \frac{2m\alpha^2}{\hbar^2}E u(\rho) .
+$$
+<p>&nbsp;<br>
+
+The constant \( \alpha \) can now be fixed
+so that
+<p>&nbsp;<br>
+$$
+\frac{mk}{\hbar^2} \alpha^4 = 1,
+$$
+<p>&nbsp;<br>
+
+or 
+<p>&nbsp;<br>
+$$
+\alpha = \left(\frac{\hbar^2}{mk}\right)^{1/4}.
+$$
+<p>&nbsp;<br>
+
+Defining
+<p>&nbsp;<br>
+$$
+\lambda = \frac{2m\alpha^2}{\hbar^2}E,
+$$
+<p>&nbsp;<br>
+
+we can rewrite Schroedinger's equation as
+<p>&nbsp;<br>
+$$
+  -\frac{d^2}{d\rho^2} u(\rho) + \rho^2u(\rho)  = \lambda u(\rho) .
+$$
+<p>&nbsp;<br>
+
+This is similar to the equation for a buckling beam.
+In three dimensions 
+the eigenvalues for \( l=0 \) are 
+\( \lambda_0=3,\lambda_1=7,\lambda_2=11,\dots . \)
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec21">Discretizing </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+Define first the diagonal matrix element
+<p>&nbsp;<br>
+$$
+   d_i=\frac{2}{h^2}+V_i,
+$$
+<p>&nbsp;<br>
+
+and the non-diagonal matrix element 
+<p>&nbsp;<br>
+$$
+   e_i=-\frac{1}{h^2}.
+$$
+<p>&nbsp;<br>
+
+In this case the non-diagonal matrix elements are given by a mere constant. <em>All non-diagonal matrix elements are equal</em>.
+
+<p>
+With these definitions the Schroedinger equation takes the following form
+<p>&nbsp;<br>
+$$
+d_iu_i+e_{i-1}u_{i-1}+e_{i+1}u_{i+1}  = \lambda u_i,
+$$
+<p>&nbsp;<br>
+
+where \( u_i \) is unknown. We can write the 
+latter equation as a matrix eigenvalue problem 
+<p>&nbsp;<br>
+$$
+\begin{equation}
+    \left( \begin{array}{ccccccc} d_1 & e_1 & 0   & 0    & \dots  &0     & 0 \\
+                                e_1 & d_2 & e_2 & 0    & \dots  &0     &0 \\
+                                0   & e_2 & d_3 & e_3  &0       &\dots & 0\\
+                                \dots  & \dots & \dots & \dots  &\dots      &\dots & \dots\\
+                                0   & \dots & \dots & \dots  &\dots       &d_{n_{\mathrm{step}}-2} & e_{n_{\mathrm{step}}-1}\\
+                                0   & \dots & \dots & \dots  &\dots       &e_{n_{\mathrm{step}}-1} & d_{n_{\mathrm{step}}-1}
+             \end{array} \right)      \left( \begin{array}{c} u_{1} \\
+                                                              u_{2} \\
+                                                              \dots\\ \dots\\ \dots\\
+                                                              u_{n_{\mathrm{step}}-1}
+             \end{array} \right)=\lambda \left( \begin{array}{c} u_{1} \\
+                                                              u_{2} \\
+                                                              \dots\\ \dots\\ \dots\\
+                                                              u_{n_{\mathrm{step}}-1}
+             \end{array} \right) 
+\tag{1}
+\end{equation} 
+$$
+<p>&nbsp;<br>
+
+or if we wish to be more detailed, we can write the tridiagonal matrix as
+<p>&nbsp;<br>
+$$
+\begin{equation}
+    \left( \begin{array}{ccccccc} \frac{2}{h^2}+V_1 & -\frac{1}{h^2} & 0   & 0    & \dots  &0     & 0 \\
+                                -\frac{1}{h^2} & \frac{2}{h^2}+V_2 & -\frac{1}{h^2} & 0    & \dots  &0     &0 \\
+                                0   & -\frac{1}{h^2} & \frac{2}{h^2}+V_3 & -\frac{1}{h^2}  &0       &\dots & 0\\
+                                \dots  & \dots & \dots & \dots  &\dots      &\dots & \dots\\
+                                0   & \dots & \dots & \dots  &\dots       &\frac{2}{h^2}+V_{n_{\mathrm{step}}-2} & -\frac{1}{h^2}\\
+                                0   & \dots & \dots & \dots  &\dots       &-\frac{1}{h^2} & \frac{2}{h^2}+V_{n_{\mathrm{step}}-1}
+             \end{array} \right)  
+\tag{2} 
+\end{equation} 
+$$
+<p>&nbsp;<br>
+
+Recall that the solutions are known via the boundary conditions at
+\( i=n_{\mathrm{step}} \) and at the other end point, that is for  \( \rho_0 \).
+The solution is zero in both cases.
 </div>
 </section>
 
