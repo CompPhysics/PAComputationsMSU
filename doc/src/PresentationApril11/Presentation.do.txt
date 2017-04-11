@@ -195,12 +195,12 @@ where $u(x)$ is the vertical displacement, $R$ is a material specific constant, 
 Scale equations with $x = \rho L$ and $\rho \in [0,1]$ and get 
 !bt
 \[
-\frac{d^2 v(\rho)}{dx^2} +K v(\rho),
+\frac{d^2 v(\rho)}{dx^2} +K v(\rho)=0,
 \]
 !et
 a standard eigenvalue problem with $K= FL^2/R$. 
 
-If you replace $R=-\hbar^2/2m$ and $F=\lambda$ and we have the quantum mechanical variant for a particle moving in a well with infinite walls at the endpoints.
+If you replace $R=-\hbar^2/2m$ and $F=\lambda$, we have the quantum mechanical variant for a particle moving in a well with infinite walls at the endpoints.
 !eblock
 
 !split
