@@ -130,7 +130,9 @@ $(function () {
                '___sec14'),
               ('Discretizing', 2, None, '___sec15'),
               ('The Python code', 2, None, '___sec16'),
-              ('The power of numerical methods', 2, None, '___sec17')]}
+              ('The power of numerical methods', 2, None, '___sec17'),
+              ('Proposal', 2, None, '___sec18'),
+              ('Process', 2, None, '___sec19')]}
 end of tocinfo -->
 
 <body>
@@ -211,16 +213,16 @@ essentially almost all advanced problems in modern
 societies.
 
 <p>
-Computing competence enlarges the body of tools available to students and
-scientists beyond classical tools and allows for a more generic
-handling of problems. Focusing on algorithmic aspects results in
-deeper insights about scientific problems.
+Computing competence <b>enlarges the body of tools available to students</b> and
+scientists beyond classical tools and <b>allows for a more generic
+handling of problems</b>. Focusing on algorithmic aspects <b>results in
+deeper insights</b> about scientific problems.
 
 <ul>
-<li> Computing in basic physics courses allows us to bring important elements of scientific methods at a much earlier stage in our education.</li>
-<li> It gives the students skills and abilities which are asked for by society.</li>
+<li> Computing in basic physics courses allows us to bring important elements of scientific methods at a much earlier stage in our students' education.</li>
+<li> It gives the students skills and abilities that are asked for by society.</li>
 <li> It gives us as university teachers a unique opportunity to enhance students' insights about physics and how to solve scientific problems.</li>
-<li> Combined with a strong Physics Education group, MSU is in a unique position among big ten universities and perhaps even in the country.</li> 
+<li> Combined with a strong Physics Education Research group, MSU is in a unique position among Big Ten universities and, likely, the country.</li>
 </ul>
 </div>
 
@@ -232,11 +234,10 @@ deeper insights about scientific problems.
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
-Computing means solving scientific problems using all possible tools, including symbolic computing, computers and numerical algorithms and analytical paper and pencil solutions .
+<b>Computing means solving scientific problems using all possible tools</b>, including symbolic computing, computers and numerical algorithms, and analytical paper and pencil solutions .
 
 <p>
-Computing is about developing an understanding of the scientific method  by enhancing
-algorithmic thinking when solving problems.
+<b>Computing is about developing an understanding of the scientific method</b> by enhancing algorithmic thinking when solving problems.
 
 <p>
 On the part of students, this competence involves being able to:
@@ -281,16 +282,16 @@ particular problem.
 <ul>
 <li> Algorithms involving pen and paper are traditionally aimed at what we often refer to as continuous models.</li>
 <li> Application of computers calls for approximate discrete models.</li>
-<li> Much of the development of methods for continuous models are now being replaced by methods  for discrete models in science and industry, simply because much larger classes of problems can be addressed with discrete models, often also by simpler and more generic methodologies.</li>
+<li> Much of the development of <b>methods for continuous models are now being replaced by methods  for discrete models</b> in science and industry, simply because <b>much larger classes of problems can be addressed</b> with discrete models, often also by simpler and more generic methodologies.</li>
 </ul>
 
-However, verification of algorithms and understanding their limitations requires much of the classical knowledge about continuous models.
+<em>However, verification of algorithms and understanding their limitations requires much of the classical knowledge about continuous models.</em>
 
 <p>
 So, why should basic university education undergo a shift towards modern computing?
 
 <p>
-The impact of the computer on mathematics and science is tremendous: science and industry now rely on solving mathematical problems through computing.
+The impact of the computer on mathematics and science is tremendous: <b>science and industry now rely on solving mathematical problems through computing</b>.
 
 <ul>
 <li> Computing can increase the relevance in education by solving more realistic problems earlier.</li>
@@ -313,7 +314,7 @@ The impact of the computer on mathematics and science is tremendous: science and
 <li> and many more cases</li>
 </ol>
 
-Can use essentially the same algorithms to solve these problems, either some simple modified Euler algorithms or some Runge-Kutta class of algorithms or perhaps the so-called Verlet class of algorithms.  Algorithms students use in one course can be reused in other courses.
+Can use essentially the <b>same algorithms to solve these problems</b>, either some simple modified Euler algorithms or some Runge-Kutta class of algorithms or perhaps the so-called Verlet class of algorithms.  <b>Algorithms students use in one course can be reused in other courses</b>.
 </div>
 
 
@@ -326,13 +327,13 @@ Can use essentially the same algorithms to solve these problems, either some sim
 <p>
 
 <p>
-Classical pendulum with damping and external force as it could appear in a mechanics course
+Classical pendulum with damping and external force as it could appear in a mechanics course (PHY 321)
 $$
   ml\frac{d^2\theta}{dt^2}+\nu\frac{d\theta}{dt}  +mgsin(\theta)=Acos(\omega t).
 $$
 
-Easy to solve numerically and then visualize the solution.  
-Almost the same equation for an RLC circuit in the electromagnetism course
+Easy to solve numerically and then visualize the solution.
+Almost the same equation for an RLC circuit in the electromagnetism course (PHY 482)
 $$
 L\frac{d^2Q}{dt^2}+\frac{Q}{C}+R\frac{dQ}{dt}=Acos(\omega t).
 $$
@@ -352,12 +353,12 @@ $$
 <p>
 Classical pendulum equations with damping and external force
 $$
-   \frac{d\theta}{d\hat{t}} =\hat{v}, 
+   \frac{d\theta}{d\hat{t}} =\hat{v},
 $$
 
-and 
+and
 $$
-   \frac{d\hat{v}}{d\hat{t}} =Acos(\hat{\omega} \hat{t})-\hat{v}\xi-\sin(\theta), 
+   \frac{d\hat{v}}{d\hat{t}} =Acos(\hat{\omega} \hat{t})-\hat{v}\xi-\sin(\theta),
 $$
 
 with \( \omega_0=\sqrt{g/l} \), \( \hat{t}=\omega_0 t \) and \( \xi = mg/\omega_0\nu \).
@@ -365,18 +366,18 @@ with \( \omega_0=\sqrt{g/l} \), \( \hat{t}=\omega_0 t \) and \( \xi = mg/\omega_
 <p>
 The RLC circuit
 $$
-   \frac{dQ}{d\hat{t}} =\hat{I}, 
+   \frac{dQ}{d\hat{t}} =\hat{I},
 $$
 
-and 
+and
 $$
-   \frac{d\hat{I}}{d\hat{t}} =Acos(\hat{\omega} \hat{t})-\hat{I}\xi-Q, 
+   \frac{d\hat{I}}{d\hat{t}} =Acos(\hat{\omega} \hat{t})-\hat{I}\xi-Q,
 $$
 
 with \( \omega_0=1/\sqrt{LC} \), \( \hat{t}=\omega_0 t \) and \( \xi = CR\omega_0 \).
 
 <p>
-The equations are essentially the same. Great potential for abstraction.
+The equations are essentially the same. <b>Great potential for abstraction</b>.
 </div>
 
 
@@ -415,7 +416,7 @@ $$
 where \( u(x) \) is the vertical displacement, \( R \) is a material specific constant, \( F \) the force and \( x \in [0,L] \) with \( u(0)=u(L)=0 \).
 
 <p>
-Scale equations with \( x = \rho L \) and \( \rho \in [0,1] \) and get 
+Scale equations with \( x = \rho L \) and \( \rho \in [0,1] \) and get
 $$
 \frac{d^2 v(\rho)}{dx^2} +K v(\rho)=0,
 $$
@@ -440,7 +441,7 @@ $$
 $$
 
 with \( i=1,2,\dots, n \). We need to add to this system the two boundary conditions \( v(0) =v_0 \) and \( v(1) = v_{n+1} \).
-The so-called Toeplitz matrix (special case from the discretized second derivative) 
+The so-called Toeplitz matrix (special case from the discretized second derivative)
 $$
     \mathbf{A} = \frac{1}{h^2}\left(\begin{array}{cccccc}
                           2 & -1 &  &   &  & \\
@@ -472,7 +473,7 @@ The Toeplitz matrix has analytical eigenpairs!! Adding a potential along the dia
 We are first interested in the solution of the radial part of Schroedinger's equation for one electron. This equation reads
 $$
   -\frac{\hbar^2}{2 m} \left ( \frac{1}{r^2} \frac{d}{dr} r^2
-  \frac{d}{dr} - \frac{l (l + 1)}{r^2} \right )R(r) 
+  \frac{d}{dr} - \frac{l (l + 1)}{r^2} \right )R(r)
      + V(r) R(r) = E R(r).
 $$
 
@@ -495,12 +496,12 @@ with \( n=0,1,2,\dots \) and \( l=0,1,2,\dots \).
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
-Since we have made a transformation to spherical coordinates it means that 
-\( r\in [0,\infty) \).  
+Since we have made a transformation to spherical coordinates it means that
+\( r\in [0,\infty) \).
 The quantum number
 \( l \) is the orbital momentum of the electron.   Then we substitute \( R(r) = (1/r) u(r) \) and obtain
 $$
-  -\frac{\hbar^2}{2 m} \frac{d^2}{dr^2} u(r) 
+  -\frac{\hbar^2}{2 m} \frac{d^2}{dr^2} u(r)
        + \left ( V(r) + \frac{l (l + 1)}{r^2}\frac{\hbar^2}{2 m}
                                     \right ) u(r)  = E u(r) .
 $$
@@ -519,7 +520,7 @@ The boundary conditions are \( u(0)=0 \) and \( u(\infty)=0 \).
 We introduce a dimensionless variable \( \rho = (1/\alpha) r \)
 where \( \alpha \) is a constant with dimension length and get
 $$
-  -\frac{\hbar^2}{2 m \alpha^2} \frac{d^2}{d\rho^2} u(\rho) 
+  -\frac{\hbar^2}{2 m \alpha^2} \frac{d^2}{d\rho^2} u(\rho)
        + \left ( V(\rho) + \frac{l (l + 1)}{\rho^2}
          \frac{\hbar^2}{2 m\alpha^2} \right ) u(\rho)  = E u(\rho) .
 $$
@@ -527,13 +528,13 @@ $$
 In project 2 we choose \( l=0 \).
 Inserting \( V(\rho) = (1/2) k \alpha^2\rho^2 \) we end up with
 $$
-  -\frac{\hbar^2}{2 m \alpha^2} \frac{d^2}{d\rho^2} u(\rho) 
+  -\frac{\hbar^2}{2 m \alpha^2} \frac{d^2}{d\rho^2} u(\rho)
        + \frac{k}{2} \alpha^2\rho^2u(\rho)  = E u(\rho) .
 $$
 
 We multiply thereafter with \( 2m\alpha^2/\hbar^2 \) on both sides and obtain
 $$
-  -\frac{d^2}{d\rho^2} u(\rho) 
+  -\frac{d^2}{d\rho^2} u(\rho)
        + \frac{mk}{\hbar^2} \alpha^4\rho^2u(\rho)  = \frac{2m\alpha^2}{\hbar^2}E u(\rho) .
 $$
 </div>
@@ -548,7 +549,7 @@ $$
 <p>
 We have thus
 $$
-  -\frac{d^2}{d\rho^2} u(\rho) 
+  -\frac{d^2}{d\rho^2} u(\rho)
        + \frac{mk}{\hbar^2} \alpha^4\rho^2u(\rho)  = \frac{2m\alpha^2}{\hbar^2}E u(\rho) .
 $$
 
@@ -574,8 +575,8 @@ $$
 $$
 
 This is similar to the equation for a buckling beam.
-In three dimensions 
-the eigenvalues for \( l=0 \) are 
+In three dimensions
+the eigenvalues for \( l=0 \) are
 \( \lambda_0=1.5,\lambda_1=3.5,\lambda_2=5.5,\dots . \)
 </div>
 
@@ -592,7 +593,7 @@ $$
    d_i=\frac{2}{h^2}+V_i,
 $$
 
-and the non-diagonal matrix element 
+and the non-diagonal matrix element
 $$
    e_i=-\frac{1}{h^2}.
 $$
@@ -605,8 +606,8 @@ $$
 d_iu_i+e_{i-1}u_{i-1}+e_{i+1}u_{i+1}  = \lambda u_i,
 $$
 
-where \( u_i \) is unknown. We can write the 
-latter equation as a matrix eigenvalue problem 
+where \( u_i \) is unknown. We can write the
+latter equation as a matrix eigenvalue problem
 $$
 \begin{equation}
     \left( \begin{array}{ccccccc} d_1 & e_1 & 0   & 0    & \dots  &0     & 0 \\
@@ -623,9 +624,9 @@ $$
                                                               u_{2} \\
                                                               \dots\\ \dots\\ \dots\\
                                                               u_{n_{\mathrm{step}}-1}
-             \end{array} \right) 
+             \end{array} \right)
 \label{eq:sematrix}
-\end{equation} 
+\end{equation}
 $$
 
 or if we wish to be more detailed, we can write the tridiagonal matrix as
@@ -637,9 +638,9 @@ $$
                                 \dots  & \dots & \dots & \dots  &\dots      &\dots & \dots\\
                                 0   & \dots & \dots & \dots  &\dots       &\frac{2}{h^2}+V_{n_{\mathrm{step}}-2} & -\frac{1}{h^2}\\
                                 0   & \dots & \dots & \dots  &\dots       &-\frac{1}{h^2} & \frac{2}{h^2}+V_{n_{\mathrm{step}}-1}
-             \end{array} \right)  
-\label{eq:matrixse} 
-\end{equation} 
+             \end{array} \right)
+\label{eq:matrixse}
+\end{equation}
 $$
 
 Recall that the solutions are known via the boundary conditions at
@@ -653,15 +654,15 @@ The solution is zero in both cases.
 
 <h2 id="___sec16">The Python code </h2>
 The code sets up the Hamiltonian matrix by defining the minimun and maximum values of \( r \) with a
-maximum value of integration points. It plots the 
+maximum value of integration points. It plots the
 eigenfunctions of the three lowest eigenstates.
 <p>
 
 
 <div class="compute"><script type="text/x-sage">
-#Program which solves the one-particle Schrodinger equation 
+#Program which solves the one-particle Schrodinger equation
 #for a potential specified in function
-#potential(). 
+#potential().
 
 from  matplotlib import pyplot as plt
 import numpy as np
@@ -741,18 +742,61 @@ The last example shows the potential of combining numerical algorithms with anal
 
 <ul>
 <li> make abstraction and explore other physics cases easily where no analytical solutions are known</li>
-<li> Validate and verify  their  algorithms.</li> 
+<li> Validate and verify  their  algorithms.</li>
 <li> Including concepts like unit testing, one has the possibility to test and validate several or all parts of the code.</li>
 <li> Validation and verification are then included <em>naturally</em> and one can develop a better attitude to what is meant with an ethically sound scientific approach.</li>
-<li> The above example allows the student to also test the mathematical error of the algorithm for the eigenvalue solver by changing the number of integration points. The students get trained from day one to think error analysis.</li> 
+<li> The above example allows the student to also test the mathematical error of the algorithm for the eigenvalue solver by changing the number of integration points. The students get trained from day one to think error analysis.</li>
 <li> The algorithm can be tailored to any kind of one-particle problem used in quantum mechanics or eigenvalue problems</li>
 <li> A simple rewrite allows for reuse in linear algebra problems for solution of say Poisson's equation in electromagnetism, or the diffusion equation in one dimension.</li>
-<li> With an ipython notebook the students can keep exploring similar examples and turn them in as their own notebooks.</li> 
+<li> With an ipython notebook the students can keep exploring similar examples and turn them in as their own notebooks.</li>
 </ul>
 </div>
 
 
 <p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec18">Proposal </h2>
+
+<p>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+
+<p>
+By early in the Fall 2017 term (in time to make any necessary curricular changes for the 2018-19 academic year), the committee (Danny Caballero, Sean Couch, Wade Fisher, Connor Glosser, Morten Hjorth-Jensen, Claire Kopenhafer, Brian O'Shea, and Carlo Piermarocchi) will present a document to the faculty of the Department of Physics and Astronomy that:
+
+<ol>
+<li> outlines proposed learning outcomes relating to computational modeling and data analysis within the upper-division physics curriculum,</li>
+<li> offers a concrete and realistic plan of action that will allow us to attain these learning outcomes, and</li>
+<li> provides a plan to assess the progress of our efforts.</li>
+</ol>
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec19">Process </h2>
+
+<p>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+
+<p>
+Prior to Fall 2017, the committee will pursue several goals.  We will:
+
+<ol>
+<li> Engage the faculty in the department to understand current best practices, to identify areas of concern, and to solicit ideas for desired learning outcomes and curriculum modifications.</li>
+<li> Survey current undergraduate students to understand their experiences thus far and identify the types of training that they would like to receive with regards to these subjects.</li>
+<li> Survey students who recently received a bachelor's degree in physics or astrophysics to identify what aspects of their education have been useful to them thus far, and what they would have liked to have learned while here at MSU.</li>
+<li> Identify possible areas of collaboration with the Department of Computational Mathematics, Science and Engineering, and explore the possibility of more in-depth educational options (i.e., a computational physics degree).</li>
+<li> Contact faculty at other institutions that have pursued similar reform efforts to learn about potential opportunities and pitfalls.</li>
+<li> Synthesize the results obtained from the previous points into a coherent document that will be presented to the faculty for discussion.</li>
+</ol>
+</div>
+
 
 <!-- ------------------- end of main content --------------- -->
 
