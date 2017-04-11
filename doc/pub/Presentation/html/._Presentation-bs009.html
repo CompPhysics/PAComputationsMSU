@@ -1,0 +1,240 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="description" content="Integrating a computational perspective in physics courses">
+
+<title>Integrating a computational perspective in physics courses</title>
+
+<!-- Bootstrap style: bootstrap -->
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- not necessary
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+-->
+
+<style type="text/css">
+
+/* Add scrollbar to dropdown menus in bootstrap navigation bar */
+.dropdown-menu {
+   height: auto;
+   max-height: 400px;
+   overflow-x: hidden;
+}
+
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:50px;      /* fixed header height for style bootstrap */
+  margin:-50px 0 0; /* negative fixed header height */
+}
+</style>
+
+
+<script src="http://sagecell.sagemath.org/static/jquery.min.js"></script>
+<script src="http://sagecell.sagemath.org/embedded_sagecell.js"></script>
+<link rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
+<script>
+$(function () {
+    // Make the div with id 'mycell' a Sage cell
+    sagecell.makeSagecell({inputLocation:  '#mycell',
+                           template:       sagecell.templates.minimal,
+                           evalButtonText: 'Activate'});
+    // Make *any* div with class 'compute' a Sage cell
+    sagecell.makeSagecell({inputLocation: 'div.compute',
+                           evalButtonText: 'Evaluate'});
+});
+</script>
+
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [("Wouldn't it be cool if your mechanics students could reproduce results from a PRL?",
+               2,
+               None,
+               '___sec0'),
+              ('Unique opportunities', 2, None, '___sec1'),
+              ('Computing competence', 2, None, '___sec2'),
+              ('Better understanding of the scientific method',
+               2,
+               None,
+               '___sec3'),
+              ('Why should basic university education undergo a shift towards modern computing?',
+               2,
+               None,
+               '___sec4'),
+              ('Examples of simple algorithms, initial value problems and proper scaling of equations',
+               2,
+               None,
+               '___sec5'),
+              ('Mechanics and electromagnetism, initial value problems',
+               2,
+               None,
+               '___sec6'),
+              ('Mechanics and electromagnetism, initial value problems and now proper scaling',
+               2,
+               None,
+               '___sec7'),
+              ('Other examples of simple algorithms that can be reused in many courses, two-point boundary value problems and scaling',
+               2,
+               None,
+               '___sec8'),
+              ('A buckling beam, or a quantum mechanical particle in an infinite well',
+               2,
+               None,
+               '___sec9'),
+              ('Discretize and get the same type of problem',
+               2,
+               None,
+               '___sec10'),
+              ('Adding complexity, hydrogen-like atoms or other one-particle potentials',
+               2,
+               None,
+               '___sec11'),
+              ('Radial Schroedinger equation', 2, None, '___sec12'),
+              ('Scaling the equations', 2, None, '___sec13'),
+              ('A natural length scale comes out automagically when scaling',
+               2,
+               None,
+               '___sec14'),
+              ('Discretizing', 2, None, '___sec15'),
+              ('The Python code', 2, None, '___sec16'),
+              ('The power of numerical methods', 2, None, '___sec17')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript"
+ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<!-- Bootstrap navigation bar -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="Presentation-bs.html">Integrating a computational perspective in physics courses</a>
+  </div>
+
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+     <!-- navigation toc: --> <li><a href="._Presentation-bs001.html#___sec0" style="font-size: 80%;">Wouldn't it be cool if your mechanics students could reproduce results from a PRL?</a></li>
+     <!-- navigation toc: --> <li><a href="._Presentation-bs002.html#___sec1" style="font-size: 80%;">Unique opportunities</a></li>
+     <!-- navigation toc: --> <li><a href="._Presentation-bs003.html#___sec2" style="font-size: 80%;">Computing competence</a></li>
+     <!-- navigation toc: --> <li><a href="._Presentation-bs004.html#___sec3" style="font-size: 80%;">Better understanding of the scientific method</a></li>
+     <!-- navigation toc: --> <li><a href="._Presentation-bs005.html#___sec4" style="font-size: 80%;">Why should basic university education undergo a shift towards modern computing?</a></li>
+     <!-- navigation toc: --> <li><a href="._Presentation-bs006.html#___sec5" style="font-size: 80%;">Examples of simple algorithms, initial value problems and proper scaling of equations</a></li>
+     <!-- navigation toc: --> <li><a href="._Presentation-bs007.html#___sec6" style="font-size: 80%;">Mechanics and electromagnetism, initial value problems</a></li>
+     <!-- navigation toc: --> <li><a href="._Presentation-bs008.html#___sec7" style="font-size: 80%;">Mechanics and electromagnetism, initial value problems and now proper scaling</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec8" style="font-size: 80%;">Other examples of simple algorithms that can be reused in many courses, two-point boundary value problems and scaling</a></li>
+     <!-- navigation toc: --> <li><a href="._Presentation-bs010.html#___sec9" style="font-size: 80%;">A buckling beam, or a quantum mechanical particle in an infinite well</a></li>
+     <!-- navigation toc: --> <li><a href="._Presentation-bs011.html#___sec10" style="font-size: 80%;">Discretize and get the same type of problem</a></li>
+     <!-- navigation toc: --> <li><a href="._Presentation-bs012.html#___sec11" style="font-size: 80%;">Adding complexity, hydrogen-like atoms or other one-particle potentials</a></li>
+     <!-- navigation toc: --> <li><a href="._Presentation-bs013.html#___sec12" style="font-size: 80%;">Radial Schroedinger equation</a></li>
+     <!-- navigation toc: --> <li><a href="._Presentation-bs014.html#___sec13" style="font-size: 80%;">Scaling the equations</a></li>
+     <!-- navigation toc: --> <li><a href="._Presentation-bs015.html#___sec14" style="font-size: 80%;">A natural length scale comes out automagically when scaling</a></li>
+     <!-- navigation toc: --> <li><a href="._Presentation-bs016.html#___sec15" style="font-size: 80%;">Discretizing</a></li>
+     <!-- navigation toc: --> <li><a href="._Presentation-bs017.html#___sec16" style="font-size: 80%;">The Python code</a></li>
+     <!-- navigation toc: --> <li><a href="._Presentation-bs018.html#___sec17" style="font-size: 80%;">The power of numerical methods</a></li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</div> <!-- end of navigation bar -->
+
+<div class="container">
+
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
+
+<a name="part0009"></a>
+<!-- !split -->
+
+<h2 id="___sec8" class="anchor">Other examples of simple algorithms that can be reused in many courses, two-point boundary value problems and scaling </h2>
+<div class="panel panel-default">
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+These physics examples can all be studied using almost the same types of algorithms, simple eigenvalue solvers and Gaussian elimination with the same starting matrix!
+
+<ol>
+<li> A buckling beam and Toeplitz matrices (mechanics and mathematical methods), eigenvalue problems</li>
+<li> A particle in an infinite potential well, quantum eigenvalue problems</li>
+<li> A particle (or two) in a general quantum well, quantum eigenvalue problems</li>
+<li> Poisson's  equation in one dim, linear algebra (electromagnetism)</li>
+<li> The diffusion equation in one dimension (Statistical Physics), linear algebra</li>
+<li> and many other cases</li>
+</ol>
+</div>
+</div>
+
+
+<p>
+<p>
+<!-- navigation buttons at the bottom of the page -->
+<ul class="pagination">
+<li><a href="._Presentation-bs008.html">&laquo;</a></li>
+  <li><a href="._Presentation-bs000.html">1</a></li>
+  <li><a href="._Presentation-bs001.html">2</a></li>
+  <li><a href="._Presentation-bs002.html">3</a></li>
+  <li><a href="._Presentation-bs003.html">4</a></li>
+  <li><a href="._Presentation-bs004.html">5</a></li>
+  <li><a href="._Presentation-bs005.html">6</a></li>
+  <li><a href="._Presentation-bs006.html">7</a></li>
+  <li><a href="._Presentation-bs007.html">8</a></li>
+  <li><a href="._Presentation-bs008.html">9</a></li>
+  <li class="active"><a href="._Presentation-bs009.html">10</a></li>
+  <li><a href="._Presentation-bs010.html">11</a></li>
+  <li><a href="._Presentation-bs011.html">12</a></li>
+  <li><a href="._Presentation-bs012.html">13</a></li>
+  <li><a href="._Presentation-bs013.html">14</a></li>
+  <li><a href="._Presentation-bs014.html">15</a></li>
+  <li><a href="._Presentation-bs015.html">16</a></li>
+  <li><a href="._Presentation-bs016.html">17</a></li>
+  <li><a href="._Presentation-bs017.html">18</a></li>
+  <li><a href="._Presentation-bs018.html">19</a></li>
+  <li><a href="._Presentation-bs010.html">&raquo;</a></li>
+</ul>
+<!-- ------------------- end of main content --------------- -->
+
+</div>  <!-- end container -->
+<!-- include javascript, jQuery *first* -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+<!-- Bootstrap footer
+<footer>
+<a href="http://..."><img width="250" align=right src="http://..."></a>
+</footer>
+-->
+
+
+</body>
+</html>
+    
+
