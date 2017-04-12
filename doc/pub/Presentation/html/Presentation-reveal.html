@@ -160,7 +160,7 @@ MathJax.Hub.Config({
 
 <br>
 <p>&nbsp;<br>
-<center><h4>Apr 11, 2017</h4></center> <!-- date -->
+<center><h4>Apr 12, 2017</h4></center> <!-- date -->
 <br>
 </section>
 
@@ -404,7 +404,7 @@ $$
 where \( u(x) \) is the vertical displacement, \( R \) is a material specific constant, \( F \) the force and \( x \in [0,L] \) with \( u(0)=u(L)=0 \).
 
 <p>
-Scale equations with \( x = \rho L \) and \( \rho \in [0,1] \) and get
+Scale equations with \( x = \rho L \) and \( \rho \in [0,1] \) and get (note that we change from \( u(x) \) to \( v(\rho) \)) 
 <p>&nbsp;<br>
 $$
 \frac{d^2 v(\rho)}{dx^2} +K v(\rho)=0,
@@ -435,14 +435,14 @@ with \( i=1,2,\dots, n \). We need to add to this system the two boundary condit
 The so-called Toeplitz matrix (special case from the discretized second derivative)
 <p>&nbsp;<br>
 $$
-    \mathbf{A} = \frac{1}{h^2}\left(\begin{array}{cccccc}
+    \mathbf{A} = \frac{1}{h^2}\begin{bmatrix}
                           2 & -1 &  &   &  & \\
                           -1 & 2 & -1 & & & \\
                            & -1 & 2 & -1 & &  \\
                            & \dots   & \dots &\dots   &\dots & \dots \\
                            &   &  &-1  &2& -1 \\
                            &    &  &   &-1 & 2 \\
-                      \end{array} \right)
+                      \end{bmatrix}
 $$
 <p>&nbsp;<br>
 
@@ -519,26 +519,26 @@ We introduce a dimensionless variable \( \rho = (1/\alpha) r \)
 where \( \alpha \) is a constant with dimension length and get
 <p>&nbsp;<br>
 $$
-  -\frac{\hbar^2}{2 m \alpha^2} \frac{d^2}{d\rho^2} u(\rho)
+  -\frac{\hbar^2}{2 m \alpha^2} \frac{d^2}{d\rho^2} v(\rho)
        + \left ( V(\rho) + \frac{l (l + 1)}{\rho^2}
-         \frac{\hbar^2}{2 m\alpha^2} \right ) u(\rho)  = E u(\rho) .
+         \frac{\hbar^2}{2 m\alpha^2} \right ) v(\rho)  = E v(\rho) .
 $$
 <p>&nbsp;<br>
 
-In project 2 we choose \( l=0 \).
+Let us choose \( l=0 \).
 Inserting \( V(\rho) = (1/2) k \alpha^2\rho^2 \) we end up with
 <p>&nbsp;<br>
 $$
-  -\frac{\hbar^2}{2 m \alpha^2} \frac{d^2}{d\rho^2} u(\rho)
-       + \frac{k}{2} \alpha^2\rho^2u(\rho)  = E u(\rho) .
+  -\frac{\hbar^2}{2 m \alpha^2} \frac{d^2}{d\rho^2} v(\rho)
+       + \frac{k}{2} \alpha^2\rho^2v(\rho)  = E v(\rho) .
 $$
 <p>&nbsp;<br>
 
 We multiply thereafter with \( 2m\alpha^2/\hbar^2 \) on both sides and obtain
 <p>&nbsp;<br>
 $$
-  -\frac{d^2}{d\rho^2} u(\rho)
-       + \frac{mk}{\hbar^2} \alpha^4\rho^2u(\rho)  = \frac{2m\alpha^2}{\hbar^2}E u(\rho) .
+  -\frac{d^2}{d\rho^2} v(\rho)
+       + \frac{mk}{\hbar^2} \alpha^4\rho^2v(\rho)  = \frac{2m\alpha^2}{\hbar^2}E v(\rho) .
 $$
 <p>&nbsp;<br>
 </div>
@@ -553,8 +553,8 @@ $$
 We have thus
 <p>&nbsp;<br>
 $$
-  -\frac{d^2}{d\rho^2} u(\rho)
-       + \frac{mk}{\hbar^2} \alpha^4\rho^2u(\rho)  = \frac{2m\alpha^2}{\hbar^2}E u(\rho) .
+  -\frac{d^2}{d\rho^2} v(\rho)
+       + \frac{mk}{\hbar^2} \alpha^4\rho^2v(\rho)  = \frac{2m\alpha^2}{\hbar^2}E v(\rho) .
 $$
 <p>&nbsp;<br>
 
@@ -583,11 +583,11 @@ $$
 we can rewrite Schroedinger's equation as
 <p>&nbsp;<br>
 $$
-  -\frac{d^2}{d\rho^2} u(\rho) + \rho^2u(\rho)  = \lambda u(\rho) .
+  -\frac{d^2}{d\rho^2} v(\rho) + \rho^2v(\rho)  = \lambda v(\rho) .
 $$
 <p>&nbsp;<br>
 
-This is similar to the equation for a buckling beam.
+This is similar to the equation for a buckling beam except for the potential term.
 In three dimensions
 the eigenvalues for \( l=0 \) are
 \( \lambda_0=1.5,\lambda_1=3.5,\lambda_2=5.5,\dots . \)
@@ -620,30 +620,30 @@ In this case the non-diagonal matrix elements are given by a mere constant. <em>
 With these definitions the Schroedinger equation takes the following form
 <p>&nbsp;<br>
 $$
-d_iu_i+e_{i-1}u_{i-1}+e_{i+1}u_{i+1}  = \lambda u_i,
+d_iu_i+e_{i-1}v_{i-1}+e_{i+1}v_{i+1}  = \lambda v_i,
 $$
 <p>&nbsp;<br>
 
-where \( u_i \) is unknown. We can write the
+where \( v_i \) is unknown. We can write the
 latter equation as a matrix eigenvalue problem
 <p>&nbsp;<br>
 $$
 \begin{equation}
-    \left( \begin{array}{ccccccc} d_1 & e_1 & 0   & 0    & \dots  &0     & 0 \\
+    \begin{bmatrix} d_1 & e_1 & 0   & 0    & \dots  &0     & 0 \\
                                 e_1 & d_2 & e_2 & 0    & \dots  &0     &0 \\
                                 0   & e_2 & d_3 & e_3  &0       &\dots & 0\\
                                 \dots  & \dots & \dots & \dots  &\dots      &\dots & \dots\\
                                 0   & \dots & \dots & \dots  &\dots       &d_{n_{\mathrm{step}}-2} & e_{n_{\mathrm{step}}-1}\\
                                 0   & \dots & \dots & \dots  &\dots       &e_{n_{\mathrm{step}}-1} & d_{n_{\mathrm{step}}-1}
-             \end{array} \right)      \left( \begin{array}{c} u_{1} \\
-                                                              u_{2} \\
+             \end{bmatrix}      \begin{bmatrix} v_{1} \\
+                                                              v_{2} \\
                                                               \dots\\ \dots\\ \dots\\
-                                                              u_{n_{\mathrm{step}}-1}
-             \end{array} \right)=\lambda \left( \begin{array}{c} u_{1} \\
-                                                              u_{2} \\
+                                                              v_{n_{\mathrm{step}}-1}
+             \end{bmatrix}=\lambda \begin{bmatrix}{c} v_{1} \\
+                                                              v_{2} \\
                                                               \dots\\ \dots\\ \dots\\
-                                                              u_{n_{\mathrm{step}}-1}
-             \end{array} \right)
+                                                              v_{n_{\mathrm{step}}-1}
+             \end{bmatrix}
 \tag{1}
 \end{equation}
 $$
@@ -673,7 +673,7 @@ The solution is zero in both cases.
 
 
 <section>
-<h2 id="___sec16">The Python code </h2>
+<h2 id="___sec16">The Python (2.7) code </h2>
 The code sets up the Hamiltonian matrix by defining the minimun and maximum values of \( r \) with a
 maximum value of integration points. It plots the
 eigenfunctions of the three lowest eigenstates.
