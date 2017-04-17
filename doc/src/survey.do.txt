@@ -1,0 +1,50 @@
+TITLE: Survey of Current and Former Students (Draft)
+AUTHOR: Danny Caballero, Sean Couch, Wade Fisher, Connor Glosser, Morten Hjorth-Jensen, Claire Kopenhafer, Brian O'Shea, and Carlo Piermarocchi
+DATE: today
+
+The committee envisions two surveys: one for current students and one for recent graduates. Note that "Likert scale" means the response is not open, but rather requests the degree to which the respondent endorses the statement.
+
+OPEN - refers to open response
+MC - refers to multiple choice (select one)
+MS - refers to multiple select (select all that apply)
+LIKERT - refers to degree of endorsement
+
+
+===== Draft questions for current students =====
+
+* What is your current major? Minor? (OPEN)
+* What is your current classification? (MC)
+* Have you done undergraduate research? In which department? What kind of work have you done? (OPEN)
+* In which major courses has your instructor asked you use the computer to solve problems? (MS)
+* In which major courses has your instructor taught you about using a computer to solve problems (MS)?
+* How else have you used the computer to solve problems? Please consider other courses and research experiences. (OPEN)
+* Please select your endorsement of the following statements (LIKERT):
+  * Computation is important to physics and astronomy.
+  * Learning computation is personally important to me.
+  * Learning computation will make me a better prepared scientist.
+  * Learning computation will take away from current course offerings.
+  * I'm concerned that incorporating computation into coursework will make them to full.
+  * I'm concerned that incorporating computation into coursework means some important things will have to be left out.
+  * Learning computation is important for my professional development.
+  * I think I am already receiving enough instruction on computation.
+  * I think we require more instruction in computation in our major.
+  * I am concerned about learning computation in my classes because I've never used it before.
+  * I am concerned about learning computation in my classes because it's hard to use.
+  * I am concerned about learning computation in my classes because I'm not a computer person.
+* Are there other things that you wish we taught in the physics and astronomy department? (OPEN)
+* How do you wish your undergraduate courses in physics and astronomy were taught? (OPEN)
+
+===== Draft questions for recent graduates =====
+
+* What Bachelor's degree(s) did you earn from MSU? (OPEN)
+* How long ago did you graduate with your Bachelor's degree(s)? (OPEN)
+* What is your current position? (OPEN)
+* Would you classify your current position as a Science, Technology, Engineering, or Math (STEM) position? (Yes/No)
+* Would you classify your current position as a Physics and/or Astronomy position? (Yes/No)
+* How do you use computation in your current position? (OPEN)
+* How did your Bachelor's program (course work) prepare you for doing computation in your current position? (OPEN)
+* Did you conduct undergraduate research while at MSU? What kind of research? How did you use computation in that research? (OPEN)
+* How did your undergraduate research experience prepare you for doing computation in your current position? (OPEN)
+* How did your employer (current or former) prepare you for doing computation in your current position? (OPEN)
+* When interviewing for your positions, what kinds of question did you get regarding computation? (OPEN)
+* What kinds of skills are needed to be successful in your current position? Where did you develop those skills? (OPEN)
