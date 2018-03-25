@@ -1,10 +1,14 @@
 TITLE: Executive Summary: Computational Physics at the Physics and Astronomy Department, Michigan State University
-AUTHOR: Danny Caballero, Sean Couch, Wade Fisher, Connor Glosser, Morten Hjorth-Jensen, Claire Kopenhafer, Brian O'Shea, and Carlo Piermarocchi
-DATE: April 2, 2017
+AUTHOR: Danny Caballero, Sean Couch, Wade Fisher, Connor Glosser, Nat Hawkins, Morten Hjorth-Jensen, Claire Kopenhafer, Brian O'Shea, and Carlo Piermarocchi
+DATE: today
 
 ===== Motivation =====
 
-Modern scientists increasingly rely on computational modeling and data analysis to explore and to understand the natural world.  Given its ubiquitous use in science and its critical importance to the future of engineering, computational modeling has been called the "third leg" of 21st century science, next to theory and experiment.  This is particularly true in physics, where many important recent advances in our understanding of the physical world have been driven by large-scale computational modeling and data analysis - for example, the 2012 discovery of the Higgs boson, the 2013 Nobel Prize in chemistry for computational modeling of molecules (received by biophysicists), and the 2016 discovery of gravitational waves.  It has become clear that a large fraction of theoretical and experimental physicists require a high level of computational sophistication to competently pursue many aspects of their work - a trend that is likely to grow with time as computers increase in power and experimental datasets grow exponentially.
+Modern scientists increasingly rely on computational modeling and data analysis to explore and to understand the natural world.  Given its ubiquitous use in science and its critical importance to the future of engineering, computational modeling has been called the "third leg" of 21st century science, next to theory and experiment.  This is particularly true in physics, where many important recent advances in our understanding of the physical world have been driven by large-scale computational modeling and data analysis - for example, the 2012 discovery of the Higgs boson, the 2013 Nobel Prize in chemistry for computational modeling of molecules (received by biophysicists), and the 2016 discovery of gravitational waves.  It has become clear that a large fraction of theoretical and experimental physicists require a high level of computational sophistication to competently pursue many aspects of their work - a trend that is likely to grow with time as computers increase in power and experimental datasets grow exponentially. "By 2020, it is also expected that one out of every two
+jobs in the STEM (Science, Technology, Engineering and Mathematics) fields will be in
+computing":"http://pathways.acm.org/executive-summary.html"
+(Association for Computing Machinery, 2013).
+
 
 Beyond its increasing centrality in research, the use of computational modeling in the classroom setting provides students with insights that are complementary to those resulting from pencil-and-paper manipulation of equations.  In particular, the ability to closely examine the behavior of systems that are too complex to be easily analytically tractable, or that have no analytic solutions (i.e., many systems of practical interest), helps to develop intuition that is unavailable to many students from analytic calculation.
 
@@ -16,7 +20,7 @@ For all of the reasons outlined above, it is critical to ensure that students gr
 
 ===== Proposal =====
 
-By early in the Fall 2017 term (in time to make any necessary curricular changes for the 2018-19 academic year), this committee will present a document to the faculty of the Department of Physics and Astronomy that: (1) outlines proposed learning outcomes relating to computational modeling and data analysis within the upper-division physics curriculum, (2) offers a concrete and realistic plan of action that will allow us to attain these learning outcomes, and (3) provides a plan to assess the progress of our efforts.  Prior to Fall 2017, the committee will pursue several goals.  We will:
+By early in the Fall 2018 term (in time to make any necessary curricular changes for the 2019-20 academic year), this committee will present a document to the faculty of the Department of Physics and Astronomy that: (1) outlines proposed learning outcomes relating to computational modeling and data analysis within the upper-division physics curriculum, (2) offers a concrete and realistic plan of action that will allow us to attain these learning outcomes, and (3) provides a plan to assess the progress of our efforts.  Prior to Fall 2018, the committee will pursue several goals.  We will:
 
 o  Engage the faculty in the department to understand current best practices, to identify areas of concern, and to solicit ideas for desired learning outcomes and curriculum modifications.
 o  Survey current undergraduate students to understand their experiences thus far and identify the types of training that they would like to receive with regards to these subjects.

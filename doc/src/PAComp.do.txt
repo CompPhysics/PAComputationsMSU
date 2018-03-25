@@ -1,6 +1,6 @@
 TITLE: Computating in Physics courses at the Physics and Astronomy Department, Michigan State University
-AUTHOR: Danny Caballero, Sean Couch, Wade Fisher, Connor Glosser, Morten Hjorth-Jensen, Claire Kopenhafer, Brian O'Shea, and Carlo Piermarocchi
-DATE: Spring semester 2017
+AUTHOR: Danny Caballero, Sean Couch, Wade Fisher, Connor Glosser, Nat Hawkins, Morten Hjorth-Jensen, Claire Kopenhafer, Brian O'Shea, and Carlo Piermarocchi
+DATE: Spring semester 2018
 
 !split
 =====  Charge =====
