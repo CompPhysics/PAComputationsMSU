@@ -21,4 +21,4 @@ Brian O'Shea
 Carlo Piermarocchi
 
 Material will be added gradually. See also the website of [Partnership for Integration of
-Computation into Undergraduate Physics](http://gopicup.org) for highly relevant information.
+Computation into Undergraduate Physics](http://gopicup.org) for highly relevant information. A recent article by Cabellero and Hjorth-Jensen, see http://lanl.arxiv.org/abs/1802.08871 has a longer discussion on integrating a computational perspective in physics courses.
