@@ -1103,7 +1103,7 @@ def initialize():
     return RMin, RMax, lOrbital, Dim
 # Harmonic oscillator potential
 def potential(r):
-    return 0.5*r*r
+    return r*r
 
 #Get the boundary, orbital momentum and number of integration points
 RMin, RMax, lOrbital, Dim = initialize()
@@ -1144,7 +1144,7 @@ FirstEigvector = EigVectors[:,0]
 SecondEigvector = EigVectors[:,1]
 ThirdEigvector = EigVectors[:,2]
 plt.plot(r, FirstEigvector**2 ,'b-',r, SecondEigvector**2 ,'g-',r, ThirdEigvector**2 ,'r-')
-plt.axis([0,4.6,0.0, 0.025])
+plt.axis([0,5.0,0.0, 0.025])
 plt.xlabel(r'$r$')
 plt.ylabel(r'Radial probability $r^2|R(r)|^2$')
 plt.title(r'Radial probability distributions for three lowest-lying states')
