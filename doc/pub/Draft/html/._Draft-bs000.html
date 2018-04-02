@@ -36,6 +36,21 @@ Automatically generated HTML file from DocOnce source
 </style>
 
 
+<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script>
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script>
+<link rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
+<script>
+$(function () {
+    // Make the div with id 'mycell' a Sage cell
+    sagecell.makeSagecell({inputLocation:  '#mycell',
+                           template:       sagecell.templates.minimal,
+                           evalButtonText: 'Activate'});
+    // Make *any* div with class 'compute' a Sage cell
+    sagecell.makeSagecell({inputLocation: 'div.compute',
+                           evalButtonText: 'Evaluate'});
+});
+</script>
+
 </head>
 
 <!-- tocinfo
@@ -107,10 +122,35 @@ Automatically generated HTML file from DocOnce source
                3,
                None,
                '___sec24'),
-              ('Links with CMSE and Mathematics courses', 2, None, '___sec25')]}
+              ('Links with CMSE and Mathematics courses', 2, None, '___sec25'),
+              ('Examples on how to Include Computing in Core Physics Courses',
+               2,
+               None,
+               '___sec26'),
+              ('Ordinary differential equations in various courses',
+               3,
+               None,
+               '___sec27'),
+              ('Two-point boundary value problem', 3, None, '___sec28')]}
 end of tocinfo -->
 
 <body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
 
     
 <!-- Bootstrap navigation bar -->
@@ -155,6 +195,9 @@ end of tocinfo -->
      <!-- navigation toc: --> <li><a href="#___sec23" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Master of Science in Computational Physics</a></li>
      <!-- navigation toc: --> <li><a href="#___sec24" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Major of Science in Computational Physics</a></li>
      <!-- navigation toc: --> <li><a href="#___sec25" style="font-size: 80%;"><b>Links with CMSE and Mathematics courses</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec26" style="font-size: 80%;"><b>Examples on how to Include Computing in Core Physics Courses</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec27" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Ordinary differential equations in various courses</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec28" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Two-point boundary value problem</a></li>
 
         </ul>
       </li>
@@ -187,7 +230,7 @@ end of tocinfo -->
 
 <br>
 <p>
-<center><h4>Mar 25, 2018</h4></center> <!-- date -->
+<center><h4>Apr 2, 2018</h4></center> <!-- date -->
 <br>
 <p>
 </div> <!-- end jumbotron -->
@@ -277,11 +320,11 @@ The impact of the computer on mathematics and science is tremendous: science and
 <li> Computing can decrease the need for special tricks and tedious algebra, and shifts the focus to problem definition, visualization, and "what if" discussions.</li>
 </ul>
 
-The result is a deeper understanding of mathematical modeling and the scientific method (we hope, and here our physics education research group can play a central role in promoting this).
+The result is a deeper understanding of mathematical modeling and the scientific method.
 Not only is computing via programming a very powerful tool, it can also be a great pedagogical aid.
 
 <p>
-For the mathematical training, there is one major new component among the arguments above: understanding abstractions and generalization. While many of the classical methods developed for continuous models are specialized for a particular problem or a narrow class of problems, computing-based algorithms are often developed for problems in a generic form and hence applicable to a large problem class.
+For the mathematical training, there is one major new component among the arguments above: understanding abstractions and generalization. While many of the classical methods developed for continuous models are specialized for a particular problem or a narrow class of problems, computing-based algorithms are often developed for problems in a generic form and hence applicable to a large problem class, with the possible benefits of making additional abstractions.
 
 <p>
 Computing competence represents a central element in scientific problem solving, from basic education and research to essentially almost all advanced problems in modern societies. It enlarges the body of tools available to students and scientists beyond classical tools and allows for a more generic handling of problems. Focusing on algorithmic aspects results in deeper insights about scientific problems.
@@ -292,7 +335,7 @@ Moreover, today's projects in science and industry tend to involve larger teams.
 <h2 id="___sec3" class="anchor">General learning outcomes for computing competence </h2>
 
 <p>
-Below, we articulate high-level learning outcomes that we expect students to develop through comprehensive and coordinated instruction in numerical methods over the course of their bachelor's program at Michigan State. These learning outcomes are different from specific learning goals in that the former reference the end state that we aim for students to achieve. The latter references the specific knowledge, tools, and practices with which students should engage and discusses how we expect them to participate in that work. We reserve the discussion of specific learning goals to individual course experiences (e.g., Electrostatics).
+Below, we articulate high-level learning outcomes that we expect students to develop through comprehensive and coordinated instruction in numerical methods over the course of their bachelor's program at Michigan State. These learning outcomes are different from specific learning goals in that the former reference the end state that we aim for students to achieve. The latter references the specific knowledge, tools, and practices with which students should engage and discusses how we expect them to participate in that work. We reserve the discussion of specific learning goals to individual course experiences (see below).
 
 <h3 id="___sec4" class="anchor">Learning outcomes for numerical algorithms </h3>
 
@@ -310,7 +353,7 @@ Numerical algorithms form the basis for solving science and engineering problems
 <h3 id="___sec5" class="anchor">Learning outcomes for symbolic computing </h3>
 
 <p>
-Symbolic computing is a helpful tool for addressing certain classes of problems where a functional representation of the solution (or part of the solution) is needed. Through engaging with symbolic computing platforms, we aim for students to have developed:
+Symbolic computing is a helpful tool for addressing certain classes of problems where a functional representation of the solution (or part of the solution) is needed. Through engaging with symbolic computing platforms, we aim for students to have developed (not all):
 
 <ul>
 <li> A working knowledge of at least one computer algebra system (CAS)</li>
@@ -372,17 +415,18 @@ The results of a computation need to be communicated in some format (i.e., throu
 
 <p>
 The above learning goals and outcomes are of a more generic character. What follows here are specific
-algorithms that occur frequently in scientific problems. The implementation of these algorithms in various physics courses, together with problem and project solving, is a way to implement large fractions of the above learning goals. we reserve the coupling of the the broad learning goals above to the algorithms articulated below to our discussion of specific course (or topical) learning goals.
+algorithms that occur frequently in scientific problems. The implementation of these algorithms in various physics courses, together with problem and project solving, is a way to implement large fractions of the above learning goals. we reserve the coupling of the broad learning goals above to the algorithms articulated below to our discussion of specific course (or topical) learning goals.
 
 <p>
 We list as well tools that are important in developing
 numerical projects. These tools allow students to develop a better understanding of the scientific process. In addition, use of the algorithms can facilitate instruction in an ethical approach to science.
 
 <p>
-The algorithms and tools listed here can be intergated in different ways depending on the specific learning goals for the course or topic. Furthermore, several of these algorithms can be used and, then, revisited in the various courses.
+The algorithms and tools listed here can be intergated in different ways depending on the specific learning goals for the course or topic. Furthermore, several of these algorithms can be used and, then, revisited in the various courses, see the examples at the end of this document.
 
 <h3 id="___sec11" class="anchor">Central algorithms </h3>
 
+<p>
 The following mathematical formulations of problems from the physical sciences play a prominent role and should be reflected in how we teach physics:
 
 <ul>
@@ -421,60 +465,10 @@ The following mathematical formulations of problems from the physical sciences p
 </ul>
 
 In order to achieve a proper pedagogical introduction of these algorithms, it is important that students and teachers alike see how these algorithms are used to solve a variety of physics problems. The same algorithm, for example the solution of a second-order differential equation, can be used to solve the equations for the classical pendulum in a mechanics course or the (with a suitable change of variables) equations for a coupled RLC circuit in the electromagnetism course. Similarly, if students develop a program for studies of celestial bodies in the mechanics course, many of the elements of such a program can be reused in a molecular dynamics calculation in a course on statistical physics and thermal physics. The two-point boundary value problem for a buckling beam
-(discretized as an eigenvalue problem) can be reused in quantum mechanical studies of interacting electrons in oscillator traps, or just to study a particle in a box potential with varying depth and extension.
+(discretized as an eigenvalue problem) can be reused in quantum mechanical studies of interacting electrons in oscillator traps, or just to study a particle in a box potential with varying depth and extension. The examples at the end of this document provide further examples.
 
 <p>
 In order to aid the introduction of computational exercises and projects, we will need to develop educational resources for this. The <a href="http://www.compadre.org/picup/" target="_self">PICUP project</a>,  Partnership for Integration of Computation into Undergraduate Physics, develops <a href="http://www.compadre.org/PICUP/resources/" target="_self">resources for teachers and students on the integration of computational  material</a>.   We strongly recommend these resources.  Physics is an old discipline, with a large wealth of established analytical exercises and projects. In fields like mechanics, we have centuries of pedagogical developments, with a strong emphasis on developing analytical skills. The majority of physics teachers are well familiar with this and in order to see how computing can enlarge this body of exercises and projects, and hopefully add additional insights to the physics behind various phenomena, we find it important to develop a large body of computational examples.
-
-<p>
-As part of this proposal, we are in the process of  developing several examples of problems and projects that can be included in our undergraduate courses in physics. You can click on the following links (ipython notebooks or PDF formats)
-
-<ul>
-<li> Mechanics
-
-<ol type="a"></li>
-  <li> <a href="https://github.com/CompPhysics/PAComputationsMSU/tree/master/doc/pub/Mechanics/ipynb" target="_self">Ipython notebook</a></li>
-  <li> <a href="https://github.com/CompPhysics/PAComputationsMSU/tree/master/doc/pub/Mechanics/pdf/Mechanics-minted.pdf" target="_self">Standard PDF file</a></li>
-</ol>
-
-<li> Quantum mechanics
-
-<ol type="a"></li>
-  <li> <a href="https://github.com/CompPhysics/PAComputationsMSU/tree/master/doc/pub/Quantum/ipynb" target="_self">Ipython notebook</a></li>
-  <li> <a href="https://github.com/CompPhysics/PAComputationsMSU/tree/master/doc/pub/Quantum/pdf/Quantum-minted.pdf" target="_self">Standard PDF file</a></li>
-</ol>
-
-<li> Electromagnetism
-
-<ol type="a"></li>
-  <li> <a href="https://github.com/CompPhysics/PAComputationsMSU/tree/master/doc/pub/Elmag/ipynb" target="_self">Ipython notebook</a></li>
-  <li> <a href="https://github.com/CompPhysics/PAComputationsMSU/tree/master/doc/pub/Elmag/pdf/Elmag-minted.pdf" target="_self">Standard PDF file</a></li>
-</ol>
-
-<li> Statistical and thermal physics
-
-<ol type="a"></li>
-  <li> <a href="https://github.com/CompPhysics/PAComputationsMSU/tree/master/doc/pub/StatPhys/ipynb" target="_self">Ipython notebook</a></li>
-  <li> <a href="https://github.com/CompPhysics/PAComputationsMSU/tree/master/doc/pub/StatPhys/pdf/StatPhys-minted.pdf" target="_self">Standard PDF file</a></li>
-</ol>
-
-<li> Methods in Theoretical Physics (not yet ready)
-
-<ol type="a"></li>
-  <li> <a href="https://github.com/CompPhysics/PAComputationsMSU/tree/master/doc/pub/" target="_self">Ipython notebook</a></li>
-  <li> <a href="https://github.com/CompPhysics/PAComputationsMSU/tree/master/doc/pub/" target="_self">Standard PDF file</a></li>
-</ol>
-
-<li> Physics laboratory (not yet ready)
-
-<ol type="a"></li>
-  <li> <a href="https://github.com/CompPhysics/PAComputationsMSU/tree/master/doc/pub/" target="_self">Ipython notebook</a></li>
-  <li> <a href="https://github.com/CompPhysics/PAComputationsMSU/tree/master/doc/pub/" target="_self">Standard PDF file</a></li>
-</ol>
-
-</ul>
-
-We hope these examples can aid physics teachers in their usage of computing in physics courses. Furthermore, via a consensus and collectively driven approach, the hope is that this body of examples can be continuously enlarged.
 
 <h3 id="___sec12" class="anchor">Central tools and programming languages </h3>
 
@@ -503,11 +497,11 @@ Unit testing is a central element in the development of numerical projects, from
 For a major in physics degree at Michigan State University, the course <a href="https://cmse.msu.edu/academics/undergraduate-program/undergraduate-courses/cmse-201-introduction-to-computational-modeling/" target="_self">CMSE 201 Introduction to Computational Modeling</a> is compulsory and it lays the foundation for the use of computational exercises and projects in various physics courses. Based on this course, and the various mathematics courses included in a Physics degree, there is a unique possibility to incorporate computational exercises and projects in various physics courses, without taking away the attention from the basic physics topics to be covered.
 
 <p>
-What follows below is a suggested listed of possible learning outcomes. These suggestions are to be viewed as inputs to the ongoing discussions. The list of possible outcomes can be reduced or enlarged.
+What follows below is a suggested list of possible learning outcomes. <b>These suggestions are to be viewed as inputs to the ongoing discussions. The list of possible outcomes can be reduced or enlarged</b>.
+The hope is that the various points listed here can serve as a good starting point for future discussions and developments.
 
 <p>
-<b>What follows is a list of possible learning outcomes and numerical topics.</b>
-The hope is that the various points listed here can serve as a good starting point for future discussions and developments. In order to get the discussion started, 
+In order to get the discussion started, 
 we propose that the following courses aim to integrate the above learning outcomes and goals:
 
 <h3 id="___sec14" class="anchor">Classical Mechanics 1 PHY321 </h3>
@@ -646,14 +640,24 @@ The introduction of computational elements in the various courses should be stro
 <p>
 The Physics and Astronomy department at MSU is in a unique position due to its strong research group in physics education, the <a href="http://www.pa.msu.edu/research/physics-education-lab" target="_self">PERL group</a>.
 This means that it is possible to
-develop research motivated curricular changes.  There are many interesting challenges here, like
+develop research motivated curricular changes accompanied by quantitative research, including a proper assessment of various learning outcomes and goals.  There are many interesting challenges here, like
 which are the main obstacles when transferring from a classical pen and paper approach to actually have a working program which solves the same (and more general problems). What is a good progression in presenting numerical topics in physics courses? Are there specific mathematical skills we would like our students to have? How do we integrate student-active teaching, how do we develop and test various assessment methods?
+
+<p>
+The issues include but
+are not limited to how well students learn computing, what new
+insights students gain about the specific science through computing,
+and how students' affective states (e.g., motivation to learn,
+computational self-efficacy) are affected by computing . When assessing how well computing can be integrated in core physics courses, various assessments should provide deeper insights into the
+integration of computing  in science education in general as well as
+provide a structured framework for assessment of our efforts and a
+basis for systematic studies of student learning.
 
 <h2 id="___sec21" class="anchor">Advanced computational physics courses </h2>
 
 <p>
 Towards the end of undergraduate studies it is useful to offer a course which focuses on more advanced algorithms and presents compiled languages like C++ and Fortran, languages our students will meet in actual research.
-Furthemore, such a course, like the present <a href="https://github.com/CompPhysics/ComputationalPhysicsMSU" target="_self">PHY480 Computational Physics</a> offers as well more advanced projects which train the students in actual research, developing more complicated programs and working on larger projects.
+Furthemore, such a course, like the present <b>PHY480 Computational Physics</b> offers as well more advanced projects which train the students in actual research, developing more complicated programs and working on larger projects.
 The  course could cover
 
 <ul>
@@ -691,10 +695,10 @@ The CMSE department offers in addition a series <a href="https://cmse.msu.edu/ac
 
 <p>
 The above advanced courses can form the basis for a MSc in computational physics, as well as, together with
-CSME courses, a major in computational physics.
+CSME courses, a major in computational physics or a so-called <b>concentration</b> in computational physics.
 
 <p>
-The following is a suggestion for a major in Computational physics and a Master of Science degree in Computational Physics.
+The following is a suggestion for a major in Computational physics and a Master of Science degree in Computational Physics. We expect this to entail a strong collaboration with the newly established CMSE department.
 
 <h3 id="___sec23" class="anchor">Master of Science in Computational Physics </h3>
 
@@ -732,7 +736,7 @@ The Master of Science in Computational Physics has a duration of two years, with
 <h3 id="___sec24" class="anchor">Major of Science in Computational Physics </h3>
 
 <p>
-The major of science in Computational Physics replaces all physics laboratory courses with either Computational physics courses and/or CMSE courses. Need more input here.
+The major (or concetration) in Computational Physics replaces all physics laboratory courses with either Computational physics courses and/or CMSE courses.  This point needs further inputs.
 
 <h2 id="___sec25" class="anchor">Links with CMSE and Mathematics courses </h2>
 
@@ -742,6 +746,546 @@ abovementioned algorithms in the mathematics courses our physics students take. 
 
 <p>
 With such a background, it is easier for physics teachers, with proper repetitions and adequate material, to introduce numerical exercises and projects in many basic physics courses.
+
+<h2 id="___sec26" class="anchor">Examples on how to Include Computing in Core Physics Courses </h2>
+
+<h3 id="___sec27" class="anchor">Ordinary differential equations in various courses </h3>
+
+<p>
+We assume that our students know how to solve and study systems of
+ordinary differential with initial conditions only. Later in this
+section we will venture into two-point boundary value problems that
+can be studied and solved with eigenvalue solvers.
+
+<p>
+Let us start with initial value problems and ordinary differential
+equations. Such equations appear in a wealth of physics
+applications. Typical examples students will encounter are the
+classical pendulum in a mechanics course, an RLC circuit in the course on
+electromagnetism, the modeling of the Solar system in Astrophysics or Mechanics 
+courses and many other cases.  The essential message is that, with
+properly scaled equations, students can use essentially the
+same algorithms to solve these problems, either starting with
+a simple modified Euler algorithm or a Runge-Kutta class of
+algorithms or the so-called Verlet class of algorithms, to mention a few.
+
+<p>
+The idea is that algorithms students develop and use in one course can be
+reused in other courses.  This allows  students to make the
+relevant abstractions discussed above, opening up for a much wider
+range of applicabilities.
+
+<p>
+Here we look at two familiar cases from
+mechanics and electromagnetism, the equations for the classical
+pendulum and those for an RLC circuit.  When properly scaled, these
+equations are essentially the same. To scale equations,
+either in terms of dimensionless variables or appropriate variables,
+is an important aspect which allows the students to see the potential
+for abstractions and hopefully see how the problems studied in say a
+mechanics course can be transferred to other fields.
+
+<p>
+The classical pendulum with damping and external force as it could
+appear in a mechanics course is given by the following equation of
+motion for the angle \( \theta \) as function of time \( t \)
+$$
+  ml\frac{d^2\theta}{dt^2}+\nu\frac{d\theta}{dt}  +mgsin(\theta)=Acos(\omega t),
+$$
+
+where \( m \) is its mass, \( l \) the length, \( \nu \) a damping factor and \( A \)
+the amplitude of an applied external source with frequency
+\( \omega \). The solution of this type of equations (second-order
+differential equations with given initial conditions) is something the
+students may encounter in CMSE 201 and Mathematics courses.
+With this background, students are already familiar with
+the numerical solution and visualization of such equations.
+If we now
+move to a course on electromagnetism, we encounter almost the same
+equation for an RLC circuit, namely
+$$
+L\frac{d^2Q}{dt^2}+\frac{Q}{C}+R\frac{dQ}{dt}=Acos(\omega t),
+$$
+
+where \( L \) is the inductance, \( R \) the applied resistance, \( Q \) the
+time-dependent charge and \( C \) the capacitance.
+
+<p>
+Let us consider first the classical pendulum equations with damping and an
+external force and define the scaled velocity \( \hat{v} \) as
+$$
+   \frac{d\theta}{d\hat{t}} =\hat{v},
+$$
+
+where we have defined a dimensionless time variable \( \hat{t} \). With
+the equation for the velocity we can rewrite the second-order
+differential in terms of two coupled first-order differential
+equations where the second equation represents the acceleration
+$$
+   \frac{d\hat{v}}{d\hat{t}} =Acos(\hat{\omega} \hat{t})-\hat{v}\xi-\sin(\theta).
+$$
+
+We have scaled the  equations with \( \omega_0=\sqrt{g/l} \),
+\( \hat{t}=\omega_0 t \) and \( \xi = mg/\omega_0\nu \). The frequency
+\( \omega_0 \) defines a so-called natural frequency defined by the
+gravitational acceleration \( g \) and the length of the pendulum \( l \). The
+frequency \( \hat{\omega}= \omega/\omega_0 \).  In a similar way, our RLC
+circuit can now be rewritten in terms of two coupled first-order
+differential equations,
+$$
+   \frac{dQ}{d\hat{t}} =\hat{I},
+$$
+
+and
+$$
+   \frac{d\hat{I}}{d\hat{t}} =Acos(\hat{\omega} \hat{t})-\hat{I}\xi-Q,
+$$
+
+with \( \omega_0=1/\sqrt{LC} \), \( \hat{t}=\omega_0 t \) and \( \xi =
+CR\omega_0 \). Here we see that the natural frequency is defined in
+terms of the physical parameters \( L \) and \( C \).
+
+<p>
+The equations are essentially the same, the main differences reside in
+the different scaling constants and the introduction of a non-linear
+term for the angle \( \theta \) in the pendulum equation. The differential
+solver the students end up writing in the mechanics course (which
+comes normally before the course on electromagnetism) can then be
+reused in the electromagnetism course, with a great potential for
+further abstraction.
+
+<h3 id="___sec28" class="anchor">Two-point boundary value problem </h3>
+
+<p>
+Let us now move to another frequently encountered problem in several
+physics courses, namely that of a two-point boundary value problem. In
+the examples below we will see again that if the equations are
+properly scaled, we can reuse the same algorithm for solving different
+physics problems. Here we will start with the equations for a buckling
+beam (a case which can be found in a mechanics course or a course on
+mathematical methods in physics). Thereafter, with a simple change of
+variables and constants, the same problem can be used to study a
+quantum mechanical particle confined to move in an infinite potential
+well.  By simply changing the diagonal matrix elements of the
+discretized differential equation problem, we can study particles that
+move in a harmonic oscillator potential or other types of
+quantum-mechanical one-body or selected two-body problems.  With
+slight modifications to the matrix that results from the
+discretization of a second derivative, we can study Poisson's equation
+in one dimension, a problem of relevance in
+electromagnetism.
+
+<p>
+Let us start with the buckling beam. This is a two-point boundary
+value problem
+$$
+R \frac{d^2 u(x)}{dx^2} = -F u(x),
+$$
+
+where \( u(x) \) is the vertical displacement, \( R \) is a material specific
+constant, \( F \) is the applied force and \( x \in [0,L] \) with \( u(0)=u(L)=0 \).
+We scale the equation with \( x = \rho L \) and \( \rho \in [0,1] \) and get
+(note that we change from \( u(x) \) to \( v(\rho) \))
+$$
+\frac{d^2 v(\rho)}{dx^2} +K v(\rho)=0,
+$$
+
+which is, when discretized (see below), nothing but a standard eigenvalue problem with \( K=
+FL^2/R \). Here we can assume that either the force \( F \) or the material
+specific rigidity \( R \) are unknown.  If we replace \( R=-\hbar^2/2m \) and
+\( -F=\lambda \), we have the quantum mechanical variant for a particle
+moving in a well with infinite walls at the endpoints.  The way to
+solve these equations numerically is to discretize the second
+derivative and the right hand side as
+$$
+    -\frac{v_{i+1} -2v_i +v_{i-i}}{h^2}=\lambda v_i,
+$$
+
+with \( i=1,2,\dots, n \). Here \( h \) is the step size which is defined by
+the number of integration (or mesh) points.  We need to add to this
+system the two boundary conditions \( v(0) =v_0 \) and \( v(1) = v_{n+1} \),
+although they are not needed in the solution of the equations since
+their values are known.  For all integration points \( i=1,2,\dots, n \)
+the set of equations to solve result in a so-called tridiagonal
+Toeplitz matrix ( a special case arising from the discretized second
+derivative)
+$$
+    \mathbf{A} = \frac{1}{h^2}\begin{bmatrix}
+                          2 & -1 &  &   &  & \\
+                          -1 & 2 & -1 & & & \\
+                           & -1 & 2 & -1 & &  \\
+                           & \dots   & \dots &\dots   &\dots & \dots \\
+                           &   &  &-1  &2& -1 \\
+                           &    &  &   &-1 & 2 \\
+                      \end{bmatrix}
+$$
+
+and with the corresponding vectors \( \mathbf{v} = (v_1, v_2,
+\dots,v_n)^T \) allows us to rewrite the differential equation as a
+standard eigenvalue problem
+$$
+   \mathbf{A}\mathbf{v} = \lambda\mathbf{v}.
+$$
+
+The tridiagonal Toeplitz matrix has analytical eigenpairs,
+providing us thereby with an invaluable check on the equations to be
+solved.
+
+<p>
+If we stay with quantum mechanical one-body problems (or
+special interacting two-body problems) adding a potential along the
+diagonal elements allows us to reuse this problem for many types of physics
+cases.  To see this, let us assume we are interested in the solution
+of the radial part of Schr\"odinger's equation for one electron. This
+equation reads
+$$
+  -\frac{\hbar^2}{2 m} \left ( \frac{1}{r^2} \frac{d}{dr} r^2
+  \frac{d}{dr} - \frac{l (l + 1)}{r^2} \right )R(r)
+     + V(r) R(r) = E R(r).
+$$
+
+Suppose in our case \( V(r) \) is the harmonic oscillator potential
+\( (1/2)kr^2 \) with \( k=m\omega^2 \) and \( E \) is the energy of the harmonic
+oscillator in three dimensions.  The oscillator frequency is \( \omega \)
+and the energies are
+$$
+E_{nl}=  \hbar \omega \left(2n+l+\frac{3}{2}\right),
+$$
+
+with \( n=0,1,2,\dots \) and \( l=0,1,2,\dots \).
+
+<p>
+Since we have made a transformation to spherical coordinates it means
+that \( r\in [0,\infty) \). The quantum number \( l \) is the orbital momentum
+  of the electron.  In order to find analytical solutions for this
+  problem, we would substitute \( R(r) = (1/r) u(r) \) (which gives
+  \( u(0)=u(\infty)=0 \) and thereby easier boundary conditions) and
+  obtain
+$$
+  -\frac{\hbar^2}{2 m} \frac{d^2}{dr^2} u(r)
+       + \left ( V(r) + \frac{l (l + 1)}{r^2}\frac{\hbar^2}{2 m}
+                                    \right ) u(r)  = E u(r) .
+$$
+
+The boundary conditions are \( u(0)=0 \) and \( u(\infty)=0 \).
+
+<p>
+In order to scale the equations, we introduce a dimensionless variable \( \rho = (1/\alpha) r \)
+where \( \alpha \) is a constant with dimension length and get
+$$
+  -\frac{\hbar^2}{2 m \alpha^2} \frac{d^2}{d\rho^2} v(\rho)
+       + \left ( V(\rho) + \frac{l (l + 1)}{\rho^2}
+         \frac{\hbar^2}{2 m\alpha^2} \right ) v(\rho)  = E v(\rho) .
+$$
+
+Let us choose \( l=0 \) for the mere sake of simplicity.
+Inserting \( V(\rho) = (1/2) k \alpha^2\rho^2 \) we end up with
+$$
+  -\frac{\hbar^2}{2 m \alpha^2} \frac{d^2}{d\rho^2} v(\rho)
+       + \frac{k}{2} \alpha^2\rho^2v(\rho)  = E v(\rho).
+$$
+
+We multiply thereafter with \( 2m\alpha^2/\hbar^2 \) on both sides and obtain
+$$
+  -\frac{d^2}{d\rho^2} v(\rho)
+       + \frac{mk}{\hbar^2} \alpha^4\rho^2v(\rho)  = \frac{2m\alpha^2}{\hbar^2}E v(\rho) .
+$$
+
+A natural length scale comes out automatically when scaling. To see this, since \( \alpha \) is constant we are left to determine, 
+we determine \( \alpha \) by requiring that
+$$
+\frac{mk}{\hbar^2} \alpha^4 = 1.
+$$
+
+This defines a natural length scale in terms of the various physical
+constants that determine the equation.  The final expression, inserting \( k=m\omega^2 \) is
+$$
+\alpha = \left(\frac{\hbar}{m\omega}\right)^{1/2}.
+$$
+
+If we were to replace the harmonic oscillator potential with the
+attractive Coulomb interaction from the hydrogen atom, the  parameter \( \alpha \) would equal the Bohr
+radius \( a_0 \).  This way students see the general properties of a
+two-point boundary value problem and can reuse the code they developed
+for a mechanics course to the subsequent quantum mechanical course.
+
+<p>
+Defining
+$$
+\lambda = \frac{2m\alpha^2}{\hbar^2}E,
+$$
+
+we can rewrite Schroedinger's equation as
+$$
+  -\frac{d^2}{d\rho^2} v(\rho) + \rho^2v(\rho)  = \lambda v(\rho) .
+$$
+
+This is similar to the equation for a buckling beam, except for the
+potential term.  In three dimensions with our scaling, the eigenvalues for \( l=0 \) are
+\( \lambda_0=3,\lambda_1=7,\lambda_2=11,\dots . \)
+
+<p>
+If we  define first the diagonal matrix element
+$$
+   d_i=\frac{2}{h^2}+V_i,
+$$
+
+and the non-diagonal matrix element
+$$
+   e_i=-\frac{1}{h^2},
+$$
+
+we can rewrite the Schr\"oedinger equation as
+$$
+d_iu_i+e_{i-1}v_{i-1}+e_{i+1}v_{i+1}  = \lambda v_i,
+$$
+
+where \( v_i \) is unknown and \( i=1,2,\dots, n \). We can reformulate the
+latter equation as a matrix eigenvalue problem
+$$
+    \begin{bmatrix} d_1 & e_1 & 0   & 0    & \dots  &0     & 0 \\
+                                e_1 & d_2 & e_2 & 0    & \dots  &0     &0 \\
+                                0   & e_2 & d_3 & e_3  &0       &\dots & 0\\
+                                \dots  & \dots & \dots & \dots  &\dots      &\dots & \dots\\
+                                0   & \dots & \dots & \dots  &\dots       &d_{n-1} & e_{n-1}\\
+                                0   & \dots & \dots & \dots  &\dots       &e_{n-1} & d_{n}
+             \end{bmatrix}      \begin{bmatrix} v_{1} \\
+                                                              v_{2} \\
+                                                              \dots\\ \dots\\ \dots\\
+                                                              v_{n}
+             \end{bmatrix}=\lambda \begin{bmatrix}{c} v_{1} \\
+                                                              v_{2} \\
+                                                              \dots\\ \dots\\ \dots\\
+                                                              v_{n}
+             \end{bmatrix}
+$$
+
+or if we wish to be more detailed, we can write the tridiagonal matrix as
+$$
+    \begin{bmatrix} \frac{2}{h^2}+V_1 & -\frac{1}{h^2} & 0   & 0    & \dots  &0     & 0 \\
+                                -\frac{1}{h^2} & \frac{2}{h^2}+V_2 & -\frac{1}{h^2} & 0    & \dots  &0     &0 \\
+                                0   & -\frac{1}{h^2} & \frac{2}{h^2}+V_3 & -\frac{1}{h^2}  &0       &\dots & 0\\
+                                \dots  & \dots & \dots & \dots  &\dots      &\dots & \dots\\
+                                0   & \dots & \dots & \dots  &\dots       &\frac{2}{h^2}+V_{n-1} & -\frac{1}{h^2}\\
+                                0   & \dots & \dots & \dots  &\dots       &-\frac{1}{h^2} & \frac{2}{h^2}+V_{n}
+             \end{bmatrix}.
+$$
+
+The following Python code sets up the matrix to diagonalize by defining
+the minimun and maximum values of \( r \) with a maximum value of
+integration points. It plots the eigenfunctions of the three lowest
+eigenstates (click on evaluate and run the program!).
+<p>
+
+
+<div class="compute"><script type="text/x-sage">
+#Program which solves the one-particle Schrodinger equation
+#for a potential specified in function
+#potential().
+
+from  matplotlib import pyplot as plt
+import numpy as np
+#Function for initialization of parameters
+def initialize():
+    RMin = 0.0
+    RMax = 10.0
+    lOrbital = 0
+    Dim = 400
+    return RMin, RMax, lOrbital, Dim
+# Harmonic oscillator potential
+def potential(r):
+    return 0.5*r*r
+
+#Get the boundary, orbital momentum and number of integration points
+RMin, RMax, lOrbital, Dim = initialize()
+
+#Initialize constants
+Step    = RMax/(Dim)
+DiagConst = 2.0/ (Step*Step)
+NondiagConst =  -1.0 / (Step*Step)
+OrbitalFactor = lOrbital * (lOrbital + 1.0)
+
+#Calculate array of potential values
+v = np.zeros(Dim)
+r = np.linspace(RMin,RMax,Dim)
+for i in range(Dim):
+    r[i] = RMin + (i+1) * Step;
+    v[i] = potential(r[i]) + OrbitalFactor/(r[i]*r[i]);
+
+#Setting up a tridiagonal matrix and finding eigenvectors and eigenvalues
+Matrix = np.zeros((Dim,Dim))
+Matrix[0,0] = DiagConst + v[0];
+Matrix[0,1] = NondiagConst;
+for i in xrange(1,Dim-1):
+    Matrix[i,i-1]  = NondiagConst;
+    Matrix[i,i]    = DiagConst + v[i];
+    Matrix[i,i+1]  = NondiagConst;
+Matrix[Dim-1,Dim-2] = NondiagConst;
+Matrix[Dim-1,Dim-1] = DiagConst + v[Dim-1];
+# diagonalize and obtain eigenvalues, not necessarily sorted
+EigValues, EigVectors = np.linalg.eig(Matrix)
+# sort eigenvectors and eigenvalues
+permute = EigValues.argsort()
+EigValues = EigValues[permute]
+EigVectors = EigVectors[:,permute]
+# now plot the results for the three lowest lying eigenstates
+for i in range(3):
+    print(EigValues[i])
+FirstEigvector = EigVectors[:,0]
+SecondEigvector = EigVectors[:,1]
+ThirdEigvector = EigVectors[:,2]
+plt.plot(r, FirstEigvector**2 ,'b-',r, SecondEigvector**2 ,'g-',r, ThirdEigvector**2 ,'r-')
+plt.axis([0,4.6,0.0, 0.025])
+plt.xlabel(r'$r$')
+plt.ylabel(r'Radial probability $r^2|R(r)|^2$')
+plt.title(r'Radial probability distributions for three lowest-lying states')
+plt.savefig('eigenvector.pdf')
+plt.show()
+
+</script></div>
+<p>
+The last example shows the potential of combining numerical algorithms with analytical results (or eventually symbolic calculations), allowing thereby students to test their physics understanding. One can easily switch to other potentials by simply redefining the potential function. For example, a finite box potential can easily be defined as
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #408080; font-style: italic"># Finite depth and range box potential, with strength V and range a</span>
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">potential</span>(r):
+    <span style="color: #008000; font-weight: bold">if</span> r <span style="color: #666666">&gt;=</span> <span style="color: #666666">0.0</span> <span style="color: #AA22FF; font-weight: bold">and</span> r <span style="color: #666666">&lt;=</span> <span style="color: #666666">10.0</span>:
+        V <span style="color: #666666">=</span> <span style="color: #666666">-0.05</span>
+    <span style="color: #008000; font-weight: bold">else</span>:
+        V <span style="color: #666666">=0.0</span>
+    <span style="color: #008000; font-weight: bold">return</span> V
+</pre></div>
+<p>
+Thereafter, the students can explore the role of the potential depth
+and the range of the potential. Analyzing the eigenvectors gives
+additional information about the spatial degrees of freedom in terms
+of different potentials.  The possibility to visualize the results immediately, aids in providing students with a deeper understanding of the relevant physics.
+
+<p>
+This example contains also many of the
+computing learning outcomes we discussed above, in addition to those
+related to the physics of a particular system. We see that, by proper
+scaling, the students can make further abstractions and explore other
+physics cases easily where no analytical solutions are known. With
+unit testing and analytical results they can validate and verify their
+algorithms.
+
+<p>
+The above example allows the student to test the mathematical error of
+the algorithm for the eigenvalue solver by simply changing the number
+of integration points. The students get trained to develop an
+understanding of the error analysis and where things can go wrong. The
+algorithm can be tailored to any kind of one-particle problem used in
+quantum mechanics.
+
+<p>
+A simple rewrite allows for the reuse in linear algebra problems for
+solution of say Poisson's equation in electromagnetism, or the
+diffusion equation in one dimension. To see this and how the same matrix can be used in a course in electromagnetism, let us consider
+Poisson's equation.
+We assume that
+the electrostatic potential \( \Phi \) is generated by a localized charge
+distribution \( \rho (\mathbf{r}) \).   In three dimensions
+the pertinent equation reads
+$$
+\nabla^2 \Phi = -4\pi \rho (\mathbf{r}).
+$$
+
+With a spherically symmetric potential \( \Phi \) and charge distribution \( \rho (\mathbf{r}) \) and using spherical coordinates,  the relevant
+equation to solve
+simplifies to a one-dimensional equation in \( r \), namely
+$$
+\frac{1}{r^2}\frac{d}{dr}\left(r^2\frac{d\Phi}{dr}\right) = -4\pi \rho(r),
+$$
+
+which can be rewritten via a substitution \( \Phi(r)= \phi(r)/r \) as
+$$
+\frac{d^2\phi}{dr^2}= -4\pi r\rho(r).
+$$
+
+The inhomogeneous term \( f \) or source term is given by the charge distribution
+\( \rho \)  multiplied by \( r \) and the constant \( -4\pi \).
+
+<p>
+We can  rewrite this equation by letting \( \phi\rightarrow u \) and
+\( r\rightarrow x \).  Scaling again the equations and replacing the right hand side with a function \( f(x) \), we can rewrite the
+equation as
+$$
+-u''(x) = f(x).
+$$
+
+Our scaling gives us again \( x\in [0,1] \) and the two-point boundary value problem
+with \( u(0)=u(1)=0 \). With \( n+1 \) integration points and
+the step length defined as \( h=1/(n) \) and replacing the continuous function \( u \) with its discretized version \( v \), we get
+the following equation
+$$
+\begin{equation*}
+   -\frac{v_{i+1}+v_{i-1}-2v_i}{h^2} = f_i  \hspace{0.5cm} \mathrm{for} \hspace{0.1cm} i=1,\dots, n,
+\end{equation*}
+$$
+
+where \( f_i=f(x_i) \).
+Bringing up again the tridiagonal Toeplitz matrix,
+$$
+    \mathbf{A} = \frac{1}{h^2}\begin{bmatrix}
+                           2& -1& 0 &\dots   & \dots &0 \\
+                           -1 & 2 & -1 &0 &\dots &\dots \\
+                           0&-1 &2 & -1 & 0 & \dots \\
+                           & \dots   & \dots &\dots   &\dots & \dots \\
+                           0&\dots   &  &-1 &2& -1 \\
+                           0&\dots    &  & 0  &-1 & 2 \\
+                      \end{bmatrix},
+$$
+
+our problem becomes now a classical linear algebra problem
+$$
+\mathbf{A}\mathbf{v}=\mathbf{f},
+$$
+
+with the unknown function \( \mathbf{v} \). Using standard LU
+decomposition algorithms (here one can use
+the so-called Thomas algorithm which reduces the number of floating
+point operations to \( O(n) \)) one can easily find the solution to this
+problem.
+
+<p>
+These examples demonstrate how one can, with a discretized second
+derivative, solve physics problems that arise in different
+undergraduate courses using standard linear algebra and eigenvalue
+algorithms and ordinary differential equations, allowing thereby
+teachers to focus on the interesting physics. Many of these problems
+can easily be linked up with ongoing research. This opens up for many
+interesting perspectives in physics education. We can bring in at a
+much earlier stage in our education basic research elements and
+perhaps even link with ongoing research during the first year of
+undergraduate studies.
+
+<p>
+Instead of focusing on tricks and mathematical manipulations to solve
+the continuous problems for those few case where an analytical
+solution can be found, the discretization of the continuous problem
+opens up for studies of many more interesting and realistic problems.
+However, we have seen that in order to verify and validate our codes,
+the existence of analytical solutions offer us an invaluable test of
+our algorithms and programs. The analytical results can either be
+included explicitely or via symbolic software like Python's Sympy package.
+Thus, computing stands indeed for solving scientific problems using
+all possible tools, including symbolic computing, computers and
+numerical algorithms, numerical experiments (as well as real
+experiments if possible) and analytical paper and pencil solutions.
+
+<p>
+The benefits are many, in particular it allows us to make our research
+more visible in early undergraduate physics courses, enhancing
+research-based teaching with the possibility to focus more on
+understanding and increased insight.  It gives also our candidates the
+skills and abilities that are requested by society at large, both from
+the private and the public sectors. With computing, we emphasize a broader and
+more up-to-date education with a problem-based orientation, often
+requested by potential employers.  Furthermore, there are clear
+indications that a discussion of computing across disciplines results in an increased
+impetus for broad cooperation in teaching and a broader focus on university pedagogical topics.
 
 <p>
 <!-- navigation buttons at the bottom of the page -->
