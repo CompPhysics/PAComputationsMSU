@@ -364,7 +364,7 @@ These could be (presently some of these topics  are covered by PHY905, sections 
   o  Computational Statistical mechanics, covering topics spanning from Molecular dynamics to studies of phase transitions, highly relevant for several subdisciplines
   o  Computational Astrophysics and Astronomy
   o  Data analysis and machine learning tailored to physics problems. This course can be jointly taught with the new department of Computational Science.
-  o  Additional CMSE courses, see list below.
+  o  For additional CMSE courses, see list below.
 
 The CMSE department offers in addition a series "of courses at all levels":"https://cmse.msu.edu/academics/".
 
@@ -388,7 +388,7 @@ o Core physics courses (these courses should be compulsory)
 o Computational Science and Physics courses, select in order to fill up necessary credit requirements.
   * Computational quantum mechanics, spanning from Monte Carlo methods to other methods used in atomic, molecular, nuclear, condensed matter and high-energy physics
   * Computational Statistical mechanics, covering topics spanning from Molecular dynamics to studies of phase transitions, highly relevant for several subdisciplines
-  * Computational Astrophysics and Astronomy
+  * Computational Astrophysics and Astronomy exists already
   * Data analysis and machine learning tailored to physics problems. This course can be jointly taught with the new department of Computational Science.
   * CMSE 802, Methods in Computational Modeling, 3 credits, spring and fall semesters
   * CMSE 820, Mathematical Foundations of Data Science, 3 credits, spring semester
@@ -409,6 +409,15 @@ abovementioned algorithms in the mathematics courses our physics students take. 
 With such a background, it is easier for physics teachers, with proper repetitions and adequate material, to introduce numerical exercises and projects in many basic physics courses.
 
 
+=====  Courses for university teachers, students and teaching/learning assistants =====
+
+In order to aid the PA department in upgrading the computational competences and skills of the scientific staff, we recommend to develop
+intensive one-week courses for teachers, teaching/learning assistants and other students. These courses could 
+be taught during the summer breaks. These courses could include teaching practices and
+learning material that can aid university teachers in including
+computational exercises and projects. The courses can also include
+an introduction to basic programming elements, with an emphasis on pedagogical
+aspects.
 
 
 ===== Examples on how to Include Computing in Core Physics Courses =====
