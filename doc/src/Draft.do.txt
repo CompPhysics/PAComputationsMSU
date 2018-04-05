@@ -189,7 +189,9 @@ We will strongly recommend that Python is used as the high-level programming lan
  o "Jupyter and ipython notebook":"http://jupyter.org/".
  o Version control software like "git":"https://git-scm.com/" and repositories like "GitHub":"https://github.com/"
  o Other typsetting tools like LaTeX.
- o Unit tests and using existing tools for unit tests. "Python has extensive tools for this":"https://docs.python.org/2/library/unittest.html"
+ o Unit tests and using existing tools for unit tests. "Python has extensive tools for this":"https://docs.python.org/2/library/unittest.html". Other useful libraries for unit testing are "doctest":"https://docs.python.org/2/library/doctest.html" and "covergarage":"https://coverage.readthedocs.io/en/coverage-4.5.1/"
+
+
 
 The notebooks can be used to hand in exercises and projects. They can provide the students with experience in presenting their work in the form of scientific/technical reports.
 
@@ -368,9 +370,9 @@ These could be (presently some of these topics  are covered by PHY905, sections 
 
 The CMSE department offers in addition a series "of courses at all levels":"https://cmse.msu.edu/academics/".
 
-===== A possible Physics major in computational physics and a possible MSc in Computational Physics =====
+===== A possible Physics major in computational physics and a possible Master of Science in Computational Physics =====
 
-The above advanced courses can form the basis for a MSc in computational physics, as well as, together with
+The above advanced courses can form the basis for a Master of Science in computational physics, as well as, together with
 CSME courses, a major in computational physics or a so-called _concentration_ in computational physics.
 
 The following is a suggestion for a major in Computational physics and a Master of Science degree in Computational Physics. We expect this to entail a strong collaboration with the newly established CMSE department.
