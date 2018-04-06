@@ -83,7 +83,15 @@ students have a good basis in scientific programming.
 By early in the Fall 2018 term (in time to make any necessary curricular changes for the 2019-20 academic year), this committee will present a document to the faculty of the Department of Physics and Astronomy that: 
 o outlines proposed learning outcomes relating to computational modeling and data analysis within the upper-division physics curriculum, 
 o offers a concrete and realistic plan of action that will allow us to attain these learning outcomes for selected courses, and 
-o provides a plan to assess the progress of our efforts.  
+o provides a plan to assess the progress of our efforts ("see the assessment plan in the longer draft":"https://compphysics.github.io/PAComputationsMSU/doc/pub/Draft/html/Draft-bs.html").  
+
+The proposed computational curriculum goals are to:
+o Integrate computational learning practices in PHY321 by Fall 2018 or Spring 2019
+o Gradually integrate the remaining core (also elective) courses (PHY410, PHY415, PHY451, PHY471, PHY481), keeping pace with the cohort of students on this initial schedule.
+o Develop resources to support faculty and ensure continuity over year-to-year transitions.
+o Maintain program vitality by systematically refreshing computational course material as our programs evolve.
+o The working group will continue to work on the above action items and will invite current (and future) instructors to serve as members of the working group for the specific courses.
+
 
 In addition,   we will also  
 o  Engage the faculty in the department to understand current best practices, to identify areas of concern, and to solicit ideas for desired learning outcomes and curriculum modifications.
@@ -102,7 +110,7 @@ computational learning outcomes in more detail, lists examples of
 computational projects and topics that can be included in specific
 courses as well as other proposals meant to enhance computing in
 physics education. The longer document is meant as an input to the
-discussions. Please feel free to "read more at this
+discussions. Please feel free to "read the longer draft at this
 link":"https://compphysics.github.io/PAComputationsMSU/doc/pub/Draft/html/Draft-bs.html"
 or "look up the Github
 repository":"https://github.com/CompPhysics/PAComputationsMSU". We
@@ -111,3 +119,6 @@ may also consult a "longer article written by two of us (DMC and
 MHJ)":"http://lanl.arxiv.org/abs/1802.08871". In this reference the
 authors discuss how to develop a physics curriculum for undergraduate
 students that includes computing as a central element. The article contains several examples of numerical exercises/projects that can be includedd in Physics courses.  "A shorter version with examples is also available":"https://compphysics.github.io/PAComputationsMSU/doc/pub/Example/html/Example-bs.html".
+
+
+
