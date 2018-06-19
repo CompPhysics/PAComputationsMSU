@@ -1,0 +1,695 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="description" content="Examples on how to integrate a computational perspective in physics courses">
+
+<title>Examples on how to integrate a computational perspective in physics courses</title>
+
+<!-- Bootstrap style: bootstrap -->
+<link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- not necessary
+<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+-->
+
+<style type="text/css">
+
+/* Add scrollbar to dropdown menus in bootstrap navigation bar */
+.dropdown-menu {
+   height: auto;
+   max-height: 400px;
+   overflow-x: hidden;
+}
+
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:50px;      /* fixed header height for style bootstrap */
+  margin:-50px 0 0; /* negative fixed header height */
+}
+</style>
+
+
+<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script>
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script>
+<link rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
+<script>
+$(function () {
+    // Make the div with id 'mycell' a Sage cell
+    sagecell.makeSagecell({inputLocation:  '#mycell',
+                           template:       sagecell.templates.minimal,
+                           evalButtonText: 'Activate'});
+    // Make *any* div with class 'compute' a Sage cell
+    sagecell.makeSagecell({inputLocation: 'div.compute',
+                           evalButtonText: 'Evaluate'});
+});
+</script>
+
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [('Computing competence', 2, None, '___sec0'),
+              ('Better understanding of the scientific method',
+               2,
+               None,
+               '___sec1'),
+              ('Implementation in Oslo: The "C(omputing '
+               'in)S(cience)E(Education)":"http://www.mn.uio.no/ccse/english/people/index.html"  '
+               'project',
+               2,
+               None,
+               '___sec2'),
+              ('Examples of simple algorithms, initial value problems and '
+               'proper scaling of equations',
+               2,
+               None,
+               '___sec3'),
+              ('Mechanics and electromagnetism, initial value problems',
+               2,
+               None,
+               '___sec4'),
+              ('Mechanics and electromagnetism, initial value problems and now '
+               'proper scaling',
+               2,
+               None,
+               '___sec5'),
+              ('Other examples of simple algorithms that can be reused in many '
+               'courses, two-point boundary value problems and scaling',
+               2,
+               None,
+               '___sec6'),
+              ('A buckling beam, or a quantum mechanical particle in an '
+               'infinite well',
+               2,
+               None,
+               '___sec7'),
+              ('Discretize and get the same type of problem',
+               2,
+               None,
+               '___sec8'),
+              ('Adding complexity, hydrogen-like atoms or other one-particle '
+               'potentials',
+               2,
+               None,
+               '___sec9'),
+              ('A natural length scale comes out automagically when scaling',
+               2,
+               None,
+               '___sec10'),
+              ('The Python code', 2, None, '___sec11'),
+              ('The power of numerical methods', 2, None, '___sec12'),
+              ('Which aspects are important for a successful introduction of '
+               'CSE?',
+               2,
+               None,
+               '___sec13'),
+              ('Summary', 2, None, '___sec14'),
+              ('More links', 2, None, '___sec15')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "AMS"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<!-- Bootstrap navigation bar -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="Messina-bs.html">Examples on how to integrate a computational perspective in physics courses</a>
+  </div>
+
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+     <!-- navigation toc: --> <li><a href="#___sec0" style="font-size: 80%;">Computing competence</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec1" style="font-size: 80%;">Better understanding of the scientific method</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec2" style="font-size: 80%;">Implementation in Oslo: The "C(omputing in)S(cience)E(Education)":"http://www.mn.uio.no/ccse/english/people/index.html"  project</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec3" style="font-size: 80%;">Examples of simple algorithms, initial value problems and proper scaling of equations</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec4" style="font-size: 80%;">Mechanics and electromagnetism, initial value problems</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec5" style="font-size: 80%;">Mechanics and electromagnetism, initial value problems and now proper scaling</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec6" style="font-size: 80%;">Other examples of simple algorithms that can be reused in many courses, two-point boundary value problems and scaling</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec7" style="font-size: 80%;">A buckling beam, or a quantum mechanical particle in an infinite well</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec8" style="font-size: 80%;">Discretize and get the same type of problem</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec9" style="font-size: 80%;">Adding complexity, hydrogen-like atoms or other one-particle potentials</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec10" style="font-size: 80%;">A natural length scale comes out automagically when scaling</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec11" style="font-size: 80%;">The Python code</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec12" style="font-size: 80%;">The power of numerical methods</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec13" style="font-size: 80%;">Which aspects are important for a successful introduction of CSE?</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec14" style="font-size: 80%;">Summary</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec15" style="font-size: 80%;">More links</a></li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</div> <!-- end of navigation bar -->
+
+<div class="container">
+
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
+
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<div class="jumbotron">
+<center><h1>Examples on how to integrate a computational perspective in physics courses</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): Morten Hjorth-Jensen -->
+
+<center>
+<b>Morten Hjorth-Jensen</b> 
+</center>
+
+<p>
+<!-- institution(s) -->
+
+<br>
+<p>
+<center><h4>Jun 19, 2018</h4></center> <!-- date -->
+<br>
+<p>
+<!-- potential-jumbotron-button -->
+</div> <!-- end jumbotron -->
+
+<!-- !split -->
+
+<h2 id="___sec0" class="anchor">Computing competence </h2>
+<div class="panel panel-default">
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+<b>Computing means solving scientific problems using all possible tools</b>, including symbolic computing, computers and numerical algorithms, and analytical paper and pencil solutions .
+
+<p>
+<b>Computing is about developing an understanding of the scientific method</b> by enhancing algorithmic thinking when solving problems.
+
+<p>
+On the part of students, this competence involves being able to:
+
+<ul>
+<li> understand how algorithms are used to solve mathematical problems,</li>
+<li> derive, verify, and implement algorithms,</li>
+<li> understand what can go wrong with algorithms,</li>
+<li> use these algorithms to construct reproducible scientific outcomes and to engage in science in ethical ways, and</li>
+<li> think algorithmically for the purposes of gaining deeper insights about scientific problems.</li>
+</ul>
+</div>
+</div>
+
+
+<p>
+<!-- !split -->
+
+<h2 id="___sec1" class="anchor">Better understanding of the scientific method </h2>
+<div class="panel panel-default">
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+All these elements are central for maturing and gaining a better understanding of the modern scientific process <em>per se</em>.
+
+<p>
+The power of the scientific method lies in identifying a given problem
+as a special case of an abstract class of problems, identifying
+general solution methods for this class of problems, and applying a
+general method to the specific problem (applying means, in the case of
+computing, calculations by pen and paper, symbolic computing, or
+numerical computing by ready-made and/or self-written software). This
+generic view on problems and methods is particularly important for
+understanding how to apply available, generic software to solve a
+particular problem.
+</div>
+</div>
+
+
+<p>
+<!-- !split -->
+
+<h2 id="___sec2" class="anchor">Implementation in Oslo: The <a href="http://www.mn.uio.no/ccse/english/people/index.html" target="_self">C(omputing in)S(cience)E(Education)</a>  project </h2>
+<div class="panel panel-default">
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+
+<ul>
+<li> Coordinated use of computational exercises and numerical tools in most undergraduate courses.</li>
+<li> Help update the scientific staff's competence on computational aspects and give support (scientific, pedagogical and financial)  to those who wish to revise  their courses in a computational direction.</li>
+<li> Teachers get good summer students to aid in introducing computational exercises</li>
+<li> Develop courses and exercise modules with a computational perspective, both for students and teachers. New textbooks!!</li> 
+<li> Basic idea: mixture of mathematics, computation, informatics and topics from the physical sciences.</li>
+</ul>
+
+Interesting outcome: higher focus on teaching and pedagogical issues!!
+</div>
+</div>
+
+
+<p>
+<!-- !split -->
+
+<h2 id="___sec3" class="anchor">Examples of simple algorithms, initial value problems and proper scaling of equations </h2>
+<div class="panel panel-default">
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+
+<ol>
+<li> Ordinary differential equations (ODE): RLC circuit</li>
+<li> ODE: Classical pendulum</li>
+<li> ODE: Solar system</li>
+<li> and many more cases</li>
+</ol>
+
+Can use essentially the <b>same algorithms to solve these problems</b>, either some simple modified Euler algorithms or some Runge-Kutta class of algorithms or perhaps the so-called Verlet class of algorithms.  <b>Algorithms students use in one course can be reused in other courses</b>.
+</div>
+</div>
+
+
+<p>
+<!-- !split -->
+
+<h2 id="___sec4" class="anchor">Mechanics and electromagnetism, initial value problems  </h2>
+<div class="panel panel-default">
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+
+<p>
+Classical pendulum with damping and external force as it could appear in a mechanics course.
+$$
+  ml\frac{d^2\theta}{dt^2}+\nu\frac{d\theta}{dt}  +mgsin(\theta)=Acos(\omega t).
+$$
+
+Easy to solve numerically and then visualize the solution.
+Almost the same equation for an RLC circuit in the electromagnetism course,
+$$
+L\frac{d^2Q}{dt^2}+\frac{Q}{C}+R\frac{dQ}{dt}=Acos(\omega t).
+$$
+
+<p>
+</div>
+</div>
+
+
+<p>
+<!-- !split -->
+
+<h2 id="___sec5" class="anchor">Mechanics and electromagnetism, initial value problems and now proper scaling  </h2>
+<div class="panel panel-default">
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+
+<p>
+Classical pendulum equations with damping and external force
+$$
+   \frac{d\theta}{d\hat{t}} =\hat{v},
+$$
+
+and
+$$
+   \frac{d\hat{v}}{d\hat{t}} =Acos(\hat{\omega} \hat{t})-\hat{v}\xi-\sin(\theta),
+$$
+
+with \( \omega_0=\sqrt{g/l} \), \( \hat{t}=\omega_0 t \) and \( \xi = mg/\omega_0\nu \).
+
+<p>
+The RLC circuit
+$$
+   \frac{dQ}{d\hat{t}} =\hat{I},
+$$
+
+and
+$$
+   \frac{d\hat{I}}{d\hat{t}} =Acos(\hat{\omega} \hat{t})-\hat{I}\xi-Q,
+$$
+
+with \( \omega_0=1/\sqrt{LC} \), \( \hat{t}=\omega_0 t \) and \( \xi = CR\omega_0 \).
+
+<p>
+The equations are essentially the same. <b>Great potential for abstraction</b>. Use the same program with small modifications.
+</div>
+</div>
+
+
+<p>
+<!-- !split -->
+
+<h2 id="___sec6" class="anchor">Other examples of simple algorithms that can be reused in many courses, two-point boundary value problems and scaling </h2>
+<div class="panel panel-default">
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+These physics examples can all be studied using almost the same types of algorithms, simple eigenvalue solvers or Gaussian elimination with <b>almost</b> the same starting matrix!
+
+<ol>
+<li> A buckling beam and tridiagonal Toeplitz matrices (mechanics and mathematical methods), eigenvalue problems</li>
+<li> A particle in an infinite potential well, quantum eigenvalue problems</li>
+<li> A particle (or two) in a general quantum well, quantum eigenvalue problems</li>
+<li> Poisson's  equation in one dim, linear algebra (electromagnetism)</li>
+<li> The diffusion equation in one dimension (Statistical Physics), linear algebra</li>
+<li> and many other cases</li>
+</ol>
+</div>
+</div>
+
+
+<p>
+<!-- !split -->
+
+<h2 id="___sec7" class="anchor">A buckling beam, or a quantum mechanical particle in an infinite well </h2>
+<div class="panel panel-default">
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+This is a two-point boundary value problem
+$$
+R \frac{d^2 u(x)}{dx^2} = -F u(x),
+$$
+
+where \( u(x) \) is the vertical displacement, \( R \) is a material specific constant, \( F \) the force and \( x \in [0,L] \) with \( u(0)=u(L)=0 \).
+
+<p>
+Scale equations with \( x = \rho L \) and \( \rho \in [0,1] \) and get (note that we change from \( u(x) \) to \( v(\rho) \)) 
+$$
+\frac{d^2 v(\rho)}{dx^2} +K v(\rho)=0,
+$$
+
+a standard eigenvalue problem with \( K= FL^2/R \).
+
+<p>
+If you replace \( R=-\hbar^2/2m \) and \( -F=\lambda \), we have the quantum mechanical variant for a particle moving in a well with infinite walls at the endpoints.
+</div>
+</div>
+
+
+<p>
+<!-- !split -->
+
+<h2 id="___sec8" class="anchor">Discretize and get the same type of problem  </h2>
+<div class="panel panel-default">
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+Discretize the second derivative and the rhs
+$$
+    -\frac{v_{i+1} -2v_i +v_{i-i}}{h^2}=\lambda v_i,
+$$
+
+with \( i=1,2,\dots, n \). We need to add to this system the two boundary conditions \( v(0) =v_0 \) and \( v(1) = v_{n+1} \).
+The so-called Toeplitz matrix (special case from the discretized second derivative)
+$$
+    \mathbf{A} = \frac{1}{h^2}\begin{bmatrix}
+                          2 & -1 &  &   &  & \\
+                          -1 & 2 & -1 & & & \\
+                           & -1 & 2 & -1 & &  \\
+                           & \dots   & \dots &\dots   &\dots & \dots \\
+                           &   &  &-1  &2& -1 \\
+                           &    &  &   &-1 & 2 \\
+                      \end{bmatrix}
+$$
+
+with the corresponding vectors \( \mathbf{v} = (v_1, v_2, \dots,v_n)^T \) allows us to rewrite the differential equation
+including the boundary conditions as a standard eigenvalue problem
+$$
+   \mathbf{A}\mathbf{v} = \lambda\mathbf{v}.
+$$
+
+The Toeplitz matrix has analytical eigenpairs!! Adding a potential along the diagonals allows us to reuse this problem for many types of physics cases.
+</div>
+</div>
+
+
+<p>
+<!-- !split -->
+
+<h2 id="___sec9" class="anchor">Adding complexity, hydrogen-like atoms or other one-particle potentials  </h2>
+<div class="panel panel-default">
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+Assume we want to solve the radial part of Schroedinger's equation for one particle in three dimensions. This equation reads
+$$
+  -\frac{\hbar^2}{2 m} \left ( \frac{1}{r^2} \frac{d}{dr} r^2
+  \frac{d}{dr} - \frac{l (l + 1)}{r^2} \right )R(r)
+     + V(r) R(r) = E R(r).
+$$
+
+Suppose in our  case \( V(r) \) is the harmonic oscillator potential \( (1/2)kr^2 \) with
+\( k=m\omega^2 \) and \( E \) is
+the energy of the harmonic oscillator in three dimensions.
+
+<p>
+Scale now the equations with \( \rho = r/\alpha \) where \( \alpha \) is a constant of dimension length.
+</div>
+</div>
+
+
+<p>
+<!-- !split -->
+
+<h2 id="___sec10" class="anchor">A natural length scale comes out automagically when scaling </h2>
+<div class="panel panel-default">
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+Manipulating the equations by requiring
+$$
+\frac{mk}{\hbar^2} \alpha^4 = 1,
+$$
+
+which define defines a natural length scale (like the Bohr radius does)
+$$
+\alpha = \left(\frac{\hbar^2}{mk}\right)^{1/4}.
+$$
+
+Defining
+$$
+\lambda = \frac{2m\alpha^2}{\hbar^2}E,
+$$
+
+we can rewrite Schroedinger's equation as
+$$
+  -\frac{d^2}{d\rho^2} v(\rho) + \rho^2v(\rho)  = \lambda v(\rho) .
+$$
+
+This is similar to the equation for a buckling beam except for the potential term.
+</div>
+</div>
+
+
+<p>
+<!-- !split -->
+
+<h2 id="___sec11" class="anchor">The Python code </h2>
+The code sets up the Hamiltonian matrix by defining the minimun and maximum values of \( r \) with a
+maximum value of integration points. It plots the
+eigenfunctions of the three lowest eigenstates.
+<p>
+
+
+<div class="compute"><script type="text/x-sage">
+#Program which solves the one-particle Schrodinger equation
+#for a potential specified in function
+#potential().
+
+from  matplotlib import pyplot as plt
+import numpy as np
+#Function for initialization of parameters
+def initialize():
+    RMin = 0.0
+    RMax = 10.0
+    lOrbital = 0
+    Dim = 400
+    return RMin, RMax, lOrbital, Dim
+# Harmonic oscillator here, easy to change
+def potential(r):
+    return 0.5*r*r
+
+#Get the boundary, orbital momentum and number of integration points
+RMin, RMax, lOrbital, Dim = initialize()
+
+#Initialize constants
+Step    = RMax/(Dim+1)
+DiagConst = 1.0/ (Step*Step)
+NondiagConst =  -0.5 / (Step*Step)
+OrbitalFactor = 0.5*lOrbital * (lOrbital + 1.0)
+
+#Calculate array of potential values
+v = np.zeros(Dim)
+r = np.linspace(RMin,RMax,Dim)
+for i in range(Dim):
+    r[i] = RMin + (i+1) * Step;
+    v[i] = potential(r[i]) + OrbitalFactor/(r[i]*r[i]);
+
+#Setting up a tridiagonal matrix and finding eigenvectors and eigenvalues
+Matrix = np.zeros((Dim,Dim))
+Matrix[0,0] = DiagConst + v[0];
+Matrix[0,1] = NondiagConst;
+for i in range(1,Dim-1):
+    Matrix[i,i-1]  = NondiagConst;
+    Matrix[i,i]    = DiagConst + v[i];
+    Matrix[i,i+1]  = NondiagConst;
+Matrix[Dim-1,Dim-2] = NondiagConst;
+Matrix[Dim-1,Dim-1] = DiagConst + v[Dim-1];
+# diagonalize and obtain eigenvalues, not necessarily sorted
+EigValues, EigVectors = np.linalg.eig(Matrix)
+# sort eigenvectors and eigenvalues
+permute = EigValues.argsort()
+EigValues = EigValues[permute]
+EigVectors = EigVectors[:,permute]
+# now plot the results for the three lowest lying eigenstates
+for i in range(3):
+    print(EigValues[i])
+FirstEigvector = EigVectors[:,0]
+SecondEigvector = EigVectors[:,1]
+ThirdEigvector = EigVectors[:,2]
+plt.plot(r, FirstEigvector**2 ,'b-',r, SecondEigvector**2 ,'g-',r, ThirdEigvector**2 ,'r-')
+plt.axis([0,4.6,0.0, 0.025])
+plt.xlabel(r'$r$')
+plt.ylabel(r'Radial probability $r^2|R(r)|^2$')
+plt.title(r'Radial probability distributions for three lowest-lying states')
+plt.savefig('eigenvector.pdf')
+plt.show()
+
+</script></div>
+<p>
+<!-- !split -->
+
+<h2 id="___sec12" class="anchor">The power of numerical methods </h2>
+<div class="panel panel-default">
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+The last example shows the potential of combining numerical algorithms with analytical results (or eventually symbolic calculations). 
+A simple change of potential gives a new physics case, example of a box potential
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #408080; font-style: italic"># Different types of potentials</span>
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">potential</span>(r):
+    <span style="color: #008000; font-weight: bold">if</span> r <span style="color: #666666">&gt;=</span> <span style="color: #666666">0.0</span> <span style="color: #AA22FF; font-weight: bold">and</span> r <span style="color: #666666">&lt;=</span> <span style="color: #666666">10.0</span>:
+        V <span style="color: #666666">=</span> <span style="color: #666666">-0.05</span>
+    <span style="color: #008000; font-weight: bold">else</span>:
+        V <span style="color: #666666">=0.0</span>
+    <span style="color: #008000; font-weight: bold">return</span> V
+</pre></div>
+<p>
+This allows students and teachers to
+
+<ul>
+<li> make abstraction and explore other physics cases easily where no analytical solutions are known</li>
+<li> Validate and verify  their  algorithms.</li>
+<li> Including concepts like unit testing, one has the possibility to test and validate several or all parts of the code.</li>
+<li> Validation and verification are then included <em>naturally</em> and one can develop a better attitude to what is meant with an ethically sound scientific approach.</li>
+<li> The above example allows the student to also test the mathematical error of the algorithm for the eigenvalue solver by changing the number of integration points. The students get trained from day one to think error analysis.</li>
+<li> The algorithm can be tailored to any kind of one-particle problem used in quantum mechanics or eigenvalue problems</li>
+<li> A simple rewrite allows for reuse in linear algebra problems for solution of say Poisson's equation in electromagnetism, or the diffusion equation in one dimension.</li>
+<li> With an ipython notebook the students can keep exploring similar examples and turn them in as their own notebooks.</li>
+</ul>
+</div>
+</div>
+
+
+<p>
+<!-- !split -->
+
+<h2 id="___sec13" class="anchor">Which aspects are important for a successful introduction of CSE? </h2>
+<div class="panel panel-default">
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+
+<ul>
+<li> Early introduction, programming course at beginning of studies linked with math courses and science and engineering courses.</li>
+<li> Crucial to learn proper programming at the beginning.</li>
+<li> Good TAs</li>
+<li> Choice of software.</li>
+<li> Textbooks and modularization of topics, ask for details</li>
+<li> Resources and expenses.</li>
+<li> Tailor to specific disciplines.</li>
+<li> Organizational matters.</li>
+<li> With a local  physics education group one can do much more!! At MSU we have a very strong <a href="http://create4stem.msu.edu/group/perl" target="_self">Physics Education Research group headed by Danny Caballero and Washti Sawtelle</a></li>
+</ul>
+</div>
+</div>
+
+
+<p>
+<!-- !split -->
+
+<h2 id="___sec14" class="anchor">Summary </h2>
+<div class="panel panel-default">
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+
+<ul>
+<li> Make our research visible in early undergraduate courses, enhance research based teaching</li>
+<li> Possibility to focus more on understanding and increased insight.</li>
+<li> Impetus for broad cooperation in teaching. Broad focus on university pedagogical topics.</li>
+<li> Strengthening of instruction based teaching (expensive and time-consuming).</li>
+<li> Give our candidates a broader and more up-to-date education with a problem-based orientation, often requested by potential employers.</li>
+<li> And perhaps the most important issue: does this enhance the student's insight in the Sciences?</li>
+</ul>
+
+We invite you to visit (online and/or in real life) our new center on <a href="http://www.mn.uio.no/ccse/english/" target="_self">Computing in Science Education</a>
+
+<p>
+</div>
+</div>
+
+
+<p>
+<!-- !split -->
+
+<h2 id="___sec15" class="anchor">More links  </h2>
+<div class="panel panel-default">
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+
+<ul>
+<li> Python and our first programming course, first semester <a href="http://www.uio.no/studier/emner/matnat/ifi/INF1100/h14/" target="_self">course</a>. Excellent new textbook by Hans Petter Langtangen, click here for the <a href="http://www.amazon.com/Scientific-Programming-Computational-Science-Engineering-ebook/dp/B00DGER1NQ/ref=sr_1_2?ie=UTF8&qid=1425382942&sr=8-2&keywords=langtangen" target="_self">textbook</a> or the <a href="http://hplgit.github.io/primer.html/doc/web/index.html" target="_self">online version</a></li>
+<li> Mathematical modelling course, first semester <a href="http://www.uio.no/studier/emner/matnat/math/MAT-INF1100/h14/" target="_self">course</a>. Textbook by Knut Morken to be published by Springer.</li>
+<li> Mechanics, second semester <a href="http://www.uio.no/studier/emner/matnat/fys/FYS-MEK1100/v12/" target="_self">course</a>. New textbook by Anders Malthe-Sorenssen, published by Springer, <a href="http://www.springer.com/us/book/9783319195957" target="_self">Undergraduate Lecture Notes in Physics</a></li>
+<li> Computational Physics I, fifth semester <a href="http://www.uio.no/studier/emner/matnat/fys/FYS3150/h15/" target="_self">course</a>. Textbook to be published by IOP, with <a href="https://github.com/CompPhysics/ComputationalPhysics1" target="_self">online version</a></li>
+<li> Book on waves and motion, Statistical Physics and Quantum physics to come, stay tuned!!</li>
+</ul>
+</div>
+</div>
+
+
+<!-- ------------------- end of main content --------------- -->
+
+</div>  <!-- end container -->
+<!-- include javascript, jQuery *first* -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+<!-- Bootstrap footer
+<footer>
+<a href="http://..."><img width="250" align=right src="http://..."></a>
+</footer>
+-->
+
+
+</body>
+</html>
+    
+

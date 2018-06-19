@@ -1,0 +1,390 @@
+TITLE: Examples on how to integrate a computational perspective in physics courses
+AUTHOR: Morten Hjorth-Jensen
+DATE: today
+
+!split
+===== Computing competence =====
+!bblock
+_Computing means solving scientific problems using all possible tools_, including symbolic computing, computers and numerical algorithms, and analytical paper and pencil solutions .
+
+_Computing is about developing an understanding of the scientific method_ by enhancing algorithmic thinking when solving problems.
+
+On the part of students, this competence involves being able to:
+
+* understand how algorithms are used to solve mathematical problems,
+* derive, verify, and implement algorithms,
+* understand what can go wrong with algorithms,
+* use these algorithms to construct reproducible scientific outcomes and to engage in science in ethical ways, and
+* think algorithmically for the purposes of gaining deeper insights about scientific problems.
+!eblock
+
+!split
+===== Better understanding of the scientific method =====
+!bblock
+All these elements are central for maturing and gaining a better understanding of the modern scientific process *per se*.
+
+The power of the scientific method lies in identifying a given problem
+as a special case of an abstract class of problems, identifying
+general solution methods for this class of problems, and applying a
+general method to the specific problem (applying means, in the case of
+computing, calculations by pen and paper, symbolic computing, or
+numerical computing by ready-made and/or self-written software). This
+generic view on problems and methods is particularly important for
+understanding how to apply available, generic software to solve a
+particular problem.
+!eblock
+
+!split
+===== Implementation in Oslo: The "C(omputing in)S(cience)E(Education)":"http://www.mn.uio.no/ccse/english/people/index.html"  project =====
+!bblock What we do
+* Coordinated use of computational exercises and numerical tools in most undergraduate courses.
+* Help update the scientific staff's competence on computational aspects and give support (scientific, pedagogical and financial)  to those who wish to revise  their courses in a computational direction.
+* Teachers get good summer students to aid in introducing computational exercises
+* Develop courses and exercise modules with a computational perspective, both for students and teachers. New textbooks!! 
+* Basic idea: mixture of mathematics, computation, informatics and topics from the physical sciences.
+ 
+Interesting outcome: higher focus on teaching and pedagogical issues!!
+!eblock
+
+
+
+!split
+=====  Examples of simple algorithms, initial value problems and proper scaling of equations =====
+!bblock
+ o Ordinary differential equations (ODE): RLC circuit
+ o ODE: Classical pendulum
+ o ODE: Solar system
+ o and many more cases
+
+Can use essentially the _same algorithms to solve these problems_, either some simple modified Euler algorithms or some Runge-Kutta class of algorithms or perhaps the so-called Verlet class of algorithms.  _Algorithms students use in one course can be reused in other courses_.
+!eblock
+
+
+
+!split
+===== Mechanics and electromagnetism, initial value problems  =====
+!bblock When properly scaled, these equations are essentially the same. Scaling is important.
+
+Classical pendulum with damping and external force as it could appear in a mechanics course.
+!bt
+\[
+  ml\frac{d^2\theta}{dt^2}+\nu\frac{d\theta}{dt}  +mgsin(\theta)=Acos(\omega t).
+\]
+!et
+Easy to solve numerically and then visualize the solution.
+Almost the same equation for an RLC circuit in the electromagnetism course,
+!bt
+\[
+L\frac{d^2Q}{dt^2}+\frac{Q}{C}+R\frac{dQ}{dt}=Acos(\omega t).
+\]
+!et
+
+!eblock
+
+
+!split
+===== Mechanics and electromagnetism, initial value problems and now proper scaling  =====
+!bblock
+
+Classical pendulum equations with damping and external force
+!bt
+\[
+   \frac{d\theta}{d\hat{t}} =\hat{v},
+\]
+!et
+and
+!bt
+\[
+   \frac{d\hat{v}}{d\hat{t}} =Acos(\hat{\omega} \hat{t})-\hat{v}\xi-\sin(\theta),
+\]
+!et
+with $\omega_0=\sqrt{g/l}$, $\hat{t}=\omega_0 t$ and $\xi = mg/\omega_0\nu$.
+
+The RLC circuit
+!bt
+\[
+   \frac{dQ}{d\hat{t}} =\hat{I},
+\]
+!et
+and
+!bt
+\[
+   \frac{d\hat{I}}{d\hat{t}} =Acos(\hat{\omega} \hat{t})-\hat{I}\xi-Q,
+\]
+!et
+with $\omega_0=1/\sqrt{LC}$, $\hat{t}=\omega_0 t$ and $\xi = CR\omega_0$.
+
+The equations are essentially the same. _Great potential for abstraction_. Use the same program with small modifications. 
+!eblock
+
+
+
+
+!split
+=====  Other examples of simple algorithms that can be reused in many courses, two-point boundary value problems and scaling =====
+!bblock
+These physics examples can all be studied using almost the same types of algorithms, simple eigenvalue solvers or Gaussian elimination with _almost_ the same starting matrix!
+
+ o A buckling beam and tridiagonal Toeplitz matrices (mechanics and mathematical methods), eigenvalue problems
+ o A particle in an infinite potential well, quantum eigenvalue problems
+ o A particle (or two) in a general quantum well, quantum eigenvalue problems
+ o Poisson's  equation in one dim, linear algebra (electromagnetism)
+ o The diffusion equation in one dimension (Statistical Physics), linear algebra
+ o and many other cases
+!eblock
+
+
+
+!split
+===== A buckling beam, or a quantum mechanical particle in an infinite well =====
+!bblock
+This is a two-point boundary value problem
+!bt
+\[
+R \frac{d^2 u(x)}{dx^2} = -F u(x),
+\]
+!et
+where $u(x)$ is the vertical displacement, $R$ is a material specific constant, $F$ the force and $x \in [0,L]$ with $u(0)=u(L)=0$.
+
+Scale equations with $x = \rho L$ and $\rho \in [0,1]$ and get (note that we change from $u(x)$ to $v(\rho)$) 
+!bt
+\[
+\frac{d^2 v(\rho)}{dx^2} +K v(\rho)=0,
+\]
+!et
+a standard eigenvalue problem with $K= FL^2/R$.
+
+If you replace $R=-\hbar^2/2m$ and $-F=\lambda$, we have the quantum mechanical variant for a particle moving in a well with infinite walls at the endpoints.
+!eblock
+
+!split
+===== Discretize and get the same type of problem  =====
+!bblock
+Discretize the second derivative and the rhs
+!bt
+\[
+    -\frac{v_{i+1} -2v_i +v_{i-i}}{h^2}=\lambda v_i,
+\]
+!et
+with $i=1,2,\dots, n$. We need to add to this system the two boundary conditions $v(0) =v_0$ and $v(1) = v_{n+1}$.
+The so-called Toeplitz matrix (special case from the discretized second derivative)
+!bt
+\[
+    \mathbf{A} = \frac{1}{h^2}\begin{bmatrix}
+                          2 & -1 &  &   &  & \\
+                          -1 & 2 & -1 & & & \\
+                           & -1 & 2 & -1 & &  \\
+                           & \dots   & \dots &\dots   &\dots & \dots \\
+                           &   &  &-1  &2& -1 \\
+                           &    &  &   &-1 & 2 \\
+                      \end{bmatrix}
+\]
+!et
+with the corresponding vectors $\mathbf{v} = (v_1, v_2, \dots,v_n)^T$ allows us to rewrite the differential equation
+including the boundary conditions as a standard eigenvalue problem
+!bt
+\[
+   \mathbf{A}\mathbf{v} = \lambda\mathbf{v}.
+\]
+!et
+The Toeplitz matrix has analytical eigenpairs!! Adding a potential along the diagonals allows us to reuse this problem for many types of physics cases.
+!eblock
+
+
+!split
+===== Adding complexity, hydrogen-like atoms or other one-particle potentials  =====
+!bblock
+Assume we want to solve the radial part of Schroedinger's equation for one particle in three dimensions. This equation reads
+!bt
+\[
+  -\frac{\hbar^2}{2 m} \left ( \frac{1}{r^2} \frac{d}{dr} r^2
+  \frac{d}{dr} - \frac{l (l + 1)}{r^2} \right )R(r)
+     + V(r) R(r) = E R(r).
+\]
+!et
+Suppose in our  case $V(r)$ is the harmonic oscillator potential $(1/2)kr^2$ with
+$k=m\omega^2$ and $E$ is
+the energy of the harmonic oscillator in three dimensions.
+
+Scale now the equations with $\rho = r/\alpha$ where $\alpha$ is a constant of dimension length. 
+!eblock
+
+
+
+
+!split
+===== A natural length scale comes out automagically when scaling =====
+!bblock
+Manipulating the equations by requiring
+!bt
+\[
+\frac{mk}{\hbar^2} \alpha^4 = 1,
+\]
+!et
+which define defines a natural length scale (like the Bohr radius does)
+!bt
+\[
+\alpha = \left(\frac{\hbar^2}{mk}\right)^{1/4}.
+\]
+!et
+Defining
+!bt
+\[
+\lambda = \frac{2m\alpha^2}{\hbar^2}E,
+\]
+!et
+we can rewrite Schroedinger's equation as
+!bt
+\[
+  -\frac{d^2}{d\rho^2} v(\rho) + \rho^2v(\rho)  = \lambda v(\rho) .
+\]
+!et
+This is similar to the equation for a buckling beam except for the potential term.
+!eblock
+
+
+!split
+===== The Python code =====
+The code sets up the Hamiltonian matrix by defining the minimun and maximum values of $r$ with a
+maximum value of integration points. It plots the
+eigenfunctions of the three lowest eigenstates.
+!bc pyscpro
+#Program which solves the one-particle Schrodinger equation
+#for a potential specified in function
+#potential().
+
+from  matplotlib import pyplot as plt
+import numpy as np
+#Function for initialization of parameters
+def initialize():
+    RMin = 0.0
+    RMax = 10.0
+    lOrbital = 0
+    Dim = 400
+    return RMin, RMax, lOrbital, Dim
+# Harmonic oscillator here, easy to change
+def potential(r):
+    return 0.5*r*r
+
+#Get the boundary, orbital momentum and number of integration points
+RMin, RMax, lOrbital, Dim = initialize()
+
+#Initialize constants
+Step    = RMax/(Dim+1)
+DiagConst = 1.0/ (Step*Step)
+NondiagConst =  -0.5 / (Step*Step)
+OrbitalFactor = 0.5*lOrbital * (lOrbital + 1.0)
+
+#Calculate array of potential values
+v = np.zeros(Dim)
+r = np.linspace(RMin,RMax,Dim)
+for i in range(Dim):
+    r[i] = RMin + (i+1) * Step;
+    v[i] = potential(r[i]) + OrbitalFactor/(r[i]*r[i]);
+
+#Setting up a tridiagonal matrix and finding eigenvectors and eigenvalues
+Matrix = np.zeros((Dim,Dim))
+Matrix[0,0] = DiagConst + v[0];
+Matrix[0,1] = NondiagConst;
+for i in range(1,Dim-1):
+    Matrix[i,i-1]  = NondiagConst;
+    Matrix[i,i]    = DiagConst + v[i];
+    Matrix[i,i+1]  = NondiagConst;
+Matrix[Dim-1,Dim-2] = NondiagConst;
+Matrix[Dim-1,Dim-1] = DiagConst + v[Dim-1];
+# diagonalize and obtain eigenvalues, not necessarily sorted
+EigValues, EigVectors = np.linalg.eig(Matrix)
+# sort eigenvectors and eigenvalues
+permute = EigValues.argsort()
+EigValues = EigValues[permute]
+EigVectors = EigVectors[:,permute]
+# now plot the results for the three lowest lying eigenstates
+for i in range(3):
+    print(EigValues[i])
+FirstEigvector = EigVectors[:,0]
+SecondEigvector = EigVectors[:,1]
+ThirdEigvector = EigVectors[:,2]
+plt.plot(r, FirstEigvector**2 ,'b-',r, SecondEigvector**2 ,'g-',r, ThirdEigvector**2 ,'r-')
+plt.axis([0,4.6,0.0, 0.025])
+plt.xlabel(r'$r$')
+plt.ylabel(r'Radial probability $r^2|R(r)|^2$')
+plt.title(r'Radial probability distributions for three lowest-lying states')
+plt.savefig('eigenvector.pdf')
+plt.show()
+!ec
+
+!split
+===== The power of numerical methods =====
+!bblock
+The last example shows the potential of combining numerical algorithms with analytical results (or eventually symbolic calculations). 
+A simple change of potential gives a new physics case, example of a box potential
+!bc pycod
+# Different types of potentials
+def potential(r):
+    if r >= 0.0 and r <= 10.0:
+        V = -0.05
+    else:
+        V =0.0
+    return V
+!ec
+This allows students and teachers to
+
+* make abstraction and explore other physics cases easily where no analytical solutions are known
+* Validate and verify  their  algorithms.
+* Including concepts like unit testing, one has the possibility to test and validate several or all parts of the code.
+* Validation and verification are then included *naturally* and one can develop a better attitude to what is meant with an ethically sound scientific approach.
+* The above example allows the student to also test the mathematical error of the algorithm for the eigenvalue solver by changing the number of integration points. The students get trained from day one to think error analysis.
+* The algorithm can be tailored to any kind of one-particle problem used in quantum mechanics or eigenvalue problems
+* A simple rewrite allows for reuse in linear algebra problems for solution of say Poisson's equation in electromagnetism, or the diffusion equation in one dimension.
+* With an ipython notebook the students can keep exploring similar examples and turn them in as their own notebooks.
+
+!eblock
+
+
+
+
+!split
+===== Which aspects are important for a successful introduction of CSE? =====
+!bblock
+
+* Early introduction, programming course at beginning of studies linked with math courses and science and engineering courses.
+* Crucial to learn proper programming at the beginning.
+* Good TAs
+* Choice of software.
+* Textbooks and modularization of topics, ask for details
+* Resources and expenses.
+* Tailor to specific disciplines.
+* Organizational matters.
+* With a local  physics education group one can do much more!! At MSU we have a very strong "Physics Education Research group headed by Danny Caballero and Washti Sawtelle":"http://create4stem.msu.edu/group/perl"
+!eblock
+
+
+
+!split
+===== Summary =====
+!bblock
+
+* Make our research visible in early undergraduate courses, enhance research based teaching
+* Possibility to focus more on understanding and increased insight.
+* Impetus for broad cooperation in teaching. Broad focus on university pedagogical topics.
+* Strengthening of instruction based teaching (expensive and time-consuming).
+* Give our candidates a broader and more up-to-date education with a problem-based orientation, often requested by potential employers.
+* And perhaps the most important issue: does this enhance the student's insight in the Sciences?
+
+We invite you to visit (online and/or in real life) our new center on "Computing in Science Education":"http://www.mn.uio.no/ccse/english/"
+
+!eblock
+
+
+
+
+!split
+===== More links  =====
+!bblock 
+* Python and our first programming course, first semester "course": "http://www.uio.no/studier/emner/matnat/ifi/INF1100/h14/". Excellent new textbook by Hans Petter Langtangen, click here for the "textbook":"http://www.amazon.com/Scientific-Programming-Computational-Science-Engineering-ebook/dp/B00DGER1NQ/ref=sr_1_2?ie=UTF8&qid=1425382942&sr=8-2&keywords=langtangen" or the "online version": "http://hplgit.github.io/primer.html/doc/web/index.html"
+* Mathematical modelling course, first semester "course": "http://www.uio.no/studier/emner/matnat/math/MAT-INF1100/h14/". Textbook by Knut Morken to be published by Springer.
+* Mechanics, second semester "course": "http://www.uio.no/studier/emner/matnat/fys/FYS-MEK1100/v12/". New textbook by Anders Malthe-Sorenssen, published by Springer, "Undergraduate Lecture Notes in Physics":"http://www.springer.com/us/book/9783319195957"
+* Computational Physics I, fifth semester "course":"http://www.uio.no/studier/emner/matnat/fys/FYS3150/h15/". Textbook to be published by IOP, with "online version":"https://github.com/CompPhysics/ComputationalPhysics1"
+* Book on waves and motion, Statistical Physics and Quantum physics to come, stay tuned!!
+!eblock
+
